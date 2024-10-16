@@ -9,24 +9,71 @@
 :root{
     --primary-color: rgb(13, 13, 13);
     --secondary-color: rgb(247, 246, 246);
-    --tertiary-color: rgba(128, 122, 142, 0.184);
+    --tertiary-color: rgba(45, 44, 49, 0.486);
 }
 
 a{
     color: inherit;
 }
 
-.button{
-    font-size: 1.2rem;
-    padding: 8px 15px;
-    background: transparent;
-    border: 2px solid white;
+button {
+    --primary-color: #921717;
+    --secondary-color: #fff;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
     cursor: pointer;
-    color: inherit;
-}
+  }
+  
+  button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.3s;
+  }
+  
+  button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.3s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  button:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+  button:hover .arrow:before {
+    right: 0;
+  }
 
 html{
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -37,6 +84,7 @@ body{
     background: var(--primary-color);
     color: var(--secondary-color);
     font-family: Orbitron, sans-serif;
+    overflow: hidden;
 }
 
 .preloader{
@@ -173,7 +221,7 @@ body{
     /* animation: text-fading 4s infinite; set in js because it interferes with initial opacity 0 */
 }
 
-.preloader .loading-text .dots{
+.dots{
     display: inline-block;
     width: 1.2em;
     text-align: left;
@@ -295,12 +343,12 @@ body{
     transform: translateX(10px);
 }
 
-#sidebar header{
+#sidebar .heading{
     cursor: pointer;
     user-select: none;
 }
 
-#sidebar header h1{
+#sidebar .heading h1{
     font-size: 2rem;
     margin-bottom: 5px;
     position: relative;
@@ -309,11 +357,11 @@ body{
     gap: 10px;
 }
 
-#sidebar header h1 img{
+#sidebar .heading h1 img{
     height: 40px;
 }
 
-#sidebar header p{
+#sidebar .heading p{
     font-size: .8rem;
     margin-bottom: 20px;
     text-align: center;
@@ -412,40 +460,104 @@ body{
     height: 200svh;
 }
 
-.page #viewer,
-.home #viewer{
+.page .viewer spline-viewer,
+.home .viewer spline-viewer{
     height: 100svh;
 }
+/* Spline Logo Cover */
+.page .viewer spline-viewer::before,
+.home .viewer spline-viewer::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    background: var(--primary-color);
+    z-index: 99;
+}
 
-.page #viewer button,
-.home #viewer button{
+.page .viewer .sketchfab-embed-wrapper iframe,
+.home .viewer .sketchfab-embed-wrapper iframe{
+    height: 100svh;
+    width: 100%;
+}
+
+.page .viewer model-viewer,
+.home .viewer model-viewer{
+    height: 100svh;
+    width: 100%;
+}
+
+/* Lade Bildschirm für model-viewer */
+.page .viewer .MWLoader,
+.home .viewer .MWLoader{
+    display: flex;
+    background: var(--primary-color);
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    width: 100%;
+}
+
+.page .viewer button,
+.home .viewer button{
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.page #info,
-.home #info{
+.page .info,
+.home .info{
     height: 100svh;
-    padding: 200px;
+    padding: 20px;
+    padding-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 100px;
     flex-direction: column;
+    transition: all .5s ease;
 }
 
-.page #info h1,
-.home #info h1{
+.page .info.blur,
+.home .info.blur{
+    filter: blur(5px);
+}
+
+.page .info h1,
+.home .info h1{
     font-size: 4rem;
+    text-align: center;
 }
 
-.page #info p,
-.home #info p{
-    width: 50%;
+.page .info p,
+.home .info p{
+    width: 100%;
+    max-width: 60%;
     font-size: 1.5rem;
     text-align: center;
+    max-height: 50vh;
+    overflow-y: scroll;
+    padding: 0 20px;
+}
+
+.page .info p::-webkit-scrollbar,
+.home .info p::-webkit-scrollbar {
+    width: 2px;
+}
+
+.page .info p::-webkit-scrollbar-track,
+.home .info p::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.page .info p::-webkit-scrollbar-thumb,
+.home .info p::-webkit-scrollbar-thumb {
+    background: #921717;
+    border-radius: 10px;
 }
 
 .page {
@@ -454,4 +566,83 @@ body{
 
 .page.active{
     display: block;
+}
+
+@media (max-width: 1450px) {
+    .page .info p,
+    .home .info p{
+        max-width: 80%;
+    }
+}
+@media (max-width: 750px) {
+    .page .info p,
+    .home .info p{
+        max-width: 100%;
+        font-size: 1.3rem;
+    }
+    .page .info h1,
+    .home .info h1{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 600px) {
+    .page .info,
+    .home .info{
+        gap: 50px;
+    }
+    .preloader header h1{
+        font-size: 3rem;
+    }
+    .preloader header h1 img{
+        height: 50px;
+    }
+    .preloader header p{
+        font-size: 1rem;
+    }
+    .preloader .spline-object{
+        width: 400px;
+        height: 400px;
+    }
+}
+@media (max-width: 500px) {
+    .page .info p,
+    .home .info p{
+        font-size: 1.2rem;
+    }
+    .page .info h1,
+    .home .info h1{
+        font-size: 2rem;
+    }
+    .preloader header h1{
+        font-size: 2.5rem;
+    }
+    .preloader .spline-object{
+        width: 350px;
+        height: 350px;
+    }
+}
+@media (max-width: 400px) {
+    .preloader header h1{
+        font-size: 2rem;
+    }
+    .preloader header h1 img{
+        height: 40px;
+    }
+    .preloader header p{
+        font-size: .9rem;
+    }
+    .preloader .spline-object{
+        width: 320px;
+        height: 320px;
+    }
+}
+@media (max-width: 350px) {
+    .page .info p,
+    .home .info p{
+        font-size: 1.1rem;
+    }
+    .page .info h1,
+    .home .info h1{
+        font-size: 1.5rem;
+    }
 }

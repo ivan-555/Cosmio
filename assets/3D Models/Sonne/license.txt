@@ -1,0 +1,8 @@
+Model Information:
+* title:	Photorealistic Sun
+* source:	https://sketchfab.com/3d-models/photorealistic-sun-7556485516804d0db3960b834e4b3f98
+* author:	Cesar Salcedo CG (https://sketchfab.com/cesar_salcedo)
+
+Model License:
+* license type:	SKETCHFAB Editorial (https://sketchfab.com/licenses)
+* requirements:	Use only in connection with events that are newsworthy or of public interest

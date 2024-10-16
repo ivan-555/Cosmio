@@ -19,11 +19,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <!-- Preload Preloader Spline Object -->
-    <link rel="preload" href="https://prod.spline.design/8YohnK9jJMTaFbFG/scene.splinecode" as="document">
+    <link rel="preload" href="https://prod.spline.design/8YohnK9jJMTaFbFG/scene.splinecode" as="script">
+    <!-- Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer@v1.11.1/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <div class="audio-slider">
-        <audio src="assets/Hans Zimmer Interstellar.mp3" id="audioPlayer" autoplay loop muted></audio>
+        <audio src="assets/Hans Zimmer Interstellar.mp3" id="audioPlayer" autoplay loop infinite muted></audio>
         <div class="circle"></div>
         <i class="fa-solid fa-volume-xmark active"></i>
         <i class="fa-solid fa-volume-high"></i>
@@ -43,21 +45,22 @@
     </div>
 
     <aside id="sidebar" class="show">
-        <header>
+        <a href="#" class="heading">
             <h1><img src="assets/favicon.png">Planetarium</h1>
             <p>Explore the Solar System</p>
-        </header>
+        </a>
         <nav>
             <ul>
-                <li><img src="assets/sun.png" alt=""><a href="#">Sun</a></li>
-                <li><img src="assets/merkur.png" alt=""><a href="#">Mercury</a></li>
-                <li><img src="assets/venus.png" alt=""><a href="#">Venus</a></li>
-                <li><img src="assets/erde.png" alt=""><a href="#">Earth</a></li>
-                <li><img src="assets/mars.png" alt=""><a href="#">Mars</a></li>
-                <li><img src="assets/jupiter.png" alt=""><a href="#">Jupiter</a></li>
-                <li><img src="assets/saturn.png" alt=""><a href="#">Saturn</a></li>
-                <li><img src="assets/uranus.png" alt=""><a href="#">Uranus</a></li>
-                <li><img src="assets/neptun.png" alt=""><a href="#">Neptune</a></li>
+                <li><img src="assets/Images/sun.png" alt=""><a href="#">Sun</a></li>
+                <li><img src="assets/Images/merkur.png" alt=""><a href="#">Mercury</a></li>
+                <li><img src="assets/Images/venus.png" alt=""><a href="#">Venus</a></li>
+                <li><img src="assets/Images/erde.png" alt=""><a href="#">Earth</a></li>
+                <li><img src="assets/Images/mars.png" alt=""><a href="#">Mars</a></li>
+                <li><img src="assets/Images/jupiter.png" alt=""><a href="#">Jupiter</a></li>
+                <li><img src="assets/Images/saturn.png" alt=""><a href="#">Saturn</a></li>
+                <li><img src="assets/Images/uranus.png" alt=""><a href="#">Uranus</a></li>
+                <li><img src="assets/Images/neptun.png" alt=""><a href="#">Neptune</a></li>
+
                 <spline-viewer url="https://prod.spline.design/YcvjjS0YRu-Y26F5/scene.splinecode" class="icon"></spline-viewer>
             </ul>
         </nav>
@@ -69,122 +72,238 @@
     </aside>
 
     <div class="home">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/Mk58y1PNqK14y7nP/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Sonnensystem/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none" field-of-view="80deg"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
-            <h1>Our Solar System</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, facilis.</p>
-            <button class="button explore">Explore</button>
+        <div class="info">
+            <h1>Solar System</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo aliquam expedita quae voluptatem esse magnam, inventore laborum recusandae ratione, maiores natus laboriosam, dolor repellendus magni sed earum nemo beatae excepturi possimus in repellat. Iste quibusdam placeat at modi quasi sed soluta recusandae quia? At consequuntur, ut sint reiciendis cum odit.</p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/6HeXdg00WrTzJE2t/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Sonne/scene.gltf" alt="3D-Modell"  auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Sun</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/IvaOZTk5YI-4vd3L/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Merkur/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Mercury</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/wkwmn3upS2XC7AFZ/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Venus/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Venus</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/n7Wf5vSqLy-kUQye/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Erde/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Earth</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, adipisci.</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/jFWfF0UZF4twcuce/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Mars/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Mars</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/fJOoNXSQUdox9o4G/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Jupiter/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none" field-of-view="80deg"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Jupiter</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/fJOoNXSQUdox9o4G/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Saturn" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c09a1970148c43ad99db134a9d6d00b5/embed?autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Saturn</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/fJOoNXSQUdox9o4G/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Uranus" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0009a69dbace44608c0bd09af9ba20db/embed?autostart=1&preload=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=1&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Uranus</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 
     <div class="page">
-        <div id="viewer">
-            <spline-viewer url="https://prod.spline.design/a9cUmYNCoP3HgrM4/scene.splinecode"></spline-viewer>
-            <button class="button viewInfo">View Info</button>
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Neptun/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
-        <div id="info">
+        <div class="info">
             <h1>Neptune</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, eveniet!</p>
-            <button class="button explore">Explore</button>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </div>
     </div>
 </body>

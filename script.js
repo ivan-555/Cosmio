@@ -4,7 +4,7 @@ const preloader = document.querySelector('.preloader');
 const pages = document.querySelectorAll('.page');
 const home = document.querySelector('.home');
 const sidebar = document.querySelector('#sidebar');
-const sidebarHeader = document.querySelector('#sidebar header');
+const sidebarHeader = document.querySelector('#sidebar .heading');
 const hamburger = document.querySelector('.hamburger');
 const viewInfoButtons = document.querySelectorAll('.viewInfo');
 const exploreButtons = document.querySelectorAll('.explore');
@@ -17,6 +17,10 @@ const audioSlider = document.querySelector('.audio-slider');
 const audioSliderCircle = document.querySelector('.audio-slider .circle');
 const audioSliderMuteIcon = document.querySelector('.audio-slider .fa-volume-xmark');
 const audioSliderUnmuteIcon = document.querySelector('.audio-slider .fa-volume-high');
+const modelViewers = document.querySelectorAll('model-viewer');
+const MWLoaders = document.querySelectorAll('.MWLoader');
+const pageInfos = document.querySelectorAll('.page .info');
+const homeInfo = document.querySelector('.home .info');
 
 //Page Preloader
 window.addEventListener('load', () => {
@@ -24,6 +28,7 @@ window.addEventListener('load', () => {
         preloader.classList.add('hide');
     }, 8000);
 });
+
 // Zeige den Text nach einer Verzögerung an, die das Laden des Spline-Objekts berücksichtigt
 setTimeout(() => {
   preloaderTexts.forEach(preloaderText => {
@@ -53,7 +58,26 @@ window.addEventListener("wheel", function(e) {
 hamburger.addEventListener('click', () => {
   sidebar.classList.toggle('show');
   hamburger.classList.toggle('isX');
+  
+  if (window.innerWidth < 1450) {
+    const isSidebarVisible = sidebar.classList.contains('show');
+
+    pageInfos.forEach(pageInfo => {
+      if (isSidebarVisible) {
+        pageInfo.classList.add('blur');
+        homeInfo.classList.add('blur');
+      } else {
+        pageInfo.classList.remove('blur');
+        homeInfo.classList.remove('blur');
+      }
+    });
+  }
 });
+
+if (window.innerWidth < 1450) {
+  sidebar.classList.remove('show');
+  hamburger.classList.remove('isX');
+}
 
 // Navigate Between Pages
 // NavLinks Icon Movement
@@ -64,6 +88,10 @@ NavLinks.forEach((link, index) => {
     pages[index].classList.add('active');
     NavIcon.style.transform = `translateY(${index * 50}px) rotate(90deg)`;
     NavIcon.classList.add('active');
+    if (window.innerWidth < 1450) {
+      sidebar.classList.remove('show');
+      hamburger.classList.remove('isX');
+    }
   });
 });
 
@@ -74,6 +102,10 @@ sidebarHeader.addEventListener('click', () => {
   setTimeout(() => {
     NavIcon.style.transform = `translateY(0px) rotate(90deg)`;
   }, 200);
+  if (window.innerWidth < 1450) {
+    sidebar.classList.remove('show');
+    hamburger.classList.remove('isX');
+  }
 });
 
 //View Info and Explore Buttons
@@ -83,6 +115,12 @@ viewInfoButtons.forEach(viewInfoButton => {
       top: window.innerHeight, // window.innerHeight = 100vh
       behavior: 'smooth'
     });
+    if (window.innerWidth < 1450) {
+      sidebar.classList.remove('show');
+      hamburger.classList.remove('isX');
+      homeInfo.classList.remove('blur');
+      pageInfos.forEach(pageInfo => pageInfo.classList.remove('blur'));
+    }
   });
 });
 
@@ -112,4 +150,13 @@ audioSlider.addEventListener('click', () => {
     audioSliderUnmuteIcon.classList.add('active');
     audioPlayer.muted = false;  // Audio wieder unmuten
   }
+});
+
+// Model Viewer Loader
+modelViewers.forEach((modelViewer, index) => {
+  modelViewer.addEventListener('load', () => {
+    setTimeout(() => {
+      MWLoaders[index].style.display = 'none';
+    }, 800); // 800ms Verzögerung nachdem das modell geladen wurde da es sonst flasht
+  });
 });
