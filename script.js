@@ -41,11 +41,6 @@ setTimeout(() => {
 }, 3000);
 
 
-// Scrollen per Mausrad deaktivieren
-window.addEventListener("wheel", function(e) {
-    e.preventDefault(); // Verhindert das Scrollen
-  }, { passive: false }); // 'passive: false' erlaubt die Nutzung von e.preventDefault()
-
  // Verhindert das Scrollen bei gedrücktem Mausrad
  document.addEventListener('mousedown', function(event) {
   // Überprüfen, ob das mittlere Mausrad gedrückt wird (event.button === 1)
@@ -53,6 +48,19 @@ window.addEventListener("wheel", function(e) {
       event.preventDefault();  // Standardaktion wie Scrollen verhindern
   }
 });
+
+// Scrollen per Mausrad auf der gesamten Seite deaktivieren
+window.addEventListener("wheel", function(e) {
+  let scrollableElements = document.querySelectorAll('.info p');
+  // Prüfen, ob das Event auf dem p Element stattfindet
+  if (scrollableElements.contains(e.target)) {
+      // Wenn das Event auf dem scrollbaren Element stattfindet, lasse es zu
+      return; // Standard-Scrolling ist hier erlaubt
+  } else {
+      // Sonst verhindere das Scrollen
+      e.preventDefault(); // Verhindert das Scrollen auf anderen Bereichen
+  }
+}, { passive: false }); // 'passive: false' erlaubt die Nutzung von e.preventDefault()
 
 // Sidebar Toggle
 hamburger.addEventListener('click', () => {
