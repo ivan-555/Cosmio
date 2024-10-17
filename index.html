@@ -24,13 +24,6 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer@v1.11.1/dist/model-viewer.min.js"></script>
 </head>
 <body>
-    <div class="audio-slider">
-        <audio src="assets/Hans Zimmer Interstellar.mp3" id="audioPlayer" autoplay loop infinite muted></audio>
-        <div class="circle"></div>
-        <i class="fa-solid fa-volume-xmark active"></i>
-        <i class="fa-solid fa-volume-high"></i>
-    </div>
-
     <div class="preloader">
         <header class="text">
             <h1><img src="assets/favicon.png">Planetarium</h1>
@@ -98,7 +91,7 @@
     <div class="page">
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer src="assets/3D Models/Sonne/scene.gltf" alt="3D-Modell"  auto-rotate camera-controls background-color="transparent"
+            <model-viewer src="assets/3D Models/Sonne/scene.glb" alt="3D-Modell"  auto-rotate camera-controls background-color="transparent"
             shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info

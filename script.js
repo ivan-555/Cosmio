@@ -133,25 +133,6 @@ exploreButtons.forEach(exploreButton => {
   });
 });
 
-// Music Mute Slider
-let isMuted = true;
-
-audioSlider.addEventListener('click', () => {
-  isMuted = !isMuted;
-  if (isMuted) {
-    audioSliderCircle.style.left = "0";
-    audioSliderMuteIcon.classList.add('active');
-    audioSliderUnmuteIcon.classList.remove('active');
-    audioPlayer.muted = true;  // Audio stummschalten
-    
-  } else {
-    audioSliderCircle.style.left = "30px";
-    audioSliderMuteIcon.classList.remove('active');
-    audioSliderUnmuteIcon.classList.add('active');
-    audioPlayer.muted = false;  // Audio wieder unmuten
-  }
-});
-
 // Model Viewer Loader
 modelViewers.forEach((modelViewer, index) => {
   modelViewer.addEventListener('load', () => {
