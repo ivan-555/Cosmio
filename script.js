@@ -8,15 +8,6 @@ const sidebarHeader = document.querySelector('#sidebar .heading');
 const hamburger = document.querySelector('.hamburger');
 const viewInfoButtons = document.querySelectorAll('.viewInfo');
 const exploreButtons = document.querySelectorAll('.explore');
-const preloaderTexts = document.querySelectorAll('.preloader .text');
-const preloaderSplineObject = document.querySelector('.preloader #preloaderSplineObject');
-const prePreloader = document.querySelector('.preloader .pre-preloader');
-const preloaderLoadingText = document.querySelector('.preloader .loading-text');
-const audioPlayer = document.querySelector('#audioPlayer');
-const audioSlider = document.querySelector('.audio-slider');
-const audioSliderCircle = document.querySelector('.audio-slider .circle');
-const audioSliderMuteIcon = document.querySelector('.audio-slider .fa-volume-xmark');
-const audioSliderUnmuteIcon = document.querySelector('.audio-slider .fa-volume-high');
 const modelViewers = document.querySelectorAll('model-viewer');
 const MWLoaders = document.querySelectorAll('.MWLoader');
 const pageInfos = document.querySelectorAll('.page .info');
@@ -26,20 +17,8 @@ const homeInfo = document.querySelector('.home .info');
 window.addEventListener('load', () => {
     setTimeout(() => {
         preloader.classList.add('hide');
-    }, 8000);
+    }, 6000);
 });
-
-// Zeige den Text nach einer Verzögerung an, die das Laden des Spline-Objekts berücksichtigt
-setTimeout(() => {
-  preloaderTexts.forEach(preloaderText => {
-    preloaderText.style.opacity = "1"; // Text anzeigen
-  });
-
-  prePreloader.style.opacity = "0"; // Pre-Preloader ausblenden
-  preloaderSplineObject.style.opacity = "1"; // Spline-Objekt anzeigen
-  preloaderLoadingText.style.animation = "text-fading 3s infinite"; // Textanimation starten
-}, 3000);
-
 
  // Verhindert das Scrollen bei gedrücktem Mausrad
  document.addEventListener('mousedown', function(event) {
@@ -146,6 +125,6 @@ modelViewers.forEach((modelViewer, index) => {
   modelViewer.addEventListener('load', () => {
     setTimeout(() => {
       MWLoaders[index].style.display = 'none';
-    }, 800); // 800ms Verzögerung nachdem das modell geladen wurde da es sonst flasht
+    }, 1300); // 1200ms Verzögerung nachdem das modell geladen wurde da es sonst flasht
   });
 });

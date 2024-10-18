@@ -18,8 +18,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    <!-- Preload Preloader Spline Object -->
-    <link rel="preload" href="https://prod.spline.design/8YohnK9jJMTaFbFG/scene.splinecode" as="script">
     <!-- Model Viewer -->
     <script type="module" src="https://unpkg.com/@google/model-viewer@v1.11.1/dist/model-viewer.min.js"></script>
 </head>
@@ -29,11 +27,12 @@
             <h1><img src="assets/favicon.png">Planetarium</h1>
             <p>Explore the Solar System</p>
         </header>
-        <div class="pre-preloader">
+        <div class="MWLoader">
             <div class="circle small"></div>
             <div class="circle big"></div>
         </div>
-        <spline-viewer url="https://prod.spline.design/8YohnK9jJMTaFbFG/scene.splinecode" class="spline-object" id="preloaderSplineObject"></spline-viewer>
+        <model-viewer src="assets/3D Models/preloader/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+        shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
         <span class="text loading-text">Loading Assets <span class="dots"></span> </span>
     </div>
 

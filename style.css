@@ -98,11 +98,6 @@ body{
     justify-content: center;
 }
 
-.preloader .text{
-    opacity: 0;
-    transition: opacity 1s;
-}
-
 .preloader header{
     cursor: pointer;
     user-select: none;
@@ -130,17 +125,17 @@ body{
     text-align: center;
 }
 
-.preloader .pre-preloader{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    transition: opacity .3s;
+.preloader .MWLoader{
+    z-index: 9999;
+    display: flex;
+    background: var(--primary-color);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
-.preloader .pre-preloader .circle{
+.preloader .MWLoader .circle{
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -148,13 +143,13 @@ body{
     transform: translate(-50%, -50%);
 }
 
-.preloader .pre-preloader .circle.small{
+.preloader .MWLoader .circle.small{
     width: 40px;
     height: 40px;
     border: 2px solid white;
     animation: circleRotate 2s infinite linear reverse;
 }
-.preloader .pre-preloader .circle.small::before{
+.preloader .MWLoader .circle.small::before{
     content: "";
     position: absolute;
     top: 50%;
@@ -165,13 +160,13 @@ body{
     background: var(--primary-color);
 }
 
-.preloader .pre-preloader .circle.big{
+.preloader .MWLoader .circle.big{
     width: 80px;
     height: 80px;
     border: 3px solid white;
     animation: circleRotate 2s infinite linear;
 }
-.preloader .pre-preloader .circle.big::before{
+.preloader .MWLoader .circle.big::before{
     content: "";
     position: absolute;
     top: 50%;
@@ -192,26 +187,13 @@ body{
     }
 }
 
-.preloader .spline-object{
+.preloader model-viewer{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
     height: 500px;
-    opacity: 0;
-    transition: opacity 1s;
-}
-/* spline logo cover */
-.preloader .spline-object::before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    height: 100px;
-    background: var(--primary-color);
-    z-index: 99;
 }
 
 .preloader .loading-text{
@@ -561,7 +543,7 @@ body{
     .preloader header p{
         font-size: 1rem;
     }
-    .preloader .spline-object{
+    .preloader model-viewer{
         width: 400px;
         height: 400px;
     }
@@ -578,7 +560,7 @@ body{
     .preloader header h1{
         font-size: 2.5rem;
     }
-    .preloader .spline-object{
+    .preloader model-viewer{
         width: 350px;
         height: 350px;
     }
@@ -593,7 +575,7 @@ body{
     .preloader header p{
         font-size: .9rem;
     }
-    .preloader .spline-object{
+    .preloader model-viewer{
         width: 320px;
         height: 320px;
     }
