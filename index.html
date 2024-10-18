@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), gyroscope=(), magnetometer=(), camera=()">
     <title>Planetarium</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Custom JS -->
     <script src="script.js" defer></script>
     <!-- Spline JS Module -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
     <!-- favicon -->
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
     <!-- font awesome -->
@@ -21,6 +22,7 @@
     <!-- Model Viewer -->
     <script type="module" src="https://unpkg.com/@google/model-viewer@v1.11.1/dist/model-viewer.min.js"></script>
 </head>
+
 <body>
     <div class="preloader">
         <header class="text">
@@ -32,7 +34,7 @@
             <div class="circle big"></div>
         </div>
         <model-viewer src="assets/3D Models/preloader/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-        shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+        shadow-intensity="0" interaction-prompt="none"></model-viewer>
         <span class="text loading-text">Loading Assets <span class="dots"></span> </span>
     </div>
 
@@ -53,6 +55,7 @@
                 <li><img src="assets/Images/uranus.png" alt=""><a href="#">Uranus</a></li>
                 <li><img src="assets/Images/neptun.png" alt=""><a href="#">Neptune</a></li>
 
+                <!-- Spline Rocket -->
                 <spline-viewer url="https://prod.spline.design/YcvjjS0YRu-Y26F5/scene.splinecode" class="icon"></spline-viewer>
             </ul>
         </nav>
@@ -67,7 +70,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Sonnensystem/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none" field-of-view="80deg"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none" field-of-view="80deg"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -122,7 +125,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Sonne/scene.glb" alt="3D-Modell"  auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -158,7 +161,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Merkur/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -194,7 +197,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Venus/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -238,7 +241,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Erde/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -276,7 +279,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Mars/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -316,7 +319,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Jupiter/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -413,7 +416,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Neptun/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" on-model-visibility="handleVisibilityChange(event)" interaction-prompt="none"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">

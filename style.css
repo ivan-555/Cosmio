@@ -16,6 +16,32 @@ a{
     color: inherit;
 }
 
+.dots{
+    display: inline-block;
+    width: 1.2em;
+    text-align: left;
+}
+
+@keyframes dot-flashing {
+    0% {
+        content: '.';
+    }
+    33% {
+        content: '..';
+    }
+    66% {
+        content: '...';
+    }
+    100% {
+        content: '.';
+    }
+}
+
+.dots::after {
+    content: '';
+    animation: dot-flashing 1.5s infinite steps(4, end);
+}
+
 button {
     --primary-color: #921717;
     --secondary-color: #fff;
@@ -32,24 +58,24 @@ button {
     gap: 0.6em;
     font-weight: bold;
     cursor: pointer;
-  }
+}
   
-  button .arrow-wrapper {
+button .arrow-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  button .arrow {
+}
+
+button .arrow {
     margin-top: 1px;
     width: var(--arrow-width);
     background: var(--primary-color);
     height: var(--arrow-stroke);
     position: relative;
     transition: 0.3s;
-  }
-  
-  button .arrow::before {
+}
+
+button .arrow::before {
     content: "";
     box-sizing: border-box;
     position: absolute;
@@ -61,15 +87,15 @@ button {
     transition: 0.3s;
     padding: 3px;
     transform: rotate(-45deg);
-  }
-  
-  button:hover .arrow {
+}
+
+button:hover .arrow {
     background: var(--secondary-color);
-  }
-  
-  button:hover .arrow:before {
+}
+
+button:hover .arrow:before {
     right: 0;
-  }
+}
 
 html{
     scroll-behavior: smooth;
@@ -86,6 +112,8 @@ body{
     font-family: Orbitron, sans-serif;
     overflow: hidden;
 }
+
+/* ---------------------------------------------------------- Preloader -------------------------------------------------------------------------- */
 
 .preloader{
     position: fixed;
@@ -126,7 +154,7 @@ body{
 }
 
 .preloader .MWLoader{
-    z-index: 9999;
+    z-index: 9999; 
     display: flex;
     background: var(--primary-color);
     align-items: center;
@@ -203,32 +231,6 @@ body{
     /* animation: text-fading 4s infinite; set in js because it interferes with initial opacity 0 */
 }
 
-.dots{
-    display: inline-block;
-    width: 1.2em;
-    text-align: left;
-}
-
-@keyframes dot-flashing {
-    0% {
-        content: '.';
-    }
-    33% {
-        content: '..';
-    }
-    66% {
-        content: '...';
-    }
-    100% {
-        content: '.';
-    }
-}
-
-.dots::after {
-    content: '';
-    animation: dot-flashing 1.5s infinite steps(4, end);
-}
-
 @keyframes text-fading {
     40% {
         opacity: 1;
@@ -241,16 +243,7 @@ body{
     }
 }
 
-@keyframes rocketRotate {
-    0% {
-        transform: translateX(-50%) rotate(0);
-    }
-
-    100% {
-        transform: translateX(-50%) rotate(360deg);
-    }
-}
-
+/* hides the preloader with fadeOut animation */
 .preloader.hide{
     animation: fadeOut .5s;
     animation-fill-mode: forwards;
@@ -263,6 +256,8 @@ body{
         display: none;
     }
 }
+
+/* ------------------------------------------------------------ Sidebar --------------------------------------------------------------- */
 
 #sidebar{
     display: flex;
@@ -283,6 +278,7 @@ body{
     transition: transform .5s ease;
 }
 
+/* opens sidebar */
 #sidebar.show{
     transform: translateX(10px);
 }
@@ -332,6 +328,7 @@ body{
     position: relative;
 }
 
+/* Rocket Spline Modell */
 #sidebar nav ul .icon{
     height: 250px;
     width: 250px;
@@ -343,7 +340,6 @@ body{
     pointer-events: none;
     opacity: 0;
 }
-
 #sidebar nav ul .icon.active{
     opacity: 1;
 }
@@ -399,11 +395,14 @@ body{
     opacity: 0;
 }
 
+/* ----------------------------------------------------------- Pages --------------------------------------------------------------------------- */
+
 .page,
 .home{
     height: 200svh;
 }
 
+/* Spline viewer */
 .page .viewer spline-viewer,
 .home .viewer spline-viewer{
     height: 100svh;
@@ -421,19 +420,21 @@ body{
     z-index: 99;
 }
 
+/* Sketchfab viewer */
 .page .viewer .sketchfab-embed-wrapper iframe,
 .home .viewer .sketchfab-embed-wrapper iframe{
     height: 100svh;
     width: 100%;
 }
 
+/* Model viewer */
 .page .viewer model-viewer,
 .home .viewer model-viewer{
     height: 100svh;
     width: 100%;
 }
 
-/* Lade Bildschirm für model-viewer */
+/* Loading screen for model-viewer */
 .page .viewer .MWLoader,
 .home .viewer .MWLoader{
     display: flex;
@@ -465,6 +466,7 @@ body{
     transition: all .5s ease;
 }
 
+/* blur class is added by js and blurs the text if the sidebar is open on small screens */
 .page .info.blur,
 .home .info.blur{
     filter: blur(5px);
@@ -483,34 +485,37 @@ body{
     font-size: 1.5rem;
     text-align: center;
     max-height: 50vh;
-    overflow-y: scroll;
+    overflow-y: scroll; /* add scrollbar if text is too long */
     padding: 0 20px;
 }
 
+/* p tag scrollbar styling */
 .page .info p::-webkit-scrollbar,
 .home .info p::-webkit-scrollbar {
     width: 2px;
 }
-
 .page .info p::-webkit-scrollbar-track,
 .home .info p::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 10px;
 }
-
 .page .info p::-webkit-scrollbar-thumb,
 .home .info p::-webkit-scrollbar-thumb {
     background: #921717;
     border-radius: 10px;
 }
 
+/* Hide all pages initialy apart from home */
 .page {
     display: none;
 }
 
+/* Show page added by js */
 .page.active{
     display: block;
 }
+
+/* ------------------------------------------------------ Media Querys ------------------------------------------------------------------------ */
 
 @media (max-width: 1450px) {
     .page .info p,
