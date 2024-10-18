@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Permissions-Policy" content="accelerometer=(), gyroscope=(), magnetometer=(), camera=()">
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), gyroscope=(), magnetometer=(), deviceorientation=(), camera=()">
     <title>Planetarium</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -70,7 +70,7 @@
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Sonnensystem/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none" field-of-view="80deg"></model-viewer>
+            shadow-intensity="0" interaction-prompt="none" field-of-view="80deg" ></model-viewer>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -341,8 +341,7 @@
                 is acting as a gravitational shield for Earth and other inner planets. Due to its immense size
                 and strong gravitational field, Jupiter frequently deflects or captures comets and asteroids that
                 might otherwise pose a threat to the inner planets. This protective function reduces the likelihood
-                of large impacts on Earth, which could cause significant damage or even mass extinctions, similar
-                to the event that is believed to have contributed to the demise of the dinosaurs. Jupiter’s gravity
+                of large impacts on Earth, which could cause significant damage or even mass extinctions. Jupiter’s gravity
                 also helps to stabilize the orbits of objects in the asteroid belt, preventing them from colliding with Earth.
             </p>
             <button class="button explore">
