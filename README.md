@@ -30,5 +30,5 @@ Füge hier Screenshots der Anwendung ein, um das Interface und die Funktionen zu
 - Git: Versionskontrolle mit Git.
   
 ### Deployment 🚀
-Diese Webseite wird mit GitHub Pages gehostet. Besuche [Planetarium](https://ivan-555.github.io/Cosmio/) für die Live-Version.
+Diese Webseite wird mit GitHub Pages gehostet. Besuche [Cosmio](https://ivan-555.github.io/Cosmio/) für die Live-Version.
 
