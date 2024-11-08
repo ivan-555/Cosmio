@@ -8,12 +8,16 @@
 
 :root{
     --primary-color: rgb(13, 13, 13);
-    --secondary-color: rgb(247, 246, 246);
+    --secondary-color: rgb(216, 214, 221);
     --tertiary-color: rgba(45, 44, 49, 0.486);
 }
 
 a{
     color: inherit;
+}
+
+p{
+    font-family: "Roboto", sans-serif;
 }
 
 .dots{
@@ -126,34 +130,7 @@ body{
     justify-content: center;
 }
 
-.preloader header{
-    cursor: pointer;
-    user-select: none;
-    position: absolute;
-    top: 15%;
-    transform: translateY(-50%);
-}
-
-.preloader header h1{
-    font-size: 3.5rem;
-    margin-bottom: 5px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.preloader header h1 img{
-    height: 60px;
-}
-
-.preloader header p{
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.preloader .MWLoader{
+.preloader .loader{
     z-index: 9999; 
     display: flex;
     background: var(--primary-color);
@@ -163,7 +140,7 @@ body{
     height: 100%;
 }
 
-.preloader .MWLoader .circle{
+.preloader .loader .circle{
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -171,13 +148,13 @@ body{
     transform: translate(-50%, -50%);
 }
 
-.preloader .MWLoader .circle.small{
+.preloader .loader .circle.small{
     width: 40px;
     height: 40px;
     border: 2px solid white;
     animation: circleRotate 2s infinite linear reverse;
 }
-.preloader .MWLoader .circle.small::before{
+.preloader .loader .circle.small::before{
     content: "";
     position: absolute;
     top: 50%;
@@ -188,13 +165,13 @@ body{
     background: var(--primary-color);
 }
 
-.preloader .MWLoader .circle.big{
+.preloader .loader .circle.big{
     width: 80px;
     height: 80px;
     border: 3px solid white;
     animation: circleRotate 2s infinite linear;
 }
-.preloader .MWLoader .circle.big::before{
+.preloader .loader .circle.big::before{
     content: "";
     position: absolute;
     top: 50%;
@@ -213,22 +190,6 @@ body{
     100% {
         transform: translate(-50%, -50%) rotate(360deg);
     }
-}
-
-.preloader model-viewer{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-}
-
-.preloader .loading-text{
-    position: absolute;
-    bottom: 15%;
-    transform: translateY(-50%);
-    /* animation: text-fading 4s infinite; set in js because it interferes with initial opacity 0 */
 }
 
 @keyframes text-fading {
@@ -262,8 +223,8 @@ body{
 #sidebar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     position: fixed;
     top: 10px;
     left: 0px;
@@ -271,12 +232,12 @@ body{
     background: var(--tertiary-color);
     border-radius: 20px;
     font-size: 1.3rem;
-    padding: 30px;
-    padding-top: 40px;
-    width: 300px;
+    padding: 20px 0;
+    padding-top: 50px;
+    width: fit-content;
     transform: translateX(-100%);
     transition: transform .5s ease;
-    max-height: 100svh;
+    max-height: calc(100svh - 10px);
 }
 
 /* opens sidebar */
@@ -284,9 +245,29 @@ body{
     transform: translateX(10px);
 }
 
+#sidebar .language{
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+#sidebar .language img{
+    height: 25px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#sidebar .language a.active img{
+    border-bottom: 1px  solid white;
+}
+
 #sidebar .heading{
     cursor: pointer;
     user-select: none;
+    height: 80px;
 }
 
 #sidebar .heading h1{
@@ -304,16 +285,21 @@ body{
 
 #sidebar .heading p{
     font-size: .8rem;
-    margin-bottom: 20px;
     text-align: center;
 }
 
 #sidebar nav ul{
-    max-height: 70vh;
+    max-height: calc(100svh - 170px);
     overflow-y: scroll;
-    padding: 0 40px;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+    padding-left: 70px;
 }
-/* p tag scrollbar styling */
+
+/* sidebar links scrollbar styling */
 #sidebar nav ul::-webkit-scrollbar{
     width: 2px;
 }
@@ -322,7 +308,7 @@ body{
     border-radius: 10px;
 }
 #sidebar nav ul::-webkit-scrollbar-thumb{
-    background: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.365);
     border-radius: 10px;
 }
 
@@ -330,14 +316,12 @@ body{
     display: flex;
     align-items: center;
     gap: 20px;
+    white-space: nowrap; /* prevent text from wrapping */
 }
 
 #sidebar nav ul li img{
-    height: 20px;
-}
-
-#sidebar nav ul li:nth-child(8) img{
-    height: 28px;
+    height: 25px;
+    width: 25px;
 }
 
 #sidebar nav ul li a{
@@ -347,20 +331,48 @@ body{
     position: relative;
 }
 
+#sidebar nav ul .show-more{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: .9rem;
+    white-space: nowrap;
+    transform: translateX(-20px);
+}
+#sidebar nav ul .show-more i{
+    transition: transform .5s ease;
+}
+#sidebar nav ul .show-more.show i{
+    transform: rotate(-180deg);
+}
+
+#sidebar nav ul .more{
+    height: 0px;
+    overflow: hidden;
+}
+#sidebar nav ul .more.show{
+    height: fit-content;
+    margin-top: 20px;
+}
+
 /* Rocket Spline Modell */
 #sidebar nav ul .icon{
-    height: 250px;
-    width: 250px;
+    height: 40px;
+    width: 40px;
     position: absolute;
-    top: 22px;
-    left: -85px;
+    top: 4px;
+    left: 15px;
     transform: translateY(0px) rotate(90deg);
     transition: transform 1s ease, opacity .3s;
     pointer-events: none;
-    opacity: 0;
+    opacity: 0 !important;
 }
 #sidebar nav ul .icon.active{
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 #sidebar .hamburger{
@@ -416,64 +428,67 @@ body{
 
 /* ----------------------------------------------------------- Pages --------------------------------------------------------------------------- */
 
-.page,
-.home{
+.page{
     height: 200svh;
 }
 
-/* Spline viewer */
-.page .viewer spline-viewer,
-.home .viewer spline-viewer{
+.page .viewer{
     height: 100svh;
-}
-/* Spline Logo Cover */
-.page .viewer spline-viewer::before,
-.home .viewer spline-viewer::before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 200px;
-    height: 100px;
-    background: var(--primary-color);
-    z-index: 99;
 }
 
 /* Sketchfab viewer */
-.page .viewer .sketchfab-embed-wrapper iframe,
-.home .viewer .sketchfab-embed-wrapper iframe{
-    height: 100svh;
+.page .viewer .sketchfab-embed-wrapper{
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.page .viewer .sketchfab-embed-wrapper iframe{
+    height: 100%;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* cuts of the top and bottom to hide the watermark */
+.page .viewer .sketchfab-embed-wrapper.cut iframe{
+    height: 110%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Model viewer */
-.page .viewer model-viewer,
-.home .viewer model-viewer{
-    height: 100svh;
+.page .viewer model-viewer{
+    height: 100%;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Loading screen for model-viewer */
-.page .viewer .MWLoader,
-.home .viewer .MWLoader{
+.page .viewer .MWLoader{
     display: flex;
     background: var(--primary-color);
     align-items: center;
     justify-content: center;
-    height: 100svh;
+    height: 100%;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
-.page .viewer button,
-.home .viewer button{
+.page .viewer button{
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 3;
 }
 
-.page .info,
-.home .info{
+.page .info{
     height: 100svh;
     padding: 20px;
     padding-top: 100px;
@@ -486,19 +501,16 @@ body{
 }
 
 /* blur class is added by js and blurs the text if the sidebar is open on small screens */
-.page .info.blur,
-.home .info.blur{
+.page .info.blur{
     filter: blur(5px);
 }
 
-.page .info h1,
-.home .info h1{
+.page .info h1{
     font-size: 4rem;
     text-align: center;
 }
 
-.page .info p,
-.home .info p{
+.page .info p{
     width: 100%;
     max-width: 60%;
     font-size: 1.5rem;
@@ -509,17 +521,14 @@ body{
 }
 
 /* p tag scrollbar styling */
-.page .info p::-webkit-scrollbar,
-.home .info p::-webkit-scrollbar {
+.page .info p::-webkit-scrollbar {
     width: 2px;
 }
-.page .info p::-webkit-scrollbar-track,
-.home .info p::-webkit-scrollbar-track {
+.page .info p::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 10px;
 }
-.page .info p::-webkit-scrollbar-thumb,
-.home .info p::-webkit-scrollbar-thumb {
+.page .info p::-webkit-scrollbar-thumb {
     background: #921717;
     border-radius: 10px;
 }

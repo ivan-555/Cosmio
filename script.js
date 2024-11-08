@@ -1,8 +1,7 @@
 const NavLinks = document.querySelectorAll('aside nav ul li a');
-const NavIcon = document.querySelector('aside nav ul .icon');
+const NavIcon = document.querySelector('aside nav .icon');
 const preloader = document.querySelector('.preloader');
 const pages = document.querySelectorAll('.page');
-const home = document.querySelector('.home');
 const sidebar = document.querySelector('#sidebar');
 const sidebarHeader = document.querySelector('#sidebar .heading');
 const hamburger = document.querySelector('.hamburger');
@@ -11,14 +10,17 @@ const exploreButtons = document.querySelectorAll('.explore');
 const modelViewers = document.querySelectorAll('model-viewer');
 const MWLoaders = document.querySelectorAll('.MWLoader');
 const pageInfos = document.querySelectorAll('.page .info');
-const homeInfo = document.querySelector('.home .info');
+const sidebarShowMoreButton = document.querySelector('#sidebar .show-more');
+const sidebarShowMoreButtonText = document.querySelector('#sidebar .show-more span');
+const sidebarMoreDiv = document.querySelector('#sidebar .more');
+const sidebarMoreDivLinks = document.querySelectorAll('#sidebar .more li a');
+const language = document.body.getAttribute('data-language');
 
 // Hide Page Preloader
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        preloader.classList.add('hide');
-    }, 6000); // 6s preloader while models are loading
-});
+setTimeout(() => {
+    preloader.classList.add('hide');
+}, 4000); // preloader time while models are loading
+
 
  // Verhindert das Scrollen bei gedrücktem Mausrad
  document.addEventListener('mousedown', function(event) {
@@ -28,12 +30,12 @@ window.addEventListener('load', () => {
   }
 });
 
-// Scrollen per Mausrad auf der gesamten Seite deaktivieren
+// Scrollen per Mausrad auf der gesamten Seite deaktivieren und für p Elemente und Sidebar zulassen
 window.addEventListener("wheel", function(e) {
-  let scrollableElements = document.querySelectorAll('.info p');
+  let scrollablePElements = document.querySelectorAll('.info p');
   // Prüfen, ob das Event auf dem p Element stattfindet
-  if (scrollableElements.contains(e.target)) {
-      // Wenn das Event auf dem scrollbaren Element stattfindet, lasse es zu
+  if ([...scrollablePElements].includes(e.target) || sidebar.contains(e.target)) {
+      // Wenn das Event auf einem p Element oder auf der Sidebar stattfindet, lasse es zu
       return; // Standard-Scrolling ist hier erlaubt
   } else {
       // Sonst verhindere das Scrollen
@@ -52,10 +54,8 @@ hamburger.addEventListener('click', () => {
     pageInfos.forEach(pageInfo => {
       if (isSidebarVisible) {
         pageInfo.classList.add('blur');
-        homeInfo.classList.add('blur');
       } else {
         pageInfo.classList.remove('blur');
-        homeInfo.classList.remove('blur');
       }
     });
   }
@@ -67,32 +67,73 @@ if (window.innerWidth < 1450) {
   hamburger.classList.remove('isX');
 }
 
+
+
+
+// Show More Button in Sidebar
+let status = 'closed'; // Status der Sidebar (ob das more div geöffnet oder geschlossen ist)
+
+// Text für die Schaltflächen entsprechend der Sprache festlegen
+const showMoreText = language === 'en' ? 'View more' : 'Mehr anzeigen';
+const showLessText = language === 'en' ? 'View less' : 'Weniger anzeigen';
+
+// Event Listener für den "Show More" Button
+sidebarShowMoreButton.addEventListener('click', () => {
+  if (status === 'closed') {
+    sidebarShowMoreButtonText.innerText = showLessText;
+    sidebarMoreDiv.classList.add('show');
+    sidebarShowMoreButton.classList.add('show');
+    status = 'open'; // Status aktualisieren
+    NavIcon.style.display = "block"; // Wenn das more div geöffnet wird, soll die Rakete wieder angezeigt werden
+  } else {
+    sidebarShowMoreButtonText.innerText = showMoreText;
+    sidebarMoreDiv.classList.remove('show');
+    sidebarShowMoreButton.classList.remove('show');
+    status = 'closed'; // Status aktualisieren
+
+    // Wenn die Rakete sich im more-Bereich befindet und das Div geschlossen wird, blenden wir sie aus
+    let transformValue = NavIcon.style.transform;
+    let translateYValue = parseInt(transformValue.match(/translateY\(([^)]+)px\)/)?.[1]);
+
+    if (translateYValue > 550) {
+      NavIcon.style.display = "none";
+    }
+  }
+});
+
+
+
 // Navigate Between Pages
 NavLinks.forEach((link, index) => {
   link.addEventListener('click', () => {
-    home.style.display = 'none';
+    if (index <= 11) {
+      NavIcon.style.display = "block";
+    }
     pages.forEach(page => page.classList.remove('active'));
     pages[index].classList.add('active');
-    NavIcon.style.transform = `translateY(${index * 50}px) rotate(90deg)`; // 50px = 1 NavLink height * index of the clicked NavLink moves the Rocket Icon to the clicked NavLink
-    NavIcon.classList.add('active'); // Show Rocket Icon if we are not on the home page
+    
+    let offset = index * 50; // Standard offset für die normalen Links
+    let isInMoreDiv = false; // Flag um zu prüfen, ob ein Link im "more" Div angeklickt wurde
+
+    // Prüfen, ob der geklickte Link im "more" Div ist
+    if (link.closest('.more')) {
+      offset += 60; // Erhöhe den offset um 60px, wenn der Link im "more" Div ist
+      isInMoreDiv = true;
+    }
+
+    NavIcon.style.transform = `translateY(${offset}px) rotate(90deg)`; // Setze die Position des navIcons
+    
+    if (isInMoreDiv && status === 'closed') {
+      NavIcon.style.display = "none"; // Verstecke die Rakete, wenn das more div geschlossen ist
+    } else {
+      NavIcon.style.display = "block"; // Zeige die Rakete an, wenn sie nicht im more div ist oder es offen ist
+    }
+
     if (window.innerWidth < 1450) {
-      sidebar.classList.remove('show'); // Close Sidebar on Mobile if a NavLink is clicked
+      sidebar.classList.remove('show'); // Schließe die Sidebar auf mobilen Geräten
       hamburger.classList.remove('isX');
     }
   });
-});
-// Header click brings you back to the home page
-sidebarHeader.addEventListener('click', () => {
-  home.style.display = 'block';
-  pages.forEach(page => page.classList.remove('active'));
-  NavIcon.classList.remove('active'); // Hide Rocket Icon if we are on the home page
-  setTimeout(() => {
-    NavIcon.style.transform = `translateY(0px) rotate(90deg)`;
-  }, 200); // 200ms delay to move the Rocket Icon back up to the home NavLink
-  if (window.innerWidth < 1450) {
-    sidebar.classList.remove('show'); // Close Sidebar on Mobile if a NavLink is clicked
-    hamburger.classList.remove('isX');
-  }
 });
 
 //View Info and Explore Buttons
@@ -106,7 +147,6 @@ viewInfoButtons.forEach(viewInfoButton => {
     if (window.innerWidth < 1450) {
       sidebar.classList.remove('show'); // Close Sidebar on Mobile if a view info button is clicked
       hamburger.classList.remove('isX');
-      homeInfo.classList.remove('blur'); // Remove blur effect on home info
       pageInfos.forEach(pageInfo => pageInfo.classList.remove('blur')); // Remove blur effect on page infos
     }
   });
@@ -125,7 +165,7 @@ exploreButtons.forEach(exploreButton => {
 modelViewers.forEach((modelViewer, index) => {
   modelViewer.addEventListener('load', () => {
     setTimeout(() => {
-      MWLoaders[index].style.display = 'none'; // Hide the loader when the model is loaded
-    }, 1300); // 1200ms Verzögerung nachdem das modell geladen wurde da es sonst flasht
+          MWLoaders[index].style.display = 'none'; // Verstecke den Preloader nach dem Laden des Modells
+      }, 1000); // Verzögerung, um flackern zu verhindern
   });
 });

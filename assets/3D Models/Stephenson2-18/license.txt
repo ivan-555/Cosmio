@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stars Comparation Free
+* source:	https://sketchfab.com/3d-models/stars-comparation-free-c446f4dded6943299c81f26509c473ea
+* author:	Mikesmax_3 (https://sketchfab.com/smss31451)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stars Comparation Free" (https://sketchfab.com/3d-models/stars-comparation-free-c446f4dded6943299c81f26509c473ea) by Mikesmax_3 (https://sketchfab.com/smss31451) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

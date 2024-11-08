@@ -3,60 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Permissions-Policy" content="accelerometer=(), gyroscope=(), magnetometer=(), deviceorientation=(), camera=()">
-    <title>Planetarium</title>
+    <title>Cosmio</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Custom JS -->
     <script src="script.js" defer></script>
-    <!-- Spline JS Module -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
     <!-- favicon -->
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google Fonts -->
+    <!-- Google Font Orbitron -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <!-- Google Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Model Viewer -->
     <script type="module" src="https://unpkg.com/@google/model-viewer@v1.11.1/dist/model-viewer.min.js"></script>
 </head>
 
-<body>
+<body data-language="en">
     <div class="preloader">
-        <header class="text">
-            <h1><img src="assets/favicon.png">Planetarium</h1>
-            <p>Explore the Solar System</p>
-        </header>
-        <div class="MWLoader">
+        <div class="loader">
             <div class="circle small"></div>
             <div class="circle big"></div>
         </div>
-        <model-viewer src="assets/3D Models/preloader/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-        shadow-intensity="0" interaction-prompt="none"></model-viewer>
-        <span class="text loading-text">Loading Assets <span class="dots"></span> </span>
     </div>
 
     <aside id="sidebar" class="show">
+        <div class="language">
+            <a href="de/index.html" >
+                <img src="assets/Images/german.webp">
+            </a>
+            <a href="#" class="active">
+                <img src="assets/Images/english.jpg">
+            </a>
+        </div>
         <a href="#" class="heading">
-            <h1><img src="assets/favicon.png">Planetarium</h1>
-            <p>Explore the Solar System</p>
+            <h1><img src="assets/favicon.png">Cosmio</h1>
+            <p>Explore the Universe</p>
         </a>
         <nav>
             <ul>
-                <li><img src="assets/Images/sun.png" alt=""><a href="#">Sun</a></li>
-                <li><img src="assets/Images/merkur.png" alt=""><a href="#">Mercury</a></li>
-                <li><img src="assets/Images/venus.png" alt=""><a href="#">Venus</a></li>
-                <li><img src="assets/Images/erde.png" alt=""><a href="#">Earth</a></li>
-                <li><img src="assets/Images/mars.png" alt=""><a href="#">Mars</a></li>
-                <li><img src="assets/Images/jupiter.png" alt=""><a href="#">Jupiter</a></li>
-                <li><img src="assets/Images/saturn.png" alt=""><a href="#">Saturn</a></li>
-                <li><img src="assets/Images/uranus.png" alt=""><a href="#">Uranus</a></li>
-                <li><img src="assets/Images/neptun.png" alt=""><a href="#">Neptune</a></li>
-
-                <!-- Spline Rocket -->
-                <spline-viewer url="https://prod.spline.design/YcvjjS0YRu-Y26F5/scene.splinecode" class="icon"></spline-viewer>
+                <div class="wrapper">
+                    <li><img src="assets/Images/solar system.png" alt=""><a href="#">Solar System</a></li>
+                    <li><img src="assets/Images/sun.png" alt=""><a href="#">Sun</a></li>
+                    <li><img src="assets/Images/merkur.png" alt=""><a href="#">Mercury</a></li>
+                    <li><img src="assets/Images/venus.png" alt=""><a href="#">Venus</a></li>
+                    <li><img src="assets/Images/erde.png" alt=""><a href="#">Earth</a></li>
+                    <li><img src="assets/Images/mars.png" alt=""><a href="#">Mars</a></li>
+                    <li><img src="assets/Images/jupiter.png" alt=""><a href="#">Jupiter</a></li>
+                    <li><img src="assets/Images/saturn.png" alt=""><a href="#">Saturn</a></li>
+                    <li><img src="assets/Images/uranus.png" alt=""><a href="#">Uranus</a></li>
+                    <li><img src="assets/Images/neptun.png" alt=""><a href="#">Neptune</a></li>
+                    <span class="show-more"><i class="fa-solid fa-chevron-down"></i><span>View more</span></span>
+                    <div class="more">
+                        <li><img src="assets/Images/moon.png" alt=""><a href="#">Moon</a></li>
+                        <li><img src="assets/Images/europa.png" alt=""><a href="#">Europa</a></li>
+                        <li><img src="assets/Images/ceres.png" alt=""><a href="#">Ceres</a></li>
+                        <li><img src="assets/Images/pluto.png" alt=""><a href="#">Pluto</a></li>
+                        <li><img src="assets/Images/planet x.png" alt=""><a href="#">Planet X</a></li>
+                        <li><img src="assets/Images/asteroid.png" alt=""><a href="#">Asteroid</a></li>
+                        <li><img src="assets/Images/komet.png" alt=""><a href="#">Comet</a></li>
+                        <li><img src="assets/Images/iss.png" alt=""><a href="#">ISS</a></li>
+                        <li><img src="assets/Images/hubble.png" alt=""><a href="#">Hubble</a></li>
+                        <li><img src="assets/Images/Sputnik.png" alt=""><a href="#">Sputnik</a></li>
+                        <li><img src="assets/Images/voyager.png" alt=""><a href="#">Voyager</a></li>
+                        <li><img src="assets/Images/dyson sphere.jpg" alt=""><a href="#">Dyson Sphere</a></li>
+                        <li><img src="assets/Images/stellar nursery.jpg" alt=""><a href="#">Stellar Nursery</a></li>
+                        <li><img src="assets/Images/protostar.jpg" alt=""><a href="#">Protostar</a></li>
+                        <li><img src="assets/Images/protoplanet.png" alt=""><a href="#">Protoplanet</a></li>
+                        <li><img src="assets/Images/helix nebula.jpg" alt=""><a href="#">Helix Nebula</a></li>
+                        <li><img src="assets/Images/supernova.jpg" alt=""><a href="#">Supernova</a></li>
+                        <li><img src="assets/Images/crab nebula.jpg" alt=""><a href="#">Crab Nebula</a></li>
+                        <li><img src="assets/Images/magellanic clouds.jpg" alt=""><a href="#">Mag. Clouds</a></li>
+                        <li><img src="assets/Images/blackhole.png" alt=""><a href="#">Black Hole</a></li>
+                        <li><img src="assets/Images/quasar.png" alt=""><a href="#">Quasar</a></li>
+                        <li><img src="assets/Images/pulsar.png" alt=""><a href="#">Pulsar</a></li>
+                        <li><img src="assets/Images/betelgeuse.png" alt=""><a href="#">Betelgeuse</a></li>
+                        <li><img src="assets/Images/polaris.png" alt=""><a href="#">Polaris</a></li>
+                        <li><img src="assets/Images/sirius.png" alt=""><a href="#">Sirius</a></li>
+                        <li><img src="assets/Images/stephenson.png" alt=""><a href="#">Stephenson</a></li>
+                        <li><img src="assets/Images/kepler 22b.png" alt=""><a href="#">Kepler 22b</a></li>
+                        <li><img src="assets/Images/proxima b.png" alt=""><a href="#">Proxima b</a></li>
+                        <li><img src="assets/Images/binary system.png" alt=""><a href="#">Binary System</a></li>
+                        <li><img src="assets/Images/milky way.jpg" alt=""><a href="#">Milky Way</a></li>
+                        <li><img src="assets/Images/andromeda.jpg" alt=""><a href="#">Andromeda</a></li>
+                        <li><img src="assets/Images/beobachtbares universum.png" alt=""><a href="#">Obs. Universe</a></li>
+                        <li><img src="assets/Images/cosmic web.jpg" alt=""><a href="#">Cosmic Web</a></li>
+                        <li><img src="assets/Images/multiverse.jpg" alt=""><a href="#">Multiverse</a></li>
+                    </div>
+                </div>
+                <!-- Rocket -->
+                <div class="MWLoader"></div> <!-- Empty Loader just for correct indexing in js -->
+                <model-viewer src="assets/3D Models/Rakete/scene.gltf" alt="3D-Modell" auto-rotate background-color="transparent"
+                shadow-intensity="0" interaction-prompt="none" class="icon active"></model-viewer>
             </ul>
         </nav>
         <div class="hamburger isX">
@@ -66,7 +109,7 @@
         </div>
     </aside>
 
-    <div class="home">
+    <div class="page active">
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
             <model-viewer src="assets/3D Models/Sonnensystem/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
@@ -82,35 +125,39 @@
             <h1>Solar System</h1>
             <p>
                 The solar system is a collection of celestial bodies bound by the gravitational pull of the Sun,
-                which sits at its center. It consists of eight planets, moons, dwarf planets, asteroids, comets,
-                and various other objects, all orbiting the Sun. The planets are divided into two main groups: the
-                terrestrial planets—Mercury, Venus, Earth, and Mars—and the gas giants—Jupiter, Saturn, Uranus,
-                and Neptune. The solar system formed about 4.6 billion years ago from a collapsing cloud of gas and
-                dust, called a solar nebula. As the nebula collapsed under its own gravity, most of the material
-                collected in the center to form the Sun, while the rest flattened into a disk, where planets and
-                other objects gradually formed. <br> <br>
+                which sits at its center. <br><br>
+                It consists of eight planets, moons, 5 dwarf planets, asteroids, comets,
+                and various other objects, all orbiting the Sun. The planets are divided into three main groups: <br>
+                The terrestrial planets: Mercury, Venus, Earth, and Mars <br>
+                The gas giants: Jupiter and Saturn <br>
+                The ice giants: Uranus and Neptune. <br><br>
+                The solar system formed about 4.6 billion years ago from a collapsing cloud of gas and dust, called a stellar nursery.
+                As the nebula collapsed under its own gravity, most of the material
+                collected in the center to form the Protostar, while the rest flattened into a disk, where planets and
+                other objects gradually formed. <br><br>
                 The Sun, the central star, provides the energy necessary
                 for life on Earth. It is mainly composed of hydrogen, which undergoes nuclear fusion to create helium,
-                producing the light and heat that sustain the solar system. <br> <br>
+                producing the light and heat that sustain the solar system. <br><br>
                 The inner planets, Mercury, Venus, Earth,
                 and Mars, are rocky and have solid surfaces. Earth is the only known planet to harbor life, thanks to
-                its liquid water, protective atmosphere, and moderate climate. <br> <br>
-                The outer planets, Jupiter, Saturn, Uranus, and Neptune, are gas giants (with the exception of Neptune and Uranus, which are often
-                categorized as ice giants). These planets are much larger than the inner planets and consist mostly
-                of hydrogen, helium, and other gases <br><br>
-                The solar system also contains the asteroid belt,
-                located between Mars and Jupiter. This region is filled with rocky objects that never coalesced into
-                a planet, likely due to Jupiter’s strong gravity. <br><br>
-                Beyond Neptune lies the Kuiper Belt, a region of
-                icy objects, including dwarf planets like Pluto. <br><br>
-                Farther still, the Oort Cloud is believed to be a
-                vast, spherical region of comets surrounding the solar system. <br><br>
-                The planets follow elliptical
-                orbits around the Sun, and their distance from the Sun determines the length of their year.
-                While the solar system is vast, the Sun’s influence extends well beyond the orbits of Neptune
-                and Pluto, defining the heliosphere, the boundary where the solar wind gives way to interstellar space​.
-                Scientists continue to explore the solar system using space probes and telescopes,
-                uncovering new details about its formation, evolution, and the potential for life beyond Earth.
+                its liquid water, protective atmosphere, and moderate climate. <br><br>
+                The outer planets, Jupiter, Saturn, Uranus, and Neptune, are gas and ice giants. These planets are much larger
+                than the inner planets and consist mostly of hydrogen, helium, and other gases. <br><br>
+                The solar system also contains the asteroid belt, located between Mars and Jupiter. This region is filled with rocky
+                objects that never coalesced into a planet, likely due to Jupiter’s strong gravity. The asteroid belt also contains the
+                dwarf planet Ceres, and most known asteroids originate from this region. <br><br>
+                Beyond Neptune lies the Kuiper Belt, a region of icy objects, including dwarf planets like Pluto. <br><br>
+                Farther still, the heliosphere marks the boundary where the Sun's influence ends, and interstellar space begins.
+                The heliosphere is a vast, bubble-like region of space dominated by the solar wind—a continuous stream of charged particles
+                released by the Sun—that extends far beyond the outer planets. This solar wind creates a protective zone around our solar system,
+                pushing against interstellar particles and forming a boundary. At the very edge of the heliosphere lies the heliopause, a
+                transitional boundary where the solar wind’s influence fades, and the pressure from interstellar particles begins to dominate
+                marking the beginning of interstellar space.<br><br>
+                Beyond the heliopause and extending much farther into space is the Oort Cloud, a vast, spherical shell of icy bodies and comets
+                thought to encircle the solar system. The Oort Cloud is considered the outermost boundary of the solar system, though it remains
+                gravitationally bound to the Sun. It stretches from around 2,000 to 100,000 astronomical units (AU) from the Sun, reaching nearly
+                two light-years into space. Occasionally, gravitational disturbances can send some of these distant comets inward toward the Sun.
+                The Oort Cloud represents the solar system’s farthest reaches, where the Sun’s gravity has only a faint hold on these distant, icy objects.
             </p>
             <button class="button explore">
                 Explore
@@ -136,17 +183,37 @@
         <div class="info">
             <h1>Sun</h1>
             <p>
-                The Sun is the central star of our solar system and provides the energy necessary for life on Earth.
-                With a diameter of about 1.39 million kilometers, it contains 99.8% of the solar system's total mass.
-                The Sun is primarily composed of hydrogen (about 75%) and helium (about 24%), which it fuses into helium
-                through nuclear fusion in its core, producing vast amounts of energy. This process releases the light
-                and heat that reach Earth, driving weather systems and supporting life through photosynthesis. The surface
-                temperature of the Sun reaches approximately 5,500°C, while its core burns at an incredible 15 million°C.
-                The Sun goes through an 11-year solar cycle, during which its magnetic activity rises and falls, affecting
-                solar winds, sunspots, and solar flares, which can influence Earth's atmosphere and technology. The Sun's
-                gravity holds the planets, asteroids, and comets in orbit around it, making it the dominant gravitational
-                force in the solar system. Over billions of years, the Sun will continue to evolve, eventually expanding
-                into a red giant and later shedding its outer layers, leaving behind a white dwarf.
+                The Sun is the central star of our solar system and the primary source of energy for life on Earth. It is a main-sequence
+                star, more specifically a yellow dwarf star that produces energy through nuclear fusion in its core. The Sun formed approximately
+                4.6 billion years ago from a cloud of gas and dust, called a stellar nursery. It has enough fuel to continue burning for
+                another 5 billion years before expanding into a red giant and later shedding its outer layers as a planetary nebula,
+                leaving behind a white dwarf. <br><br>
+                Our Sun is composed mainly of hydrogen (about 74%) and helium (around 24%), with trace amounts of heavier elements such as carbon,
+                oxygen, and iron. In its core, where temperatures reach about 15 million degrees Celsius (27 million degrees Fahrenheit), hydrogen
+                atoms fuse into helium, releasing a tremendous amount of energy in the form of light and heat. This fusion process produces light
+                and solar radiation, which travel through the layers of the Sun and eventually reach Earth, providing the warmth and light
+                necessary for life. <br><br>
+                Our Sun is a relatively stable star, but it experiences periods of increased activity, known as the solar cycle, which lasts
+                about 11 years. During periods of high activity, known as solar maximum, more sunspots, solar flares, solar wind, and coronal
+                mass ejections (CMEs) occur. <br><br>
+                Sunspots are dark, cooler regions on the Sun’s surface caused by magnetic activity. They often
+                act as the source points for solar flares and CMEs. <br><br>
+                Solar flares are sudden bursts of intense radiation from these active
+                areas. They release large amounts of energy and radiation across the electromagnetic spectrum, which can affect Earth
+                almost immediately by interfering with radio signals and disrupting high-frequency communications. <br><br>
+                The solar wind is a continuous stream of charged particles, mainly electrons and protons, flowing outward from the Sun's
+                upper atmosphere (corona). The solar wind constantly flows through the solar system, creating a "wind" that interacts with
+                planetary magnetic fields. Earth's magnetic field deflects much of the solar wind, protecting us from its harmful radiation. <br><br>
+                Coronal Mass Ejections (CMEs), however, are massive bursts of plasma and magnetic fields released from the Sun’s corona. Unlike
+                the steady solar wind, CMEs are explosive and highly energetic, ejecting billions of tons of solar material at high speeds.
+                When a CME is directed toward Earth, it can collide with Earth’s magnetic field within a few days, causing a geomagnetic storm,
+                intensifying auroras and potentially disrupting satellites, power grids, and communication systems. <br><br>
+                The Sun’s gravity is what holds the solar system together, keeping planets, asteroids, and comets in orbit. As the dominant
+                gravitational force in our solar system, the Sun's presence shapes the orbits and stability of all surrounding celestial bodies. <br><br>
+                In summary, the Sun is not only the heart of our solar system but also a source of energy and stability for life on Earth. Through
+                the process of nuclear fusion, it provides light and warmth, driving Earth’s climate and supporting ecosystems. Its life cycle,
+                activity, and influence remind us of the Sun’s essential role in sustaining life as well as its far-reaching impact across
+                the solar system.
             </p>
             <button class="button explore">
                 Explore
@@ -175,11 +242,13 @@
                 Mercury is the smallest and innermost planet in the solar system, with a diameter of about 4,880
                 kilometers. It has no significant atmosphere, which means it cannot retain heat, leading to extreme
                 temperature variations. Daytime temperatures can soar to 430°C, while nighttime temperatures can
-                plunge to -180°C due to the lack of atmospheric insulation. Mercury's surface is heavily cratered,
-                much like the Moon, as it has been bombarded by meteoroids and comets over billions of years.
+                plunge to -180°C due to the lack of atmospheric insulation. <br><br>
+                Mercury's surface is heavily cratered,
+                much like the Moon, as it has been bombarded by meteoroids and comets over billions of years. <br><br>
                 The planet's proximity to the Sun means it has very short years, taking only 88 Earth days to
                 complete an orbit. However, it rotates very slowly, taking 59 Earth days to rotate once on its
-                axis, which contributes to its extreme temperature fluctuations. Despite its hostile environment,
+                axis, which contributes to its extreme temperature fluctuations. <br><br>
+                Despite its hostile environment,
                 recent findings suggest that Mercury may have water ice in permanently shadowed craters at its poles,
                 where sunlight never reaches, keeping temperatures low enough for ice to persist. This discovery has
                 intrigued scientists, as it opens up new questions about the planet's past.
@@ -196,7 +265,7 @@
     <div class="page">
         <div class="viewer">
             <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer src="assets/3D Models/Venus/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            <model-viewer src="assets/3D Models/Venus.glb" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
             shadow-intensity="0" interaction-prompt="none"></model-viewer>
             <button class="button viewInfo">
                 View Info
@@ -212,7 +281,9 @@
                 toxic atmosphere composed mainly of carbon dioxide (about 96.5%) and clouds of sulfuric acid. This
                 dense atmosphere traps heat through a runaway greenhouse effect, making Venus the hottest planet in
                 the solar system, with surface temperatures exceeding 460°C (860°F), even hotter than Mercury, despite
-                being farther from the Sun. Scientists have long speculated that Venus might have once been more
+                being farther from the Sun. The planet's thick atmosphere and crushing surface pressure—about 92 times that of Earth's—make
+                it an incredibly hostile environment for life as we know it. <br><br>
+                Scientists have long speculated that Venus might have once been more
                 Earth-like, with liquid water on its surface and possibly even conditions suitable for life.
                 There is evidence that Venus may have had oceans for up to 3 billion years, which raises the
                 question of whether it could have supported microbial life in the distant past. However, over
@@ -220,13 +291,13 @@
                 effect, which transformed Venus into the incredibly hostile environment it is today. The planet’s
                 thick carbon dioxide atmosphere traps heat, while sulfuric acid clouds contribute to its toxic
                 conditions. This extreme climate makes Venus an essential subject of study for understanding
-                climate change and how Earth’s own atmosphere could evolve under certain conditions.One of Venus'
+                climate change and how Earth’s own atmosphere could evolve under certain conditions. <br><br>
+                One of Venus'
                 unique features is its retrograde rotation, meaning it rotates in the opposite direction to most
                 other planets. It takes about 243 Earth days to complete one rotation, making its day longer than
-                its year, which lasts about 225 Earth days. Additionally, Venus has no moons and exhibits phases
+                its year, which lasts about 225 Earth days. <br><br>
+                Additionally, Venus has no moons and exhibits phases
                 similar to the Moon when observed from Earth due to its position between the Earth and the Sun.
-                The planet's thick atmosphere and crushing surface pressure—about 92 times that of Earth's—make
-                it an incredibly hostile environment for life as we know it.
             </p>
             <button class="button explore">
                 Explore
@@ -253,17 +324,20 @@
             <h1>Earth</h1>
             <p>
                 Earth, the third planet from the Sun, is the only known planet to harbor life. It has a diameter of
-                12,742 kilometers and is covered mostly by water, which constitutes about 71% of its surface. Earth's
-                climate and life-supporting conditions are maintained by its atmosphere, which is primarily composed
+                12,742 kilometers and is covered mostly by water, which constitutes about 71% of its surface. <br><br>
+                Earth's climate and life-supporting conditions are maintained by its atmosphere, which is primarily composed
                 of nitrogen (78%) and oxygen (21%), with trace amounts of other gases. The presence of water in its
-                three forms—liquid, solid, and vapor—along with the planet's stable temperature range, supports a diverse
-                ecosystem. The magnetic field, generated by Earth's molten outer core, protects the planet from harmful
+                three forms: liquid, solid, and vapor, along with the planet's stable temperature range, supports a diverse
+                ecosystem. <br><br>
+                The magnetic field, generated by Earth's molten outer core, protects the planet from harmful
                 solar wind and cosmic radiation. This magnetic field also contributes to the creation of the auroras,
-                visible near the poles. Earth's plate tectonics play a crucial role in recycling carbon and other
-                materials, helping to regulate the planet's climate over long periods. The moon, Earth's only natural
-                satellite, influences the tides and stabilizes Earth's axial tilt, which in turn stabilizes its climate.
+                visible near the poles. <br><br>
+                Earth's plate tectonics play a crucial role in recycling carbon and other
+                materials, helping to regulate the planet's climate over long periods. <br><br>
+                The moon, Earth's only natural
+                satellite, influences the tides and stabilizes Earth's axial tilt, which in turn stabilizes its climate. <br><br>
                 Earth orbits the Sun at an average distance of about 150 million kilometers, making it ideal for
-                maintaining liquid water—a key ingredient for life. The planet experiences a tilt of approximately
+                maintaining liquid water - a key ingredient for life. The planet experiences a tilt of approximately
                 23.5 degrees, causing seasonal variations in temperature and climate.
             </p>
             <button class="button explore">
@@ -291,15 +365,19 @@
             <h1>Mars</h1>
             <p>
                 Mars, often called the "Red Planet," has not only its iron oxide surface but also two small moons,
-                Phobos and Deimos, which are irregularly shaped and may be captured asteroids. Mars' gravity is about
-                38% that of Earth's, making the planet a fascinating subject for potential human exploration. The planet
-                experiences massive dust storms that can cover its entire surface for days or weeks. Mars also has the
+                Phobos and Deimos, which are irregularly shaped and may be captured asteroids. <br><br>
+                Mars' gravity is about
+                38% that of Earth's, making the planet a fascinating subject for potential human exploration. <br><br>
+                The planet experiences massive dust storms that can cover its entire surface for days or weeks. <br> <br>
+                Mars also has the
                 largest volcano in the solar system, Olympus Mons, which is about three times the height of Mount Everest,
-                and the deepest canyon, Valles Marineris, which stretches over 4,000 km. Despite its cold temperatures,
+                and the deepest canyon, Valles Marineris, which stretches over 4,000 km. <br><br>
+                Despite its cold temperatures,
                 Mars has polar ice caps made of water and frozen carbon dioxide, which grow and recede with the seasons.
                 These ice caps, along with signs of past river valleys and lake beds, indicate that Mars likely had a
                 wetter, warmer climate billions of years ago, which is why scientists continue to search for signs of
-                past life. One of the reasons Mars is now so cold and dry is because its magnetic field weakened
+                past life. <br><br>
+                One of the reasons Mars is now so cold and dry is because its magnetic field weakened
                 and eventually disappeared billions of years ago. This left the planet vulnerable to solar wind and
                 radiation, which gradually stripped away its atmosphere. Without a strong magnetic field to protect
                 it, Mars' once-thicker atmosphere was eroded, reducing its ability to retain heat and water. This loss
@@ -332,14 +410,15 @@
             <p>
                 Jupiter is the largest planet in the solar system, with a diameter of 139,820 kilometers.
                 This gas giant is made mostly of hydrogen and helium and is famous for its Great Red Spot,
-                a massive storm larger than Earth that has raged for centuries. Jupiter has a strong magnetic
+                a massive storm larger than Earth that has raged for centuries. <br><br>
+                Jupiter also has a faint ring system, made up mostly of dust particles. <br><br>
+                Jupiter has a strong magnetic
                 field and 92 known moons, including Europa, which is believed to harbor a subsurface ocean beneath
                 its icy surface, potentially making it one of the prime candidates for extraterrestrial life in the
                 solar system. Additionally, Ganymed, another of Jupiter's moons, is the largest moon in the solar
-                system, even larger than the planet Mercury. Jupiter also has a faint ring system, made up mostly
-                of dust particles. An important but lesser-known role that Jupiter plays in the solar system
-                is acting as a gravitational shield for Earth and other inner planets. Due to its immense size
-                and strong gravitational field, Jupiter frequently deflects or captures comets and asteroids that
+                system, even larger than the planet Mercury. <br><br>
+                Jupiter plays an important role in the solar system, acting as a gravitational shield for Earth and other inner planets.
+                Due to its immense size and strong gravitational field, Jupiter frequently deflects or captures comets and asteroids that
                 might otherwise pose a threat to the inner planets. This protective function reduces the likelihood
                 of large impacts on Earth, which could cause significant damage or even mass extinctions. Jupiter’s gravity
                 also helps to stabilize the orbits of objects in the asteroid belt, preventing them from colliding with Earth.
@@ -355,7 +434,7 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="sketchfab-embed-wrapper"> <iframe title="Saturn" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c09a1970148c43ad99db134a9d6d00b5/embed?autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <div class="sketchfab-embed-wrapper"> <iframe title="Saturn" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c09a1970148c43ad99db134a9d6d00b5/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -366,12 +445,30 @@
         <div class="info">
             <h1>Saturn</h1>
             <p>
-                Saturn is the second-largest planet and is known for its spectacular ring system,
-                made of ice and rock. With a diameter of about 116,460 kilometers, Saturn is primarily
-                composed of hydrogen and helium. Saturn, with its 146 known moons, holds the record for
-                having the most moons of any planet in our solar system. The most significant of these is
-                Titan, which is larger than the planet Mercury and has a thick atmosphere,
-                making it one of the most intriguing celestial bodies for scientific study.
+                Saturn is the second-largest planet in the solar system, famous for its iconic ring system, which is one of the most remarkable
+                features in our planetary neighborhood. With a diameter of approximately 116,460 kilometers, Saturn is primarily composed of hydrogen
+                and helium, similar to Jupiter. This gas giant has a relatively low density: in fact, it is the only planet in the solar system that
+                would float if placed in water due to its low density. <br><br>
+                Saturn’s rings are one of the most complex and stunning structures in the solar system. They are primarily made of ice particles,
+                rocks and dust. These rings are thought to have formed from either comets, or asteroids that came too close to
+                Saturn and were torn apart by its intense gravitational field. The rings span an impressive distance of about 282,000 kilometers
+                across, yet they are surprisingly thin: only about 10 meters to 1 kilometer thick on average. <br><br>
+                Saturn holds the record for the planet with the most moons in the solar system, with 146 confirmed moons. These moons vary greatly
+                in size and composition, and many play a significant role in shaping Saturn’s rings. The largest and most famous of Saturn’s moons
+                is Titan, a massive moon larger than the planet Mercury. Titan is particularly intriguing due to its thick atmosphere composed
+                mainly of nitrogen, with traces of methane and other hydrocarbons. Titan’s atmosphere is dense enough to support liquid lakes and
+                rivers of methane and ethane on its surface, making it one of the prime locations in the solar system for studying prebiotic
+                chemistry and the potential for life. <br><br>
+                Another remarkable moon is Enceladus, a smaller icy moon known for its geysers that shoot plumes of water vapor and ice
+                particles from an ocean beneath its icy crust. These plumes create one of Saturn’s faint outer rings, the E ring, and suggest
+                the possibility of an underground ocean that might harbor microbial life. <br><br>
+                Other moons, such as Mimas, with its massive crater resembling the "Death Star" from Star Wars, and Iapetus, with its striking
+                two-toned surface, add to Saturn's fascinating satellite system. Rhea, Dione, and Tethys are additional larger moons, each
+                with unique geological features shaped by past impacts and gravitational interactions with Saturn and its rings. <br><br>
+                Saturn's atmosphere is dynamic, with bands of clouds and intense storms. Similar to Jupiter, Saturn has fast winds that
+                can reach up to 1,800 kilometers per hour. One of Saturn’s most remarkable weather features is the hexagonal storm at its
+                north pole, a six-sided jet stream pattern that has puzzled scientists since its discovery. This storm structure is unique
+                to Saturn and adds to the mysteries surrounding the gas giant.
             </p>
             <button class="button explore">
                 Explore
@@ -384,7 +481,7 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="sketchfab-embed-wrapper"> <iframe title="Uranus" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0009a69dbace44608c0bd09af9ba20db/embed?autostart=1&preload=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=1&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0"> </iframe> </div>
+            <div class="sketchfab-embed-wrapper"> <iframe title="Uranus" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0009a69dbace44608c0bd09af9ba20db/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -395,12 +492,17 @@
         <div class="info">
             <h1>Uranus</h1>
             <p>
-                Uranus is a gas giant with a diameter of 50,724 kilometers. It is unique in that it rotates
-                on its side, with an axial tilt of 98 degrees, likely due to a collision with another large
-                object early in its history. Its atmosphere contains hydrogen, helium, and methane, giving
-                it a pale blue color. It is theorized that on Uranus, under immense pressure and temperature
-                deep within the atmosphere, carbon atoms could crystallize into diamonds, which may then rain
-                down through the planet's layers. Uranus also has a faint ring system and 28 known moons.
+                Uranus is a gas giant with a diameter of 50,724 kilometers, known for its unusual 98-degree axial tilt, which causes it
+                to rotate on its side. This extreme tilt likely resulted from a collision with a large object early in its history,
+                giving Uranus unique seasons where each pole experiences 42 years of continuous sunlight, followed by 42 years of darkness. <br><br>
+                The atmosphere of Uranus is primarily composed of hydrogen, helium, and methane, which gives it a pale blue color as methane
+                absorbs red light. Deep within its atmosphere, under intense pressure, carbon atoms are theorized to crystallize into diamonds
+                that might rain down through the planet's layers. This "diamond rain" phenomenon is thought to be unique to Uranus and Neptune
+                among the planets in our solar system. <br><br>
+                Uranus has a faint ring system with 13 narrow rings, and it’s orbited by 27 known moons, the largest of which include
+                Titania, Oberon, Ariel, Umbriel, and Miranda. These moons have diverse terrains, with features like canyons and ridges
+                suggesting past geological activity. Additionally, Uranus’s magnetic field is tilted and offset, creating a complex magnetic
+                environment around the planet.
             </p>
             <button class="button explore">
                 Explore
@@ -426,13 +528,1701 @@
         <div class="info">
             <h1>Neptune</h1>
             <p>
-                Neptune, the farthest planet from the Sun, has a diameter of 49,244 kilometers and is similar
-                in composition to Uranus, with methane giving it a striking blue color. Neptune experiences
-                the fastest winds in the solar system, reaching speeds of up to 2,100 kilometers per hour.
-                It has 14 known moons, the largest being Triton, which orbits in the opposite direction of
-                Neptune’s rotation, suggesting it was captured by the planet’s gravity.
-                Neptune also has a very faint and dark ring system, primarily composed of ice particles mixed with dust.
-                Neptune's rings are incomplete, forming arcs rather than full rings, which is unique in the solar system.
+                Neptune is the eighth and most distant planet from the Sun in our solar system, known for its deep blue color and dynamic
+                weather patterns. With a diameter of about 49,244 kilometers, Neptune is slightly smaller than Uranus but has a greater mass,
+                making it denser. Like Uranus, Neptune is classified as an ice giant, as it contains a high proportion of water, ammonia, and
+                methane ices beneath its hydrogen and helium atmosphere. <br><br>
+                Neptune’s striking blue color is largely due to the presence of methane in its atmosphere, which absorbs red light and reflects blue.
+                This color also hints at the presence of unknown components that enhance its vibrant hue. Neptune’s atmosphere is incredibly active,
+                with some of the fastest recorded winds in the solar system, reaching up to 2,100 kilometers per hour. These powerful winds drive
+                large storms across the planet’s surface, including the famous Great Dark Spot, a storm similar to Jupiter’s Great Red Spot,
+                though it has appeared and disappeared over time. <br><br>
+                One of Neptune’s most intriguing features is its ring system. Although faint and less prominent than Saturn’s, Neptune
+                has several narrow rings composed mainly of dust and ice particles. These rings are thought to be relatively young
+                and possibly the result of fragmented moons or other small bodies orbiting the planet.
+                These rings are incomplete, forming arcs rather than full rings, which is unique in the solar system. <br><br>
+                Neptune has 14 known moons, the largest of which is Triton. Triton is unique because it orbits Neptune in the opposite direction
+                of the planet’s rotation, a retrograde orbit, suggesting that it may have been captured by Neptune’s gravity rather than forming
+                alongside the planet. Triton has an icy surface with active geysers, which spew nitrogen gas, indicating some level of geological
+                activity. It is one of the few moons in the solar system known to have an atmosphere.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- more models -->
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Mond/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Moon</h1>
+            <p>
+                The Moon, Earth's only natural satellite, is the fifth-largest moon in the solar system with a diameter
+                of about 3,474 kilometers. It formed around 4.5 billion years ago when a Mars-sized protoplanet, often
+                referred to as "Theia", collided with the early Earth. This impact ejected massive amounts of debris into
+                orbit around Earth, which eventually formed the Moon. <br><br>
+                The Moon is composed mostly of silicate rock and has a core of iron and other metals.
+                Its surface is covered with craters, mountain ranges, and maria—large, dark plains created
+                by ancient volcanic activity. Unlike Earth, the Moon has no atmosphere, which allows for extreme
+                temperature variations ranging from 127°C (260°F) during the day to -173°C (-280°F) at night. <br><br>
+                One of the most significant effects of the Moon on Earth is its gravitational pull, which creates
+                tides in Earth's oceans. The Moon also stabilizes Earth's axial tilt, which moderates the planet's
+                climate and seasons. Over time, this gravitational interaction has caused the Moon to become tidally
+                locked with Earth, meaning it always shows the same side to our planet, known as the near side. <br><br>
+                The Moon is essential for scientists as it offers a window into the early solar system. Its surface
+                has remained relatively unchanged for billions of years, preserving a record of ancient impacts and
+                geological processes. <br><br>
+                In the 20th century, the Moon became the focal point of human space exploration. On July 20, 1969,
+                the Apollo 11 mission marked the first successful human landing on the Moon, with astronauts Neil
+                Armstrong and Buzz Aldrin stepping onto its surface.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Europa/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Europa</h1>
+            <p>
+                Europa, one of Jupiter's largest moons, has long intrigued scientists due to compelling evidence suggesting the presence of
+                a vast subsurface ocean beneath its icy crust. This hidden ocean, potentially harboring twice the amount of water found on
+                Earth, positions Europa as a prime candidate in the search for extraterrestrial life within our solar system. <br><br>
+                On October 14, 2024, NASA launched the Europa Clipper mission aboard a SpaceX Falcon Heavy rocket from Kennedy Space Center in
+                Florida. The spacecraft is expected to reach Jupiter in April 2030. Upon reaching Jupiter,
+                Europa Clipper will conduct nearly 50 close flybys of Europa, coming as close as 16 miles above the moon's surface. <br><br>
+                The mission's primary objective is to assess Europa's habitability by investigating the thickness of its ice shell, the depth
+                and salinity of its ocean, and the moon's surface composition and geology. To achieve this, Europa Clipper is equipped with a
+                suite of nine sophisticated scientific instruments, including ice-penetrating radar, spectrometers, and magnetometers. <br><br>
+                The data collected by Europa Clipper will provide unprecedented insights into Europa's potential to support life, enhancing
+                our understanding of ocean worlds and informing future exploratory missions. This mission represents a significant step forward
+                in astrobiology and the study of planetary systems.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Ceres/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Ceres</h1>
+            <p>
+                Ceres is the largest object in the Asteroid Belt between Mars and Jupiter, and the only officially recognized dwarf planet
+                within the inner solar system. With a diameter of about 940 kilometers, Ceres is much smaller than Earth but massive enough
+                for its own gravity to shape it into a spherical form. This round shape sets Ceres apart from smaller, irregularly shaped
+                asteroids around it. Discovered in 1801 by Italian astronomer Giuseppe Piazzi, Ceres was initially classified as a planet,
+                but later reclassified as a dwarf planet due to its unique characteristics. <br><br>
+                Ceres is especially fascinating because its surface and composition suggest that it contains a substantial amount of water ice.
+                Scientists believe that beneath its crust lies a layer of frozen water, and possibly even a subsurface ocean. Evidence of water
+                vapor has also been detected around Ceres, suggesting that water ice on its surface sublimates under the Sun’s radiation,
+                creating a very thin, transient atmosphere. This activity indicates that Ceres might still be geologically active, even
+                though it’s much smaller and colder than other planetary bodies. <br><br>
+                Ceres also holds importance as a time capsule from the early solar system. Being one of the oldest bodies formed in
+                our planetary neighborhood, it offers insights into the building blocks of the planets and the distribution of water
+                in the inner solar system. Studying Ceres helps scientists understand how water and other essential materials could
+                have been transported to the rocky planets, possibly even playing a role in creating habitable conditions on Earth. <br><br>
+                Because of its unique characteristics and its proximity relative to other dwarf planets in the Kuiper Belt, Ceres remains a
+                prime target for future space exploration missions.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Pluto/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Pluto</h1>
+            <p>
+                Pluto is a dwarf planet located in the Kuiper Belt, a region beyond Neptune filled with icy bodies
+                and remnants from the early solar system. Discovered in 1930 by Clyde Tombaugh, Pluto was long considered
+                the ninth planet of the solar system. However, in 2006, the International Astronomical Union (IAU)
+                reclassified it as a dwarf planet because of its small size and the fact that it has not cleared its
+                orbital path of other objects. Alongside Pluto, other recognized dwarf planets in our solar system include
+                Eris, Haumea, Makemake, and Ceres. <br><br>
+                With a diameter of about 2,377 kilometers, Pluto is the biggest dwarf planet, but still smaller than Earth’s Moon
+                and is primarily composed of ice and rock. Its surface is covered with nitrogen ice mixed with traces of methane
+                and carbon monoxide, and scientists believe there may be a subsurface ocean beneath this icy exterior.
+                Pluto also has a thin atmosphere composed mostly of nitrogen, which expands when it comes closer to the
+                Sun in its highly elliptical orbit and freezes onto the surface when it moves farther away. <br><br>
+                One of Pluto’s most distinctive features is its unique relationship with its largest moon, Charon.
+                Charon is roughly half the size of Pluto, and the two bodies are tidally locked, meaning they always
+                show the same face to each other. This dynamic leads some to view Pluto and Charon as a binary system
+                rather than a traditional planet-moon pairing. <br><br>
+                In 2015, NASA’s New Horizons mission provided the first close-up images of Pluto,
+                revealing a complex and diverse landscape with mountains of water ice, plains of frozen
+                nitrogen, and signs of past geological activity. Despite its reclassification, Pluto remains
+                a fascinating object in both science and popular culture, sparking ongoing debates about what
+                defines a planet and capturing the imagination as one of the solar system’s most enigmatic worlds.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Planet X.glb" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Planet X</h1>
+            <p>
+                Planet X, also known as Planet 9, is a hypothetical, undiscovered planet that may exist in the far reaches of our solar system,
+                possibly in or near the Oort Cloud—a distant, spherical region of icy objects that marks the boundary of our solar system.
+                The idea of Planet X was proposed because astronomers have observed unusual patterns in the orbits of certain trans-Neptunian
+                objects (TNOs), which are small bodies beyond Neptune. These objects display similar alignments and clustering in their orbits,
+                suggesting that an unseen massive planet might be influencing them with its gravitational pull. <br><br>
+                The concept of Planet X gained serious attention in 2016 when astronomers Konstantin Batygin and Michael E. Brown noticed that
+                the orbits of some TNOs were unusually clustered, tilting in a way that seemed unlikely to be random. They hypothesized that this
+                clustering could be explained by the gravitational presence of a large, distant planet, orbiting far beyond Neptune and pulling
+                these objects into its influence. This planet, if it exists, would likely have a mass about 5-10 times that of Earth and could
+                either be a Super-Earth or an ice giant, similar to Uranus or Neptune. <br><br>
+                Simulations and calculations have further supported the possibility of Planet X’s existence. Models that include the presence
+                of a massive planet in the outer solar system can successfully replicate the strange orbital characteristics of distant objects.
+                Without such a planet, it is challenging to explain the patterns in these orbits. These simulations suggest that Planet X’s
+                gravitational influence could be the missing factor that shapes the outer solar system, adding weight to the hypothesis. <br><br>
+                If Planet X exists, it would likely be a cold, distant world with a surface temperature close to absolute zero, due to its immense
+                distance from the Sun. It could be a Super-Earth with a dense rocky or icy composition, or perhaps a small ice giant with a thick
+                atmosphere of hydrogen and helium. Planet X would be located about 400 to 800 astronomical units (AU) from the Sun, meaning it would
+                be 10 to 25 times farther out than Neptune. This extreme distance places it near the Oort Cloud, a region filled with icy bodies
+                that could extend even further out, marking the edge of the Sun's gravitational influence. <br><br>
+                Because of its great distance, Planet X would orbit the Sun very slowly, taking thousands of years to complete a single revolution.
+                Its faint light and slow motion make it incredibly challenging to observe directly, which explains why it has eluded detection so
+                far. Astronomers are searching for Planet X with advanced telescopes and infrared surveys, as it would likely emit faint infrared
+                radiation rather than visible light due to its cold environment. <br><br>
+                The existence of Planet X remains unconfirmed, but the unusual orbits of TNOs and the results of computer simulations continue to
+                strengthen the case for its presence. If discovered, Planet X would reshape our understanding of the solar system, revealing that
+                its structure is more complex and expansive than previously thought. It would also offer valuable insights into how planets form
+                in the far reaches of star systems, where sunlight barely penetrates and the rules of planetary formation are pushed to their limits.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Asteroid/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Asteroid</h1>
+            <p>
+                Asteroids are small, rocky objects that orbit the Sun, primarily found in the asteroid belt between
+                Mars and Jupiter. They are remnants from the early solar system, formed over 4.5 billion years ago
+                when dust and gas particles around the Sun began clumping together. Unlike planets, asteroids are too
+                small to have formed into spheres, so they have irregular shapes and vary greatly in size, from tiny
+                rocks to bodies that span hundreds of kilometers in diameter. <br><br>
+                Asteroids occasionally pass close to Earth, and while most continue on their orbits without
+                incident, some are pulled closer by Earth's gravity. When an asteroid or fragment enters Earth’s
+                atmosphere, it is called a meteoroid. As it streaks through the atmosphere, the friction causes it
+                to heat up and glow, creating what we see as a meteor or "shooting star." Usually the meteor burns up entirely
+                due to intense heat and friction. If a part of the meteoroid survives the journey through the atmosphere
+                and lands on Earth, it is then called a meteorite. <br><br>
+                Asteroids can also be nudged out of the asteroid belt by gravitational interactions with planets, especially
+                Jupiter, or by collisions with other asteroids. This process sends some of them into paths that bring them
+                closer to Earth. Meteor showers, however, differ from individual meteors in that they are caused not by
+                asteroids but by comet debris. As a comet approaches the Sun, it leaves behind a trail of dust and rocky
+                particles. When Earth’s orbit intersects this debris trail, numerous meteoroids enter the atmosphere
+                simultaneously, creating a spectacular display of meteors known as a meteor shower. Examples include
+                the Perseids and Orionids, which occur annually when Earth passes through the debris of specific comets. <br><br>
+                Asteroids, meteoroids, meteors, and meteorites are all related stages
+                in the journey of a space rock, from its origin in the asteroid belt to its potential impact on Earth.
+                These celestial visitors offer scientists insights into the composition of the early solar system and
+                the processes that shaped our planetary neighborhood.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Komet/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Comet</h1>
+            <p>
+                Comets are icy celestial bodies that orbit the Sun, primarily originating from two distant regions
+                of the solar system: the Kuiper Belt, located just beyond Neptune, and the Oort Cloud, a vast, spherical
+                shell surrounding the solar system at its farthest reaches. Comets are often referred to as "dirty snowballs"
+                because they are composed of frozen gases, dust, and rocky material. When they are far from the Sun, comets
+                remain cold and dormant, appearing as small, solid objects. However, as they approach the Sun on their
+                elongated orbits, they begin to warm up, and their icy surfaces start to vaporize, forming a glowing coma
+                (a cloud of gas and dust) around the comet's nucleus. <br><br>
+                One of the most striking features of a comet is its tail. As the Sun's heat causes the comet's
+                ice to vaporize, solar radiation and the solar wind push the gas and dust particles away from the
+                comet, creating two distinct tails: a dust tail that reflects sunlight and often appears curved,
+                and an ion tail, composed of charged particles, which is usually straight and points directly away
+                from the Sun. These tails can stretch for millions of kilometers and are responsible for the comet’s
+                spectacular appearance when visible from Earth. <br><br>
+                As a comet travels through space, it leaves behind trails of dust and rocky particles along its orbit.
+                When Earth crosses one of these trails, the particles enter our atmosphere and burn up, creating what we
+                observe as a meteor shower. These meteor showers, like the Perseids (from Comet Swift-Tuttle) or Orionids
+                (from Halley's Comet), occur annually when Earth passes through the same comet debris fields. <br><br>
+                Comets are among the oldest objects in the solar system, containing material from the early days
+                of its formation. By studying them, scientists can gain insight into the conditions that existed
+                billions of years ago. Some comets, such as Halley's Comet, follow predictable orbits and can be
+                seen from Earth at regular intervals—Halley’s Comet, for instance, returns approximately every 76 years.
+                Other comets have longer, unpredictable orbits, and some only appear once in thousands or even millions
+                of years. <br><br>
+                When a comet comes close enough to Earth, its tail can often be visible in the night sky for days,
+                weeks, or sometimes even months, depending on its size, speed, and orbit. This transient visibility
+                has fascinated people for centuries, often associating comets with myths, omens, or cosmic events.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Iss/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>ISS</h1>
+            <p>
+                The International Space Station (ISS) is a modular space station orbiting Earth at an altitude of
+                approximately 400 kilometers. It serves as a unique laboratory where astronauts from around the world
+                conduct experiments across various scientific fields, including biology, physics, astronomy, and materials
+                science, in a microgravity environment. The ISS is a collaborative project involving NASA (United States),
+                Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada). Since its first module, Zarya, was
+                launched in 1998, the ISS has been continuously expanded, and it has been permanently inhabited by
+                astronauts since the year 2000. <br><br>
+                The station orbits Earth at a speed of 28,000 kilometers per hour, completing about 16 orbits per day.
+                This rapid orbit allows crew members on board to witness multiple sunrises and sunsets daily, offering
+                spectacular views of Earth. The ISS consists of several interconnected modules, including laboratories,
+                living quarters, and docking ports for spacecraft. It also has large solar panels that provide power to
+                the station. <br><br>
+                One of the main objectives of the ISS is to enable research in microgravity, where scientists study
+                phenomena that cannot be observed under normal gravity conditions on Earth. Research conducted on the
+                ISS has led to advancements in areas like medicine, environmental science, and technology, including
+                improvements in water purification, understanding of muscle and bone loss in low gravity, and development
+                of new materials. The findings contribute to preparations for long-duration space missions, such as future
+                human exploration of Mars. <br><br>
+                Astronauts live on the ISS for extended periods, usually between six months and one year, where they
+                experience life in a completely different environment. Daily routines include scientific work, exercise
+                to combat the effects of microgravity on muscles and bones, and maintenance of the station. Communication
+                with Earth allows them to stay in contact with family and receive regular supplies of food, equipment, and
+                experiments via cargo spacecraft. <br><br>
+                The ISS is considered one of humanity’s most significant achievements in space exploration, symbolizing
+                international cooperation and a shared commitment to advancing our understanding of space and science.
+                With plans to operate until at least 2030, the ISS continues to pave the way for future deep-space
+                exploration, with its research providing invaluable data for long-term human space travel.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Hubble/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Hubble</h1>
+            <p>
+                The Hubble Space Telescope (HST) is one of the most iconic and successful telescopes in the history of
+                astronomy. Launched by NASA in 1990 aboard the space shuttle Discovery, Hubble orbits Earth at an altitude
+                of about 540 kilometers and captures images of the universe in stunning detail. Unlike ground-based telescopes,
+                Hubble is located above Earth’s atmosphere, allowing it to observe space without atmospheric distortion,
+                resulting in incredibly sharp images that have revolutionized our understanding of the cosmos. <br><br>
+                Hubble is equipped with a range of instruments that capture light in various wavelengths, including visible,
+                ultraviolet, and near-infrared. This capability allows scientists to study everything from distant galaxies
+                and nebulae to nearby planets and star-forming regions. Hubble’s Wide Field Camera 3, Cosmic Origins
+                Spectrograph, and other advanced instruments have produced some of the most detailed images of deep space,
+                giving us a clearer view of distant stars, galaxies, and phenomena like black holes and supernovae. <br><br>
+                One of Hubble’s most famous images is the Hubble Deep Field, which captured a seemingly empty patch of sky
+                in incredible detail and revealed thousands of galaxies that date back billions of years. This image alone
+                transformed our understanding of the universe’s vastness and the number of galaxies it contains. Hubble has
+                also played a crucial role in measuring the expansion rate of the universe and in determining its age,
+                estimated at around 13.8 billion years. <br><br>
+                Hubble has provided key insights into the formation of stars, the behavior of black holes, the
+                evolution of galaxies, and the composition of exoplanet atmospheres. Its observations have led to
+                groundbreaking discoveries, including the understanding of dark energy, a mysterious force driving
+                the accelerated expansion of the universe. Hubble’s data has also helped scientists refine models of
+                stellar evolution and gain insights into planetary systems beyond our own. <br><br>
+                The telescope has undergone five servicing missions by astronauts, which have upgraded its instruments
+                and extended its lifespan. These missions have kept Hubble functioning and equipped it with state-of-the-art
+                technology, allowing it to continue providing valuable data more than three decades after its launch. <br><br>
+                Hubble’s impact on science and popular culture is immense, as it has brought the wonders of the universe
+                closer to the public and inspired countless people worldwide. Though it may be eventually succeeded by the
+                James Webb Space Telescope and other advanced telescopes, Hubble’s legacy will endure as a pioneering tool
+                that expanded our vision of the cosmos and deepened humanity’s understanding of the universe.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Sputnik/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Sputnik</h1>
+            <p>
+                Sputnik 1 was the world’s first artificial satellite, launched by the Soviet Union on October 4, 1957.
+                This historic event marked the beginning of the space age and the start of the space race between the
+                United States and the Soviet Union. Sputnik, which means "satellite" or "companion" in Russian, was a
+                small, spherical satellite with a diameter of about 58 centimeters and a weight of 83.6 kilograms. It
+                was equipped with four long antennas and a simple radio transmitter that emitted beeps, allowing it to
+                be tracked as it orbited Earth. <br><br>
+                The satellite completed one orbit approximately every 96 minutes, traveling at a speed of 29,000
+                kilometers per hour. Sputnik’s signal was detectable by radio operators around the world, and its
+                success demonstrated the Soviet Union's technological capabilities in space. This event caused significant
+                shock and concern in the United States, as it highlighted the possibility of space-based technology impacting
+                global security. In response, the United States accelerated its own space program, leading to the creation
+                of NASA in 1958. <br><br>
+                Sputnik 1 did not carry scientific instruments beyond its radio transmitter, but it proved that an
+                artificial object could be successfully placed into orbit. The satellite’s beeping signals, which
+                lasted for 21 days until its batteries ran out, provided valuable information about the density of the
+                upper atmosphere by analyzing the satellite’s drag and orbital decay. Sputnik 1 continued to orbit Earth
+                for about three months until it re-entered the atmosphere and burned up on January 4, 1958. <br><br>
+                Sputnik’s launch was followed by Sputnik 2, which carried the first living creature, Laika the dog,
+                into space in November 1957, further cementing the Soviet Union's early lead in space exploration. Sputnik
+                1 remains a symbol of scientific achievement and is widely recognized as the beginning of humanity’s journey
+                into space. This milestone in space history not only ignited technological advances but also inspired
+                generations worldwide, leading to an era of rapid development in space science and exploration. <br><br>
+                In response to the launch of Sputnik 1, the United States accelerated its own space efforts.
+                This effort led to the launch of Explorer 1, the first American satellite, on January 31, 1958.
+                Developed by NASA’s predecessor, the U.S. Army Ballistic Missile Agency,
+                Explorer 1 was smaller than Sputnik at about 14 kilograms, but despite its size, Explorer 1 made a
+                groundbreaking scientific discovery: it detected the presence of the Van Allen radiation belts,
+                zones of charged particles trapped by Earth’s magnetic field.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Voyager/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Voyager</h1>
+            <p>
+                The Voyager program consists of two space probes, Voyager 1 and Voyager 2, launched by NASA in 1977 with
+                the goal of exploring the outer planets of the solar system. The mission was designed to take advantage
+                of a rare planetary alignment that allowed both spacecraft to use gravitational assists (swing-by-maneuver)
+                to travel from ne giant planet to the next, conserving fuel and shortening travel time.
+                Thanks to these maneuver, Voyager 1 now travels at a speed of about 61,000 kilometers per hour,
+                while Voyager 2 moves at around 55,000 kilometers per hour.
+                Voyager 2 was launched first on August 20, 1977, followed by Voyager 1 on September 5, 1977.
+                Both probes have since exceeded their original mission, traveling further into space than any other
+                human-made objects. <br><br>
+                Voyager 1 and Voyager 2 provided humanity with its first close-up images and data on Jupiter and
+                Saturn, including their moons and ring systems. Among their many discoveries were volcanic activity
+                on Io, one of Jupiter's moons, and evidence of subsurface oceans on Europa. Voyager 2 continued its
+                journey to Uranus and Neptune, making it the only spacecraft to have visited these two distant planets.
+                At Neptune, Voyager 2 discovered geysers on the moon Triton and observed the planet's extreme weather,
+                including its powerful storms and high-speed winds. <br><br>
+                After completing their primary missions, the Voyager probes continued on what is known as the
+                Voyager Interstellar Mission. Both spacecraft are now in interstellar space, beyond the influence
+                of the Sun’s solar wind, called the Heliopause. Voyager 1 entered interstellar space in August 2012,
+                and Voyager 2 followed in November 2018. These milestones marked the first time that human-made objects
+                had left the heliosphere, the bubble-like region of space dominated by the Sun's influence.
+                A particularly iconic moment in Voyager’s mission was the capture of the photograph known as the Pale Blue Dot.
+                At the request of astronomer Carl Sagan, Voyager 1 turned its camera back toward Earth on February 14, 1990,
+                from a distance of 6 billion kilometers, and took an image showing Earth as a tiny, faint dot in the vastness
+                of space. This image has become a profound symbol of Earth’s fragility and smallness in the cosmos,
+                reminding humanity of our shared home and inspiring generations to think about our place in the universe. <br><br>
+                A defining feature of the Voyager probes is the Golden Record, a 12-inch gold-plated phonograph
+                disc containing sounds and images representing the diversity of life and culture on Earth. Curated by
+                a team led by astronomer Carl Sagan, the Golden Record includes greetings in 55 languages, music from
+                various cultures, natural sounds, and images of Earth and its people. The records are intended as a
+                message to any potential extraterrestrial civilizations that might encounter the spacecraft in the
+                distant future. <br><br>
+                Voyager 1 and 2 continue to send data back to Earth, providing valuable information about the
+                outermost regions of the Sun's influence and the interstellar environment. Both probes are expected
+                to keep transmitting until approximately the 2030s, when their power sources will eventually deplete.
+                Even after they cease communication, the Voyagers will continue their journeys through space, silently
+                carrying the Golden Records as ambassadors of Earth, drifting for millions of years among the stars.
+                The Voyager program is one of NASA's most iconic and successful missions, symbolizing humanity's desire
+                to explore beyond our solar system and understand the vast cosmos.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper cut"> <iframe title="Dyson Sphere and a Big Light Ray 🔭😎🚀🛰️☄️🌌" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/e4ba8a064ae0432d96aae05d9a07a04d/embed?ui_hint=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Dyson Sphere</h1>
+            <p>
+                A Dyson Sphere is a hypothetical structure that could be built around a star to capture its energy on a massive scale, providing
+                an almost unlimited power source for an advanced civilization. The idea was first proposed by the physicist Freeman Dyson in 1960,
+                as a way to theoretically harness the immense energy output of a star. Dyson suggested that an advanced civilization, once it had
+                exhausted all energy sources on its planet, might construct a vast array of solar-collecting structures around its host star to
+                capture its energy directly. <br><br>
+                The most common concept of a Dyson Sphere is not a solid shell, but rather a swarm of solar panels or satellites orbiting the
+                star, collectively gathering energy. A solid shell around a star, as often depicted in science fiction, is likely impractical
+                because of the immense structural stresses it would experience and the vast amounts of material required. Instead, a Dyson Swarm—a
+                large number of separate solar collectors arranged in orbit—would allow for more flexibility, stability, and efficiency in capturing
+                the star's energy. <br><br>
+                Such a structure would enable a civilization to use the star’s energy output to power their technologies, potentially supporting
+                a highly advanced society on an astronomical scale. The energy a Dyson Sphere could provide is staggering; the Sun, for instance,
+                emits billions of times more energy than humanity currently consumes. By capturing even a small fraction of this energy, a civilization
+                could meet all its energy needs and power massive technological projects, perhaps even enabling interstellar exploration. <br><br>
+                Building a Dyson Sphere, however, would be a monumental task, requiring materials on an unimaginable scale. One proposed solution is
+                to use the materials from planets or moons within the same star system, essentially dismantling uninhabitable worlds to provide the raw
+                resources. This would require not only enormous amounts of material but also highly advanced technology capable of constructing and
+                maintaining thousands or even millions of individual solar-collecting units in orbit. <br><br>
+                The concept of a Dyson Sphere is closely related to the Kardashev Scale, which categorizes civilizations based on their energy usage.
+                A Type I civilization harnesses all available energy on its home planet, a Type II civilization can capture the energy of its entire
+                star (with a Dyson Sphere being one method of achieving this), and a Type III civilization would utilize the energy of an entire galaxy.
+                According to this scale, a civilization that has constructed a Dyson Sphere would be considered a Type II civilization. <br><br>
+                Interestingly, the search for Dyson Spheres has become a part of the Search for Extraterrestrial Intelligence (SETI). Some scientists
+                propose that advanced alien civilizations, if they exist, might leave detectable signatures in the form of excess infrared radiation
+                emitted by a Dyson Sphere around their star. Since a Dyson Sphere would absorb most of the star's visible light and re-emit energy as
+                heat, it could create a distinct infrared signature that might be detectable from Earth. <br><br>
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper cut"> <iframe title="HDRI Space Nebula Panorama" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/8a554fd7184c4a1899c214b5c0298eab/embed?ui_hint=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Stellar Nursery</h1>
+            <p>
+                A stellar nursery is a region in space where new stars are born. These nurseries, also known as star-forming regions or nebulae,
+                are vast clouds of gas and dust where the conditions are right for star formation. Stellar nurseries are typically located in the
+                spiral arms of galaxies, including our Milky Way, where interstellar clouds of hydrogen, helium, and heavier elements clump together
+                under the force of gravity. Some well-known examples of stellar nurseries are the Orion Nebula and the Tarantula Nebula. <br><br>
+                Star formation begins in these nurseries when gravitational forces cause dense clumps of gas and dust to collapse inward. This collapse
+                increases the pressure and temperature within the clump. As the material becomes more compressed, it heats up, eventually reaching a
+                point where nuclear fusion can ignite in the core. When fusion begins, a new protostar is born, and it starts producing energy,
+                stabilizing against further collapse. Over time, these protostars develop into main-sequence stars, shining brightly and pushing
+                away the remaining gas and dust around them with powerful stellar winds. <br><br>
+                Stellar nurseries are often stunningly beautiful, filled with colorful clouds of glowing gas and dark lanes of dust. The colors
+                seen in these regions are caused by the different elements in the gas. Hydrogen emits a reddish hue, while oxygen emits green or
+                blue light. The energy for this glow usually comes from nearby young, hot stars that emit intense ultraviolet light, which excites
+                the gas and causes it to emit visible light. <br><br>
+                In addition to stars, stellar nurseries are also the birthplaces of planetary systems. The leftover gas and dust around a young
+                star can clump together to form protoplanetary disks, where planets, moons, and other celestial bodies begin to take shape. These
+                disks gradually condense into planets and smaller objects that orbit the star, forming new solar systems. <br><br>
+                Stellar nurseries can vary greatly in size and structure. Some are relatively small, forming just a few stars, while others,
+                like the Tarantula Nebula in the Large Magellanic Cloud, are vast regions forming thousands of stars. The Tarantula Nebula is
+                the largest and most active stellar nursery - expanding over 1.000 light-years across - in the Local Group of galaxies making
+                it more intense than any star-forming region in the Milky Way. <br><br>
+                Eventually, as new stars form, their powerful stellar winds and radiation clear out the surrounding gas and dust, effectively
+                “shutting down” the nursery. Over time, the once-dense nebula disperses, leaving behind new stars and sometimes clusters, which
+                may gradually drift apart. However, the stars born in these nurseries will continue to shine for millions to billions of years,
+                depending on their mass, contributing to the structure and evolution of their galaxy. <br><br>
+                In summary, stellar nurseries are the birthplaces of stars and planets, where clouds of gas and dust collapse under gravity to
+                ignite nuclear fusion and create new stars. These regions are critical to our understanding of the universe, as they reveal the
+                processes that give rise to stars, planetary systems, and ultimately the building blocks for life.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="The young accreting star DG Tauri B" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/4c3421a983c0439da40508b637e89725/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Protosar</h1>
+            <p>
+                An Protostar is a young accreting star that forms as part of the stellar birth process and gains mass by drawing in
+                surrounding material from an accretion disk. Stars are born within dense regions of molecular clouds—also known
+                as stellar nurseries—where gas and dust begin to collapse under their own gravity. As this gas and dust condense,
+                they form a protostar, the initial stage of a star’s life. <br><br>
+                During the formation of a protostar, the surrounding gas and dust in the cloud do not all fall directly
+                onto the star. Instead, the material begins to spiral inward, forming a rotating accretion disk around
+                the young star. This disk is composed of the same elements that will eventually contribute to the star’s
+                mass and, in some cases, the formation of planets, moons, and other celestial bodies. The gravitational
+                pull of the protostar draws in this material, and as particles in the accretion disk collide and compress,
+                they heat up, causing the disk to glow. <br><br>
+                The process of accretion is essential for the star’s growth. As the protostar pulls in material from
+                the accretion disk, its mass increases, causing the temperature and pressure at its core to rise.
+                Eventually, if enough material accumulates, the core temperature reaches a critical threshold,
+                enabling nuclear fusion to ignite. At this point, hydrogen atoms in the
+                core start to fuse into helium, releasing tremendous amounts of energy in the form of light and heat.
+                This marks the transition from a protostar to a main-sequence star—a fully formed star in the stable phase
+                of its life. <br><br>
+                While the accretion disk is being drawn into the growing star, other processes are at work as well.
+                In some cases, the young star may emit jets of gas and radiation along its poles, known as bipolar
+                outflows or stellar jets. These jets help to clear away excess gas and dust in the vicinity, eventually
+                allowing the star to stabilize and become visible without the obscuring effects of the surrounding material. <br><br>
+                The remaining material in the accretion disk can also coalesce to form planets, asteroids, and other small
+                bodies, creating a protoplanetary disk that surrounds the young star. Over millions of years, this disk may
+                evolve into a full planetary system, with each component orbiting the now-mature star.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Protoplanet collision afterglows" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ff35368dd2644487b20c588c1e65bece/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Protoplanet</h1>
+            <p>
+                A protoplanet is a young planetary body forming within a circumstellar disk - a ring of gas and
+                dust that orbits a young star. In these disks, dust particles and small rock fragments collide and stick together, gradually
+                growing into larger bodies called planetesimals. Through ongoing collisions and gravitational attraction, these planetesimals
+                accumulate more material, eventually forming protoplanets. Protoplanets are essentially "planetary embryos" that continue to grow
+                and evolve until they may eventually become full-fledged planets. <br><br>
+                During this formation phase, protoplanets can migrate within the circumstellar disk, interacting with other bodies. As they move,
+                they may collide with other protoplanets, sometimes violently. These impacts can cause significant changes to both the size and
+                composition of the involved bodies. A well-known hypothesis for the origin of our Moon, for example, suggests that a Mars-sized
+                protoplanet collided with the early Earth, also called the proto-Earth. This collision likely created a massive ring of debris
+                around Earth, which eventually coalesced to form the Moon. <br><br>
+                After a major collision, the surviving protoplanet is typically covered in an ocean of magma. This molten layer consists of melted
+                silicate materials and volatile substances, which gradually cool and solidify to form the early crust of the planet. Over time, the
+                sequence of impacts and mergers with other objects shapes the protoplanet’s surface and influences its atmosphere, creating conditions
+                that may eventually support stable climates and, in certain cases, the emergence of life. <br><br>
+                In this way, the journey from protoplanet to planet is marked by a series of dramatic and transformative events that define a planet’s
+                characteristics and potential habitability.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="The Helix nebula, the last breath of a star" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2a750aef938642a7b1135e9b4613da37/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Helix Nebula</h1>
+            <p>
+                The Helix Nebula is a planetary nebula located in the constellation Aquarius, approximately 650 light-years away from Earth.
+                Often referred to as the “Eye of God” due to its striking, eye-like appearance, the Helix Nebula is one of the closest and most
+                well-studied planetary nebulae. It represents the final stages in the life cycle of a Sun-like star, offering insight into what
+                might eventually happen to our own Sun. <br><br>
+                A planetary nebula is the glowing shell of gas and dust that forms around a dying star of moderate size, typically one
+                similar to the Sun. When such a star reaches the end of its life, it exhausts its nuclear fuel and can no longer maintain the
+                fusion reactions that have kept it stable. This loss of energy causes the outer layers of the star to become unstable, and they
+                are gradually expelled into space, leaving behind a hot, dense core. This core is known as a white dwarf. The term “planetary nebula”
+                is a bit misleading; it has nothing to do with planets. Early astronomers named them “planetary nebulae” because, through early
+                telescopes, they appeared round and disk-like, resembling planets. <br><br>
+                This process is different from a supernova, which occurs in much more massive stars. In a supernova, a massive star undergoes a
+                core collapse, leading to an extremely violent explosion that either leaves behind a neutron star or, if the star is massive enough,
+                a black hole. In contrast, a planetary nebula forms more gently. The star gradually sheds its outer layers without a dramatic explosion,
+                and the resulting nebula is much less violent and energetic than a supernova remnant. Instead of a neutron star or black hole, the end
+                product of a planetary nebula is a white dwarf—a small, dense remnant roughly the size of Earth but with a mass comparable to that of
+                the Sun. <br><br>
+                The Helix Nebula itself was formed when a dying star, similar in mass to our Sun, reached the end of its life. As the star’s core
+                could no longer sustain nuclear fusion, it became unstable and started shedding its outer layers. These outer layers expanded into
+                space, forming a beautiful, glowing shell of gas and dust around the white dwarf at its center. This white dwarf emits intense
+                ultraviolet radiation that ionizes the gases in the nebula, causing them to glow in vibrant colors. <br><br>
+                The distinctive shape and structure of the Helix Nebula arise from complex interactions between the expelled gases and the stellar
+                winds blowing from the dying star. It has a ring-like structure with multiple intricate layers, resembling a spiral or helix,
+                which is how it got its name. Within the nebula, astronomers have observed cometary knots—dense clumps of gas with tail-like
+                structures pointing away from the central star. These knots are roughly the size of our solar system and offer clues to the dynamic
+                processes involved in the nebula’s formation. <br><br>
+                The colors visible in the Helix Nebula come from different elements emitting light at specific wavelengths. Red hues are produced
+                by hydrogen, while green and blue hues are due to oxygen. These glowing gases allow astronomers to study the composition and
+                distribution of materials within the nebula, providing insights into the processes of stellar evolution and element formation. <br><br>
+                Studying planetary nebulae like the Helix Nebula is particularly important because they represent the future of stars like our Sun.
+                In about 5 billion years, our Sun is expected to go through a similar phase, eventually becoming a white dwarf surrounded by a glowing
+                planetary nebula. By observing objects like the Helix Nebula, astronomers gain valuable insights into the life cycle of medium-sized
+                stars and the eventual fate of our solar system.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Core-collapse Supernova" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/606b7fe570dd4ae38e59fe3acf81e8a0/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Supernova</h1>
+            <p>
+                A supernova is one of the most powerful and spectacular events in the universe, marking the explosive death of a star.
+                When a star reaches the end of its life, it can undergo a sudden, catastrophic explosion that releases more energy in a brief
+                moment than an entire galaxy. This explosion, which can shine as brightly as billions of stars, plays a crucial role in the cosmos
+                by creating and distributing heavy elements essential for forming new stars, planets, and even life itself. <br><br>
+                There are two main types of supernovae, each occurring in different kinds of stars: Type I and Type II supernovae: <br><br>
+                Type I Supernovae: <br><br>
+                Type I supernovae occur in binary star systems where one of the stars is a white dwarf. A white dwarf is the dense remnant of a
+                star that has exhausted its nuclear fuel and no longer undergoes fusion reactions. In a binary system, if the white dwarf has a close
+                companion star, it can gradually pull material (mostly hydrogen and helium) from this companion. As the white dwarf accumulates mass,
+                it can reach a critical limit called the Chandrasekhar limit (around 1.4 times the mass of the Sun). At this point, the pressure and
+                temperature in the core become high enough to trigger a runaway thermonuclear reaction. This reaction is so powerful that it completely
+                destroys the white dwarf in a violent explosion, leaving no core behind. Type I supernovae, particularly Type Ia, are incredibly bright
+                and are used as “standard candles” in astronomy to measure distances in the universe due to their consistent luminosity. <br><br>
+                Type II Supernovae: <br><br>
+                Type II supernovae occur in massive stars that are at least 8 times the mass of the Sun. Throughout their lives, these stars
+                undergo nuclear fusion, producing progressively heavier elements in their cores. Eventually, they reach a stage where they produce
+                iron. However, iron does not release energy when it fuses; instead, it absorbs energy, which destabilizes the star. As iron builds
+                up in the core, the pressure can no longer counteract the force of gravity, causing the core to suddenly collapse. This collapse
+                creates an enormous shockwave that blasts the outer layers of the star into space in a tremendous explosion. The core left behind
+                can become either a neutron star—an incredibly dense object made almost entirely of neutrons—or, if the original star was massive
+                enough, a black hole. <br><br>
+                The explosion of a supernova scatters heavy elements such as carbon, oxygen, iron, and gold into space, enriching the interstellar
+                medium. These elements become the building blocks of future stars, planets, and even life, showing that we, too, are made of stardust
+                from ancient supernovae. Supernovae play a fundamental role in "recycling" material in galaxies, injecting energy and enriching
+                the surrounding space with essential elements. <br><br>
+                Some famous supernova remnants, like the Crab Nebula (the remnant of a supernova observed in 1054) and Cassiopeia A, can be
+                observed with telescopes and serve as natural laboratories for studying the processes and materials generated by these stellar
+                explosions. These remnants emit radiation from hot gas and energetic particles, allowing scientists to investigate the aftermath
+                of these extraordinary events <br><br>
+                In summary, a supernova is a stellar explosion that not only signals the end of a star’s life but also plays a
+                fundamental role in shaping the universe. Whether through the destruction of a white dwarf in a Type I supernova or the
+                collapse of a massive star in a Type II supernova, these explosive events scatter essential elements across space, driving cosmic
+                evolution and enriching galaxies with the materials needed for new stars, planets, and life.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="A pulsar beating in the heart of the Crab" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/7f1336d84b944e8a888b714057a9b9da/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Crab Nebula</h1>
+            <p>
+                The Crab Nebula is a supernova remnant located in the constellation Taurus,
+                approximately 6,500 light-years away from Earth. It is one of the most studied and iconic objects in
+                the night sky, providing astronomers with a detailed view of the aftermath of a supernova explosion.
+                The Crab Nebula was created when a massive star reached the end of its life and exploded in a supernova,
+                an event observed by astronomers on Earth in 1054 AD. This explosion was so bright that it was visible in
+                the daytime for nearly a month and remained visible at night for almost two years. <br><br>
+                Today, the Crab Nebula spans about 11 light-years across and continues to expand at a speed of about
+                1,500 kilometers per second. The nebula’s glowing filaments are made up of ionized gas, including hydrogen,
+                helium, carbon, and oxygen, which shine brightly as they interact with the surrounding magnetic field
+                and high-energy particles from the pulsar in its core. A Pulsar is a highly magnetized, rapidly rotating neutron star that
+                is the remnant of a supernova. This pulsar, known as the Crab Pulsar, spins approximately 30 times per second, emitting beams of
+                radiation that sweep across the nebula and energize it, creating a powerful display of X-rays, gamma
+                rays, and other high-energy emissions. <br><br>
+                The Crab Nebula has been invaluable to science, helping researchers understand the physics of supernova
+                remnants, pulsars, and the behavior of high-energy particles. Its pulsar is one of the most powerful
+                sources of radiation in the galaxy and continues to inject energy into the surrounding nebula, illuminating
+                it from within. The Crab Pulsar’s regular emissions of light and radio waves also allow scientists to study
+                the nature of neutron stars, which are among the densest objects in the universe. <br><br>
+                The Crab Nebula serves as a unique laboratory for studying the life cycles of stars and the effects of
+                supernovae. Its structure and emissions provide insights into the processes that shape our galaxy,
+                distributing heavy elements essential for forming new stars and planets. As one of the best-known supernova
+                remnants, the Crab Nebula is a symbol of stellar death and rebirth, demonstrating how even the violent end
+                of a star can pave the way for new cosmic evolution.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="The dark heart of an interstellar nebula" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/cc16104dfcd04338abc997a3156a25b3/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Magellanic Clouds</h1>
+            <p>
+                The Magellanic Clouds are two nearby dwarf galaxies known as the Large Magellanic Cloud (LMC) and the
+                Small Magellanic Cloud (SMC), located just outside the Milky Way and closer to us than any other galaxy,
+                including the Andromeda Galaxy. These galaxies are referred to as "clouds" because, from Earth, they appear
+                as faint, misty patches in the southern sky, resembling distant clouds. They were named after the Portuguese
+                explorer Ferdinand Magellan, whose crew documented them during their voyage around the world in the early
+                16th century. As two of the closest galactic neighbors to the Milky Way, the Magellanic Clouds play a key
+                role in understanding galaxy interactions and star formation processes. <br><br>
+                The Large Magellanic Cloud is located about 160,000 light-years from Earth, while the Small Magellanic
+                Cloud lies around 200,000 light-years away. To put their size in perspective, the LMC spans roughly 14,000
+                light-years across, while the Milky Way has a diameter of around 100,000 light-years. The Milky Way is also
+                far more massive, with a stellar mass approximately 10 times greater than that of the LMC and 100 times
+                greater than that of the SMC. Despite their smaller size, both Magellanic Clouds are rich in gas and dust,
+                which are essential for star formation, and contain regions with both young, actively forming stars and
+                older stellar populations. <br><br>
+                A striking feature of the LMC is the Tarantula Nebula (30 Doradus), the most active and massive
+                star-forming region not only in the LMC but in the entire Local Group of galaxies, which includes
+                the Milky Way, Andromeda, and their satellite galaxies. The Tarantula Nebula is an enormous star nursery,
+                significantly larger and more intense than anything in the Milky Way. It spans about 1,000 light-years and
+                produces thousands of new stars, including massive, high-energy stars that release powerful winds and
+                radiation, shaping the nebula's intricate structure. Its sheer size and activity make it the largest known
+                star-forming region in the Local Group, outshining the Milky Way's own star nurseries like the Orion Nebula. <br><br>
+                The Magellanic Clouds are gravitationally bound to the Milky Way, and their interactions with our galaxy have
+                generated complex tidal forces that shape both galaxies. These interactions have produced features such as the
+                Magellanic Stream, a long trail of gas extending between the Clouds and toward the Milky Way. This stream likely
+                formed over billions of years due to the gravitational pull exerted by the Milky Way on the Magellanic Clouds,
+                slowly drawing them closer. Scientists believe that, in the distant future, the Magellanic Clouds may merge with
+                the Milky Way. <br><br>
+                Studying the Magellanic Clouds provides invaluable insights into galaxy formation, stellar evolution
+                and the dynamics of galactic interactions. As dwarf galaxies, they offer a glimpse into the processes
+                occurring in smaller galactic systems and help us understand the role that dwarf galaxies play in the
+                evolution of the universe. Their proximity to Earth allows astronomers to study their stars, star clusters,
+                and gas clouds in exceptional detail, expanding our knowledge of galactic structure and the formation of
+                stars in diverse cosmic environments.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Schwarzes Loch/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none" field-of-view="200deg"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Black Hole</h1>
+            <p>
+                A black hole forms when a massive star reaches the end of its life and undergoes a supernova explosion,
+                leaving behind a dense core. If this core’s mass is high enough—at least three times the mass of the
+                Sun—gravity overwhelms any forces that would normally keep it stable. The core collapses under its own
+                gravity, compressing all its mass into an infinitely small point known as a singularity. This singularity
+                has such an extreme density that it warps the very fabric of space-time around it, creating a powerful
+                gravitational field. This warped space-time generates an invisible boundary called the event horizon—a
+                point of no return, beyond which nothing, not even light, can escape the black hole’s gravitational pull. <br><br>
+                As material approaches a black hole, it doesn’t fall directly into the singularity but instead forms a rapidly
+                rotating accretion disk around it. This disk is made of gas, dust, and even stars that are torn apart by the
+                black hole’s immense gravitational force. The matter in the disk spirals closer to the black hole, heating up
+                due to friction and gravitational compression, reaching temperatures of millions of degrees. This extreme heat
+                causes the accretion disk to emit intense X-rays and visible light, which makes the area surrounding a black
+                hole appear bright, even though the black hole itself remains invisible. If we were to observe a black hole,
+                we could actually see the light emitted by this accretion disk, creating a visible edge around the black hole. <br><br>
+                The strong gravitational field of a black hole also bends and distorts light from nearby stars and objects.
+                Light passing close to the black hole curves around it due to the gravitational pull, creating a lensing effect.
+                This bending of light causes a "halo" around the black hole, often called the photon ring, where light loops
+                around multiple times before escaping. This effect was captured in the famous 2019 image of the supermassive
+                black hole in galaxy M87, showing a glowing ring of light around a dark center. <br><br>
+                Black holes vary in size and mass. Stellar black holes, formed from individual stars, typically range
+                from about 10 to 100 times the mass of the Sun and are roughly the size of a large city, with a diameter
+                of a few kilometers to tens of kilometers. In contrast, supermassive black holes have masses of millions
+                to billions of solar masses. For example, the supermassive black hole at the center of our Milky Way,
+                Sagittarius A*, has a mass equivalent to about 4 million Suns and a diameter of around 24 million kilometers,
+                or about 17 times the diameter of the Sun. One of the largest supermassive black holes ever discovered,
+                TON 618, has a staggering mass of 66 billion solar masses and an event horizon that could encompass our
+                entire solar system. <br><br>
+                Supermassive black holes are found at the centers of nearly every large galaxy, including our own Milky Way,
+                and are fundamental to the structure and dynamics of their galaxies. When a galaxy forms, large clouds of gas
+                and dust collapse under gravity, creating stars and clusters that gradually come together to form the galaxy.
+                In these dense regions, some areas accumulate massive amounts of material that can coalesce into a black hole.
+                Over time, these central black holes grow by consuming gas, dust, and even stars from their surroundings,
+                ultimately achieving supermassive status. Their immense gravity serves as a gravitational anchor, around
+                which the rest of the galaxy stabilizes and organizes. <br><br>
+                As stars and other matter orbit around the supermassive black hole, they contribute to a concentrated,
+                densely packed central region known as the galactic bulge. This bulge is a gravitationally bound structure
+                of stars and gas that enhances the stability of the galaxy, allowing for the formation of spiral arms or other
+                galactic features that we see in various galaxies. The black hole’s gravitational pull helps maintain this
+                stability and can even influence the speed at which stars orbit within the galaxy. By shaping the distribution
+                and movement of matter, the supermassive black hole indirectly influences the overall structure and evolution
+                of its host galaxy. <br><br>
+                An extraordinary effect of black holes is the phenomenon known as time dilation. According to Einstein’s
+                general theory of relativity, time passes more slowly in regions of stronger gravitational fields.
+                Near a black hole, where gravity is extremely intense, time itself is dramatically stretched. This
+                effect becomes particularly noticeable close to the event horizon. If an observer were to approach a
+                black hole and remain just outside the event horizon, their perception of time would slow down relative
+                to someone far away, such as on Earth. For this observer near the black hole, seconds might feel normal
+                to them, but for someone watching from afar, it would seem as though their movements were incredibly slow.
+                Decades, centuries, or even millennia could pass on Earth while only a short amount of time passes near the
+                black hole. <br><br>
+                This gravitational time dilation effect has a profound implication: if an object or person could
+                somehow survive near the event horizon and then return to Earth, they would find that an immense
+                amount of time had passed, potentially thousands or millions of years, depending on how close they got to
+                the black hole. This “time travel” effect is a natural consequence of the way space-time curves around
+                massive objects, particularly black holes. Together, the presence of a supermassive black hole at the
+                galactic center, its role in structuring galaxies, and its effect on time itself make black holes some
+                of the most extraordinary objects in the universe. Not only do they anchor galaxies and influence the
+                formation of stars and other celestial structures, but they also warp space-time to such extremes that
+                they open up questions about the very nature of time, space, and reality.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Structure of an Active Galactic Nucleus (AGN)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c48972411beb4273a6226c6ca2eb9163/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Quasar</h1>
+            <p>
+                A quasar is the extremely bright center of a galaxy powered by a supermassive black hole that actively pulls in large amounts
+                of material, creating a glowing region around it. This bright area is not the black hole itself but rather the accretion disk—a
+                swirling disk of gas and dust that heats up as it spirals into the black hole. This heating process causes the disk to emit massive
+                amounts of light and radiation, often so powerful that it outshines the entire galaxy, making the quasar visible from vast distances. <br><br>
+                Quasars and Seyfert galaxies are both types of Active Galactic Nuclei (AGN). An AGN is an active, luminous core of a galaxy, powered
+                by a black hole that’s actively accreting material. Not all galaxies have AGNs because a black hole only becomes an AGN if it has a
+                steady supply of material to pull in. If there isn’t enough nearby gas or dust, or if the black hole is “quiet,” then the galaxy won’t
+                have an AGN. Our Milky Way, for example, doesn’t have an AGN because its central black hole, Sagittarius A*, is not actively drawing in
+                enough material to produce the high levels of radiation seen in AGNs. <br><br>
+                Seyfert galaxies are a milder type of AGN, often nearby spiral galaxies with bright centers, but their glow isn’t intense enough
+                to outshine the whole galaxy, so we can still see the surrounding stars. Quasars, on the other hand, are the most powerful type of
+                AGN, where the central black hole is consuming so much material that the radiation produced is stronger than the light of the galaxy
+                itself. Quasars are usually found far away, meaning we see them as they were billions of years ago when their black holes were highly
+                active, giving us a glimpse into the early universe. <br><br>
+                In summary, an AGN is an active galactic center powered by a black hole pulling in material and releasing energy. Quasars and
+                Seyfert galaxies are both AGNs, with quasars being the brightest, most energetic form. Not all galaxies have AGNs, as it depends
+                on whether their central black hole has enough material to consume actively.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Pulsar, a magnetized rotating neutron star" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c876c7449be643f196beed027b1b14b4/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Pulsar</h1>
+            <p>
+                Pulsars are incredibly dense neutron stars, remnants of massive stars that exploded as supernovae. These stars typically come
+                from progenitor stars with masses between 8 and 25 times that of the Sun. When such a massive star reaches the end of its life,
+                it runs out of nuclear fuel, leading to a catastrophic collapse of its core. The outer layers are expelled in the supernova
+                explosion, while the core compresses under extreme gravity, forming a neutron star. This core, now incredibly dense, compresses
+                around 1.4 times the mass of the Sun into a sphere only about 20 kilometers in diameter—roughly the size of a small city.
+                Neutron stars, including pulsars, have one of the highest densities in the universe; a single teaspoon of neutron star
+                material would weigh about 6 billion tons on Earth. This density is due to the collapse of atoms under extreme gravitational
+                forces, where protons and electrons combine to form neutrons, packing matter so densely that nearly all space is eliminated. <br><br>
+                A neutron star becomes a pulsar when it has a strong magnetic field and rotates extremely rapidly. Newly formed neutron stars often
+                spin at speeds of up to several hundred rotations per second due to the conservation of angular momentum from the collapsing core.
+                This rapid rotation, combined with a powerful magnetic field, causes the neutron star to emit beams of electromagnetic radiation from
+                its magnetic poles. Since the magnetic poles are usually not aligned with the star's rotational axis, these beams sweep through
+                space as the star rotates, much like the beams of a lighthouse. When one of these beams points toward Earth, we detect a pulse of
+                radiation, which is why they are called "pulsars." <br><br>
+                The magnetic field of a pulsar is incredibly strong, typically in the range of 10^8 to 10^12 gauss—millions to billions of
+                times stronger than Earth’s magnetic field. This intense field accelerates particles around the neutron star to near-light speeds,
+                creating jets of radiation that produce the regular pulsing effect as the star rotates. <br><br>
+                Some neutron stars have even more intense magnetic fields, up to 10^14 to 10^15 gauss, making them magnetars. Magnetars are a
+                unique type of neutron star with the strongest magnetic fields known in the universe. This extreme magnetic field creates powerful
+                stresses in the star’s crust, which can lead to “starquakes” and sudden bursts of high-energy radiation, particularly X-rays and
+                gamma rays. Magnetars tend to have slower rotation rates than typical pulsars because the intense magnetic field quickly drains
+                their rotational energy. However, their magnetic activity makes them highly unpredictable and intense sources of radiation. <br><br>
+                Around some pulsars, a pulsar wind nebula may form. This nebula is a cloud of high-energy particles, such as electrons and positrons,
+                that are accelerated by the magnetic field of the pulsar and expelled into the surrounding space. The energy from these particles
+                illuminates the surrounding gas and dust, creating a glowing nebula that can often be seen around pulsars, such as the famous Crab
+                Pulsar in the Crab Nebula. This nebula is not an accretion disk but rather a cloud of particles and magnetic fields energized by
+                the pulsar’s rapid rotation and intense magnetic activity. <br><br>
+                In summary, pulsars are rapidly rotating neutron stars with strong magnetic fields that emit beams of radiation like a
+                lighthouse. They are born from the collapse of massive stars in supernovae and, in some cases, can evolve into magnetars,
+                which have even stronger magnetic fields and unpredictable bursts of energy. The nebulae seen around some pulsars are pulsar wind
+                nebulae, formed by high-energy particles propelled from the pulsar, illuminating the surrounding space.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Is Betelgeuse really close to go supernova?" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6e3e64df5f4b486ea684557b2406c53b/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Betelgeuse</h1>
+            <p>
+                Betelgeuse, also known as Alpha Orionis, is one of the most well-known stars in the night sky. It is a red supergiant located in
+                the constellation Orion and is easily recognizable as the bright, reddish star marking Orion’s left shoulder. Betelgeuse is about
+                700 light-years away from Earth, making it relatively close on an astronomical scale. Its distinct reddish hue is due to its
+                relatively cool surface temperature of about 3,500 Kelvin, compared to the Sun’s 5,778 Kelvin. <br><br>
+                Betelgeuse is a massive star, estimated to be about 1,000 times the size of the Sun. If it were placed at the center of our solar
+                system, it would extend out past the orbit of Jupiter, engulfing Mercury, Venus, Earth, Mars, and the asteroid belt. This incredible
+                size is due to its status as a red supergiant, a late stage in the life of a massive star. Betelgeuse has used up most of its hydrogen
+                fuel and is now burning heavier elements in its core, causing it to expand to enormous proportions. <br><br>
+                One of the most fascinating aspects of Betelgeuse is that it is nearing the end of its life. As a red supergiant, Betelgeuse
+                is unstable and expected to explode in a supernova relatively soon in cosmic terms—likely within the next 100,000 to 200,000
+                ears. However, due to the unpredictable nature of this stage, it is also possible that Betelgeuse could explode much sooner,
+                potentially even within the next few thousand years or, theoretically, even in the near future. <br><br>
+                In fact, because Betelgeuse is about 700 light-years away, it’s possible that the star has already exploded, and we simply
+                haven’t seen it yet. Since light from Betelgeuse takes 700 years to reach Earth, an explosion would be visible to us only after
+                this time delay, meaning we would witness the supernova 700 years after it actually occurred. <br><br>
+                When Betelgeuse does explode, it will likely be as bright as the full Moon and visible even during the day, shining brilliantly
+                for several weeks before gradually fading. This event would provide an extraordinary sight in the night sky and offer astronomers
+                a unique opportunity to observe a supernova event in real-time, relatively close to Earth. <br><br>
+                Betelgeuse has shown some interesting behavior in recent years, sparking interest and speculation among astronomers.
+                In late 2019 and early 2020, the star experienced an unusual dimming event, where its brightness dropped by about 40%.
+                This sudden dimming, unprecedented in recorded history, led to widespread speculation that Betelgeuse might be on the
+                verge of a supernova. However, subsequent observations revealed that the dimming was likely due to a large ejection of
+                gas and dust from the star, which temporarily obscured its surface from our perspective on Earth. <br><br>
+                The future of Betelgeuse as a supernova holds significance not only for astronomers but also for our understanding of stellar
+                evolution and the life cycles of massive stars. When Betelgeuse finally explodes, it will scatter heavy elements such as carbon,
+                oxygen, and iron into space, contributing to the formation of new stars, planets, and potentially even life elsewhere in the galaxy. <br><br>
+                In summary, Betelgeuse is a fascinating example of a red supergiant star nearing the end of its life. Its immense size, brightness,
+                and unusual recent behavior make it a subject of significant scientific interest. When Betelgeuse eventually goes supernova, it will
+                provide valuable insights into the processes governing the lives and deaths of massive stars, leaving a lasting impact on our
+                understanding of the universe. The explosion could happen within the next few hundred thousand years, or—if we are fortunate to
+                witness it—perhaps even sooner.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Polarstern/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Polaris</h1>
+            <p>
+                The North Star, or Polaris, is one of the most famous stars in the night sky, located in the constellation Ursa Minor.
+                Known as the Pole Star or North Star, Polaris holds a special place in navigation and astronomy because it is almost directly
+                aligned with the Earth's rotational axis. This alignment means that while other stars appear to move across the sky due to Earth’s
+                rotation, Polaris remains nearly fixed in one spot, marking true north in the northern hemisphere. For centuries, this has made Polaris
+                an essential guide for travelers and explorers. <br><br>
+                Polaris is not a single star but part of a triple star system. The main star, Polaris A, is a supergiant approximately
+                2,500 times brighter than the Sun and about 50 times larger in diameter. Polaris A is accompanied by two smaller companion
+                stars, Polaris B and Polaris Ab, which orbit it. Polaris B is a smaller star visible through telescopes, while Polaris Ab is
+                a close companion to Polaris A and difficult to observe directly. <br><br>
+                Located around 430 light-years from Earth, Polaris appears steady in the sky, but it hasn’t always been and will not always
+                be the North Star. Over time, Polaris will shift away from its position as the north celestial pole due to two main factors.
+                The first is axial precession—a slow wobble in Earth’s rotational axis caused by gravitational forces from the Sun and Moon.
+                This wobble gradually shifts Earth’s orientation over a cycle of about 26,000 years, meaning that other stars will eventually
+                take Polaris’s place as the North Star. <br><br>
+                Additionally, our solar system itself is in motion, orbiting the center of the Milky Way galaxy at a speed of roughly
+                828,000 kilometers per hour. As the solar system moves through the galaxy, our position relative to other stars changes
+                over long timescales. Combined with axial precession, this motion causes shifts in the apparent positions of stars, including
+                Polaris. Thousands of years ago, a different star marked true north, and in the distant future, Polaris will no longer serve as
+                the North Star as Earth’s axis and the solar system’s position in the galaxy continue to shift. <br><br>
+                In summary, Polaris is an iconic star, well-known for its role in navigation and its steady position in the sky. As a bright
+                supergiant and part of a multiple star system, it also provides valuable insights into stellar structure. Though it won’t always
+                mark true north due to the combined effects of axial precession and our solar system’s galactic orbit, Polaris continues to serve
+                as a guiding light for explorers and astronomers alike, symbolizing both constancy and change in the ever-shifting night sky.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Sirius/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Sirius</h1>
+            <p>
+                Sirius, also known as the Dog Star, is the brightest star in the night sky as seen from Earth, located in the constellation
+                Canis Major. Its brilliant glow and prominence make it a striking feature in the night sky, easily visible to observers across
+                the globe, especially during the winter months in the Northern Hemisphere. <br><br>
+                Sirius is a binary star system composed of two stars: Sirius A and Sirius B. Sirius A is a main-sequence star approximately
+                twice the mass of the Sun and around 25 times more luminous. Its apparent brightness, however, is not solely due to its luminosity.
+                Its relative proximity to Earth is only about 8.6 light-years, which also contributes to its exceptional brightness, making it the
+                brightest star in our night sky. <br><br>
+                The companion star, Sirius B, is much fainter and was once a massive star that has since collapsed into a white dwarf.
+                White dwarfs are remnants of stars that have exhausted their nuclear fuel and are no longer undergoing fusion reactions.
+                Despite being nearly the size of Earth, Sirius B has a mass similar to that of the Sun, making it extremely dense. The existence
+                of Sirius B was inferred in the 19th century due to a detectable “wobble” in Sirius A’s movement, and it was visually confirmed in
+                1862. Sirius B orbits Sirius A in a long, elliptical orbit, completing one orbit roughly every 50 years.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper cut"> <iframe title="Stars Comparation Free" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c446f4dded6943299c81f26509c473ea/embed?ui_hint=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Stephenson 2-18</h1>
+            <p>
+                Stephenson 2-18 is currently considered the largest known star in the universe. This red supergiant, located in the Stephenson
+                2 star cluster in the constellation Scutum, lies approximately 19,570 light-years from Earth. With a staggering estimated radius
+                of around 2,150 times that of the Sun, Stephenson 2-18 is so immense that if it were placed at the center of our solar system,
+                its surface would extend well beyond the orbit of Saturn, engulfing all inner planets and gas giants up to that distance. <br><br>
+                The sheer scale of Stephenson 2-18 is almost beyond comprehension. For perspective, its volume is so vast that it could contain
+                billions of Suns within it. Despite its size, as a red supergiant, it has a relatively low surface temperature compared to smaller,
+                hotter stars, giving it a deep red color typical of stars at this stage in their life cycle. Yet, its incredible size makes it one
+                of the most luminous stars known, radiating tens of thousands of times more energy than the Sun. <br><br>
+                Stephenson 2-18 is in the later stages of stellar evolution, burning heavier elements in its core as it approaches the
+                end of its life. This phase is unstable and relatively short-lived for such a massive star, and it is expected to end in
+                a supernova explosion. Due to its immense mass, the remnant of this explosion will almost certainly collapse into a black
+                hole. When a star as massive as Stephenson 2-18 undergoes a supernova, the remaining core is so dense that gravity overcomes
+                all opposing forces, compressing the material to a singularity – the core of a black hole.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Kepler22b/scene.gltf" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Kepler 22 b</h1>
+            <p>
+                Kepler-22b is an exoplanet located in the constellation Cygnus, about 600 light-years from Earth. Discovered by NASA's Kepler
+                Space Telescope in 2009 and confirmed in 2011, Kepler-22b was one of the first exoplanets found within the habitable zone of its
+                star, meaning it orbits at a distance where conditions could allow for liquid water to exist on its surface. This discovery made
+                Kepler-22b an exciting candidate in the search for potentially habitable worlds outside our solar system. <br><br>
+                Kepler-22b orbits a G-type star similar to our Sun, although slightly smaller and cooler. The planet’s orbit around its star takes
+                290 days, placing it at a distance that allows temperatures to be moderate, possibly suitable for sustaining liquid water if the
+                atmosphere has the right composition. Scientists estimate that the average surface temperature of Kepler-22b could be around 22
+                degrees Celsius, assuming a similar atmosphere to Earth’s. However, the exact composition of its atmosphere
+                remains unknown, and it is uncertain if it has the right conditions to support life. <br><br>
+                In terms of size, Kepler-22b is significantly larger than Earth, with a radius about 2.4 times that of our planet.
+                This size places Kepler-22b in a category known as super-Earths or mini-Neptunes, planets that are larger than Earth
+                but smaller than gas giants like Neptune. Due to its size, it’s unclear whether Kepler-22b has a rocky surface like Earth’s
+                or if it is covered by a thick gaseous layer. If it has a rocky composition, it could potentially have conditions closer to
+                those we consider favorable for life. <br><br>
+                The discovery of Kepler-22b was a milestone for exoplanet research and provided the first strong indication that
+                planets within the habitable zone of their stars are common. Since Kepler-22b’s discovery, astronomers have found many more
+                planets in habitable zones, some even closer to Earth in size. However, Kepler-22b remains a subject of fascination and study
+                because it represents one of the earliest and most intriguing finds in the search for worlds like ours.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Proxima Centauri b.glb" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Proxima Centauri b</h1>
+            <p>
+                Proxima Centauri b is an exoplanet orbiting the star Proxima Centauri, which is part of the Alpha Centauri star system, the
+                closest stellar system to our own. Located just 4.24 light-years away from Earth, Proxima Centauri is a red dwarf and the nearest
+                star to the Sun, making Proxima Centauri b the closest known exoplanet to our solar system. This proximity has made Proxima Centauri
+                b an especially intriguing object of study in the search for potentially habitable planets outside our solar system. <br><br>
+                Proxima Centauri b orbits its parent star at a distance that places it within the habitable zone, the region around a star where
+                conditions might allow for liquid water to exist on the planet's surface. Its orbital period is only about 11 days, as Proxima
+                Centauri is a much smaller and cooler star compared to the Sun. Despite this close orbit, Proxima Centauri b receives a similar
+                amount of stellar energy as Earth does from the Sun, due to the dimmer output of its red dwarf star. If Proxima Centauri b has an
+                atmosphere, it could help regulate temperatures, potentially allowing for conditions that might support life. <br><br>
+                In terms of size, Proxima Centauri b is slightly larger than Earth, with a minimum mass of about 1.17 times that of Earth.
+                This makes it an Earth-sized exoplanet and possibly a rocky planet, which further raises the possibility of a surface environment
+                that could harbor water. However, many unknowns remain regarding its atmosphere and composition. <br><br>
+                One of the challenges for Proxima Centauri b's habitability is the stellar activity of Proxima Centauri itself. As a red dwarf,
+                Proxima Centauri frequently emits strong stellar flares, which can release bursts of radiation that might strip away an atmosphere
+                or pose challenges for any potential life on the surface. The intensity and frequency of these flares are factors that scientists
+                are studying to better understand how they might affect Proxima Centauri b’s potential for habitability. <br><br>
+                Proxima Centauri b’s discovery in 2016 marked a milestone in exoplanet research, as it is not only the closest exoplanet but also
+                one located in the habitable zone of its star. This has made it a prime candidate for further observation, especially as new
+                technologies develop, like the James Webb Space Telescope and potential future interstellar probes, which might one day study
+                Proxima Centauri b directly.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Low-Mass X-ray Binary (LMXB)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/5bcff94396d34cca9209f2177a110d42/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>X-Ray Binary System</h1>
+            <p>
+                A binary star system is a system of two stars that are gravitationally bound and orbit a common center of mass.
+                These systems often form when two stars are born from the same cloud of gas and dust and are close enough to remain
+                gravitationally linked. Binary systems are very common in the universe and come in various forms, depending on the characteristics
+                and life stages of the stars involved. <br><br>
+                An X-ray binary system is a special type of binary where one of the stars is a very dense, compact object—such as a neutron star,
+                black hole, or even a white dwarf—while the other is a larger, often more massive, star. In this system, the dense object acts as
+                a "parasite," pulling matter from its companion star due to its strong gravitational pull. As this material is drawn in, it forms
+                a rotating accretion disk around the compact object. The matter in the disk heats up dramatically due to friction and pressure as
+                it spirals toward the compact star, eventually reaching temperatures that produce intense X-ray radiation. This high-energy radiation
+                can be detected from Earth, making these systems powerful sources of X-rays. <br><br>
+                X-ray binary systems typically form in the later stages of stellar evolution. When a massive star exhausts its nuclear fuel,
+                it may end its life in a supernova, leaving behind a dense remnant—a neutron star or black hole. If this remnant is gravitationally
+                bound to a nearby companion star, it may begin to pull material from this companion, creating the accretion disk and emitting X-rays.
+                However, in some cases, a white dwarf can also serve as the "parasitic" object, drawing mass from its larger companion. <br><br>
+                Interestingly, when a white dwarf pulls in enough material from its companion, it can reach a point where its core temperature becomes
+                hot enough to ignite nuclear fusion again. This can lead to a burst of energy in the form of a nova. In extreme cases, if the white
+                dwarf accumulates enough mass, it may even collapse, leading to a type Ia supernova—a thermonuclear explosion that completely disrupts
+                the white dwarf. There is also speculation that, in rare cases, a white dwarf might accrete enough material to temporarily resemble a
+                main-sequence star again, as nuclear fusion briefly resumes in its core. <br><br>
+                In summary, an X-ray binary is a special type of binary star system in which a compact object acts as a "parasite," drawing in
+                material from a companion star and creating intense X-ray emissions. Whether the compact object is a neutron star, black hole,
+                or white dwarf, the process of accreting material can dramatically affect both stars, providing insights into stellar evolution,
+                the end stages of massive stars, and the unique interactions that occur in binary systems.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper cut"> <iframe title="Milky Way" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/eb0087b800414744b4cee3440888088c/embed?ui_hint=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Milky Way</h1>
+            <p>
+                The Milky Way is the galaxy that contains our solar system and is one of billions of galaxies in the universe. When viewed from Earth
+                on a clear, dark night, it appears as a faint, milky band of light stretching across the sky, formed by the light of countless stars
+                that are too distant to be seen individually. The Milky Way is a spiral galaxy, meaning it has a flat, rotating disk with spiral arms
+                extending outward from a central bulge. It spans about 100,000 light-years in diameter and contains an estimated 100 to 400 billion stars. <br><br>
+                At the heart of the Milky Way lies a dense region known as the galactic bulge, and within this bulge is a supermassive black hole called Sagittarius A*.
+                This black hole has a mass of about 4 million times that of the Sun and acts as the gravitational anchor of the galaxy, around which all stars, gas,
+                and dust in the Milky Way orbit. The spiral arms, where our solar system is located, are regions rich in interstellar gas and dust, providing
+                the raw materials needed for new stars to form. These arms also contain young, bright stars and numerous star clusters, making them some of
+                the most active and visually striking regions of the galaxy. <br><br>
+                Our solar system is located in one of these spiral arms, specifically the Orion Arm, about 27,000 light-years from the galactic center.
+                As part of the Milky Way, the Sun and its planets orbit the center of the galaxy, taking roughly 230 million years to complete one
+                full orbit. This journey around the galaxy’s core is known as the Sun’s galactic year. <br><br>
+                The Milky Way is constantly interacting with its neighboring galaxies, particularly the Magellanic Clouds, two small satellite galaxies
+                that orbit our galaxy. These interactions create gravitational forces that shape the structure of the Milky Way and contribute to a
+                stream of gas and stars connecting these galaxies. In the distant future, the Milky Way is expected to merge with the Andromeda Galaxy,
+                our closest large spiral galaxy located about 2.5 million light-years away. This future collision, which will happen in about 4 billion years,
+                will transform both galaxies into a single, larger elliptical galaxy. <br><br>
+                Beyond its structure and stellar population, the Milky Way holds a vast amount of dark matter, an invisible and mysterious substance
+                that does not emit light but exerts gravitational forces. Dark matter is believed to make up a significant portion of the Milky
+                Way’s mass, affecting the motion of stars and the galaxy’s overall structure.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper cut"> <iframe title="Andromeda Galaxy 3D Galaxy" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/7de529db0d384e118b7ae8d63a8bab80/embed?ui_hint=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Andromeda</h1>
+            <p>
+                The Andromeda Galaxy, also known as Messier 31 or M31, is the closest spiral galaxy to the Milky Way and the largest galaxy in our
+                local group of galaxies. Located approximately 2.5 million light-years from Earth in the constellation Andromeda, it is visible
+                to the naked eye on clear, dark nights and appears as a faint, smudgy spot. With a diameter of about 220,000 light-years,
+                Andromeda is more than twice the size of the Milky Way and contains an estimated one trillion stars, making it one of the
+                largest and most massive galaxies in our cosmic neighborhood. <br><br>
+                Andromeda, like the Milky Way, is a spiral galaxy with a large central bulge and spiral arms. Its spiral arms are rich in gas,
+                dust, and young, hot stars, indicating active star formation. The core of Andromeda contains a dense concentration of older stars,
+                and astronomers have found evidence of a supermassive black hole at its center, similar to Sagittarius A* in the Milky Way.
+                This black hole has a mass of around 140 million times the Sun, making it 30 times more massive than the black hole at the
+                center of our own galaxy. <br><br>
+                The Andromeda Galaxy and the Milky Way are moving toward each other at a speed of about 110 kilometers per second. In about
+                4 billion years, the two galaxies are expected to collide in a spectacular cosmic event. This future collision, known as a
+                galactic merger, will not result in direct collisions between individual stars due to the vast distances between them, but
+                their gravitational fields will interact strongly. The process will likely lead to the formation of a new, larger elliptical
+                galaxy, sometimes referred to as Milkomeda or Milkdromeda. <br><br>
+                During the merger, the spiral structures of both galaxies will be disrupted, and stars will be flung into new orbits,
+                reshaping the galactic structure. The supermassive black holes at the centers of both galaxies are also expected to merge,
+                forming an even larger black hole. This galactic merger will dramatically change the night sky as seen from Earth, filling
+                it with brilliant new star clusters and streams of gas and dust. <br><br>
+                Beyond its significance as our closest galactic neighbor, Andromeda plays an important role in astronomy. Because it is
+                close and similar to the Milky Way in structure, studying Andromeda helps scientists learn about the processes that govern
+                the evolution of spiral galaxies. It is also an important example of stellar populations at various stages of evolution,
+                with a mix of older stars in the bulge and younger stars in the spiral arms, providing insight into star formation cycles
+                within galaxies.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="The structure of the observable universe" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/12af810acf984bca85d6f889f0ef7a97/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Observable Universe</h1>
+            <p>
+                The observable universe is a term used to describe the portion of the entire universe that we can see or detect from Earth.
+                This observable region is not a fixed structure, but rather a limit defined by the speed of light and the age of the universe itself.
+                Because light travels at a finite speed—around 300,000 kilometers per second—it takes time to reach us from distant objects.
+                Therefore, we don’t see the universe as it is in real-time, but rather as it was when the light from those objects began its
+                journey toward us. This concept introduces a kind of "cosmic time delay," where the farther away an object is, the further back
+                in time we are looking. <br><br>
+                When we observe nearby galaxies, we see them as they were relatively recently in cosmic terms because their light has only traveled
+                a short distance to reach us. For instance, the Andromeda Galaxy is about 2.5 million light-years away, so we see it as it was 2.5
+                million years ago. In contrast, when we look at galaxies billions of light-years away, we are seeing them as they existed billions
+                of years in the past. The further we look into space, the closer we get to the time of the Big Bang, the origin of the universe
+                approximately 13.8 billion years ago. However, because of the expansion of space, the observable universe stretches much farther
+                than 13.8 billion light-years in radius; it extends to about 46.5 billion light-years in every direction. <br><br>
+                This time delay creates a layered appearance in the observable universe, which is, in a sense, an illusion of perception. Because
+                light from distant objects takes so long to reach us, we see a mixture of objects from different cosmic eras. Nearby, we observe
+                spiral galaxies like our own Milky Way, which appear relatively stable and well-formed. Further out, we find elliptical galaxies
+                and quasars, which are the energetic cores of young galaxies powered by supermassive black holes. These quasars were more common
+                in the early universe, when galaxies were young and had an abundance of material around their centers to feed their black holes.
+                As we approach the outer edges of the observable universe, we encounter the Cosmic Microwave Background (CMB), the afterglow of
+                the Big Bang. This CMB marks the "edge" of what we can observe because it represents the point at which the universe became
+                transparent, around 380,000 years after the Big Bang. Before that, the universe was opaque, so we cannot see anything beyond that point. <br><br>
+                What’s truly fascinating is that this layered structure we observe is not a reflection of the universe’s current state, but rather a
+                "snapshot" of its history as we see it from Earth. This means that the observable universe is different for every observer in space.
+                If we could teleport to the edge of our observable universe and look outward from there, we would see a similar structure—nearby galaxies,
+                distant elliptical galaxies, and quasars even farther out, all oriented around our new vantage point. Each observer in the universe,
+                regardless of location, would see themselves as being at the "center" of their own observable universe. This is a consequence of the
+                cosmic expansion being isotropic, meaning it happens uniformly in all directions. <br><br>
+                The expansion of the universe plays a critical role in shaping our observable limits. Space itself is expanding, and this expansion
+                is accelerating due to a mysterious force called dark energy. The farther away an object is, the faster it appears to be receding
+                from us due to the expansion of space. In fact, objects at the edge of the observable universe are receding faster than the speed
+                of light, not because they are moving through space faster than light, but because space itself is expanding between us and them.
+                This phenomenon does not violate the laws of relativity because it’s the fabric of space that is stretching, not the objects moving
+                through it. <br><br>
+                As a result of this accelerated expansion, some distant galaxies will eventually move beyond our observable universe. Their light
+                will no longer be able to reach us, effectively "disappearing" over the cosmic horizon. In time, our observable universe will shrink
+                in terms of the number of visible galaxies, as more and more objects move beyond this limit. This cosmic horizon marks the boundary
+                beyond which we cannot observe, even though the universe itself may continue infinitely beyond it. <br><br>
+                If the universe were not expanding faster than the speed of light, it would theoretically be possible for light from ever more distant
+                objects to reach us, gradually increasing the observable universe and allowing us to see more of it over time. However, because
+                of the accelerating expansion, this is not the case; rather, our observable universe will become more limited in the distant future. <br><br>
+                In summary, what we observe is a result of cosmic time delay and the finite speed of light. We see distant objects in earlier stages
+                of the universe’s evolution, and the observable universe appears structured into layers because of this delay. The expansion of
+                the universe means that there is no central point, and each observer in the universe would perceive a similar structure from
+                their own location. The layers of spiral galaxies, elliptical galaxies, quasars, and the Cosmic Microwave Background are not
+                the real-time structure of the universe but a complex perception shaped by the passage of light through billions of years of
+                space and time. This "illusion" is what we call the observable universe, a cosmic view limited by both distance and time,
+                providing us with a fascinating, though incomplete, glimpse into the vastness of the cosmos.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Navigating the Cosmic Web of the Universe" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/40d67c7dceb741dcb1c019a3c02fb5a8/embed?ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1"> </iframe> </div>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Cosmic Web</h1>
+            <p>
+                The Cosmic Web is the large-scale structure of the universe, made up of vast networks of galaxies, gas, and dark matter that span
+                across billions of light-years. It is called the "web" because it resembles a vast, interconnected network with filaments, nodes,
+                and voids. The filaments contain clusters of galaxies and gas, while the nodes are dense regions where these filaments intersect,
+                forming massive galaxy clusters. The voids are the empty spaces in between, where little to no matter exists. <br><br>
+                The Cosmic Web formed through gravitational attraction in the early universe. After the Big Bang, small fluctuations in the distribution
+                of matter led to regions of slightly higher density. Over billions of years, gravity pulled matter into these denser areas, creating
+                a structure of interconnected filaments. As dark matter and gas condensed into these filaments, galaxies formed, gathering along these
+                cosmic threads. <br><br>
+                Dark matter plays a crucial role in the Cosmic Web. Though invisible, it makes up about 85% of the matter in the universe and
+                acts as the "skeleton" of the web. Galaxies and gas follow the gravitational pull of dark matter, clustering along the dark matter
+                filaments and giving the Cosmic Web its shape. <br><br>
+                The Cosmic Web is essential for understanding galaxy formation and evolution. The distribution of galaxies and clusters within
+                the web affects how galaxies interact and merge, influencing their size, shape, and star formation rates. Galaxies in dense nodes,
+                for example, tend to have higher rates of interaction and star formation than those in less dense regions. <br><br>
+                Observing the Cosmic Web is challenging because of its immense scale and the faintness of the matter between galaxies. However,
+                with advanced telescopes and simulations, astronomers have been able to map out parts of the web, giving us a glimpse into the vast,
+                interconnected structure of the universe. <br><br>
+                In essence, the Cosmic Web is the backbone of the universe, shaping the large-scale distribution of galaxies and providing
+                insight into how gravity and dark matter have sculpted the cosmos over billions of years.
+            </p>
+            <button class="button explore">
+                Explore
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="viewer">
+            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            <model-viewer src="assets/3D Models/Multiversum.glb" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
+            shadow-intensity="0" interaction-prompt="none" min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m"></model-viewer>
+            <button class="button viewInfo">
+                View Info
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+        <div class="info">
+            <h1>Multiverse</h1>
+            <p>
+                The multiverse is a theoretical concept suggesting that our universe might be just one of many universes that exist.
+                According to this idea, there could be countless other universes, each with its own distinct properties, physical laws, and
+                constants. These universes, collectively referred to as the "multiverse," would together form a vast, almost unimaginable structure
+                that goes beyond the boundaries of our known cosmos. <br><br>
+                The multiverse theory has its roots in several different areas of physics and cosmology. One key idea comes from quantum mechanics
+                and the concept of the Many-Worlds Interpretation. This interpretation suggests that every possible outcome of a quantum event creates
+                a new, branching universe. For example, if a particle has two possible paths to follow, it may take both paths simultaneously but in
+                separate, parallel universes. In this view, an infinite number of branching universes would arise from every quantum event, creating
+                a vast number of parallel realities. <br><br>
+                Another concept that supports the multiverse comes from cosmic inflation, a theory in cosmology. Inflation proposes that
+                the universe underwent a rapid expansion shortly after the Big Bang, growing exponentially in a fraction of a second. Some
+                versions of this theory suggest that inflation might continue indefinitely in other regions of space, creating "bubble universes"
+                that are disconnected from each other. Each bubble could form its own universe with different properties, separated by regions where
+                space is still inflating too rapidly for interaction to occur between bubbles. This is known as the "bubble universe" or "eternal
+                inflation" model. <br><br>
+                String theory, a theoretical framework in physics, also provides a basis for the multiverse. String theory attempts to unify all
+                fundamental forces and particles into a single framework by proposing that everything is made up of tiny, vibrating strings.
+                According to string theory, there may be numerous possible configurations for these strings, leading to different kinds of universes,
+                each with its own distinct set of physical laws. The concept of a "landscape multiverse" arises from this, suggesting a vast number
+                of possible universes allowed by string theory, each with its own physical constants. <br><br>
+                If the multiverse exists, it could help explain some puzzling aspects of our own universe. For example, our universe appears to have
+                certain "fine-tuned" conditions that allow life to exist, such as specific values for gravity, the electromagnetic force, and other
+                constants. In a multiverse, it’s possible that each universe has different values for these constants, and we simply happen to live
+                in one of the universes where conditions are right for life. This idea is known as the "anthropic principle"—the notion that the
+                universe must allow for our existence because we are here to observe it. <br><br>
+                However, the multiverse remains a highly speculative idea, and there is currently no direct evidence to confirm its existence.
+                One major challenge with the multiverse hypothesis is that, by definition, other universes are beyond our observable horizon, making
+                it difficult, if not impossible, to detect them or interact with them in any way. This lack of observable evidence makes the multiverse
+                concept controversial and places it at the edge of scientific theory, as it is challenging to test or falsify through experiments.
             </p>
             <button class="button explore">
                 Explore

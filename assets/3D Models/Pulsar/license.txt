@@ -1,0 +1,8 @@
+Model Information:
+* title:	Pulsar, a magnetized rotating neutron star II
+* source:	https://sketchfab.com/3d-models/pulsar-a-magnetized-rotating-neutron-star-ii-e216d18f70c04ee994a5e99a060a94d6
+* author:	Salvatore Orlando (https://sketchfab.com/sorlando)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
