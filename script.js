@@ -121,7 +121,7 @@ NavLinks.forEach((link, index) => {
       isInMoreDiv = true;
     }
 
-    NavIcon.style.transform = `translateY(${offset}px) rotate(90deg)`; // Setze die Position des navIcons
+    NavIcon.style.transform = `translateY(${offset}px) rotate(45deg)`; // Setze die Position des navIcons
     
     if (isInMoreDiv && status === 'closed') {
       NavIcon.style.display = "none"; // Verstecke die Rakete, wenn das more div geschlossen ist

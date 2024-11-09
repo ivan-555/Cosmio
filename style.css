@@ -273,14 +273,6 @@ body{
 #sidebar .heading h1{
     font-size: 2rem;
     margin-bottom: 5px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#sidebar .heading h1 img{
-    height: 40px;
 }
 
 #sidebar .heading p{
@@ -361,18 +353,14 @@ body{
 
 /* Rocket Spline Modell */
 #sidebar nav ul .icon{
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     position: absolute;
-    top: 4px;
-    left: 15px;
-    transform: translateY(0px) rotate(90deg);
+    top: 5px;
+    left: 20px;
+    transform: translateY(0px) rotate(45deg);
     transition: transform 1s ease, opacity .3s;
     pointer-events: none;
-    opacity: 0 !important;
-}
-#sidebar nav ul .icon.active{
-    opacity: 1 !important;
 }
 
 #sidebar .hamburger{
