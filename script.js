@@ -16,18 +16,20 @@ const sidebarMoreDiv = document.querySelector('#sidebar .more');
 const sidebarMoreDivLinks = document.querySelectorAll('#sidebar .more li a');
 const language = document.body.getAttribute('data-language');
 
-// Hide Page Preloader
-setTimeout(() => {
+// Hide Page Preloader after first Model Viewer is loaded
+modelViewers[0].addEventListener('load', () => {
+  setTimeout(() => {
     preloader.classList.add('hide');
-}, 4000); // preloader time while models are loading
+  }, 2000);
+});
 
 
- // Verhindert das Scrollen bei gedrücktem Mausrad
- document.addEventListener('mousedown', function(event) {
-  // Überprüfen, ob das mittlere Mausrad gedrückt wird (event.button === 1)
-  if (event.button === 1) {
-      event.preventDefault();  // Standardaktion wie Scrollen verhindern
-  }
+// Verhindert das Scrollen bei gedrücktem Mausrad
+document.addEventListener('mousedown', function(event) {
+// Überprüfen, ob das mittlere Mausrad gedrückt wird (event.button === 1)
+if (event.button === 1) {
+    event.preventDefault();  // Standardaktion wie Scrollen verhindern
+}
 });
 
 // Scrollen per Mausrad auf der gesamten Seite deaktivieren und für p Elemente und Sidebar zulassen
