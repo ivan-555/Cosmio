@@ -246,6 +246,7 @@ body{
 /* opens sidebar */
 #sidebar.show{
     transform: translateX(10px);
+    backdrop-filter: blur(3px);
 }
 
 #sidebar .language{
