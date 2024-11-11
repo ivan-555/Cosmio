@@ -443,7 +443,7 @@ body{
 }
 /* cuts of the top and bottom to hide the watermark */
 .page .viewer .sketchfab-embed-wrapper.cut iframe{
-    height: 110%;
+    height: calc(100vh + 100px);
     top: 50%;
     transform: translateY(-50%);
 }
