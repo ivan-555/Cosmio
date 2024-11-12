@@ -173,20 +173,45 @@ modelViewers.forEach((modelViewer, index) => {
 });
 
 
-// Intersection Observer für das Lazy Loading der 3D-Modelle
-const observer = new IntersectionObserver((entries, observer) => {
+
+
+
+
+
+// Funktion zum Laden des Model-Viewer-Scripts als Modul
+function loadModelViewerScript() {
+  return new Promise((resolve, reject) => {
+    const existingScript = document.querySelector("script#model-viewer");
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
+      script.type = "module";  // Setze das type-Attribut auf module
+      script.id = "model-viewer";  // Zur Identifizierung für zukünftige Verwendung
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    } else {
+      resolve();  // Falls das Script bereits geladen ist
+    }
+  });
+}
+
+// Initialisiere den Intersection Observer
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const modelViewer = entry.target;
-      if (!modelViewer.src) { // Prüfen, ob src noch nicht gesetzt ist
-        modelViewer.src = modelViewer.getAttribute('data-src');
-        observer.unobserve(modelViewer); // Beobachtung beenden, nachdem src gesetzt wurde
-      }
+      modelViewer.setAttribute('src', modelViewer.getAttribute('data-src'));
+      observer.unobserve(modelViewer);  // Stoppe das Beobachten nach dem Laden
     }
   });
-}, { rootMargin: '0px 0px -200px 0px' }); // Optionales Offset zur Aktivierung
+}, { threshold: 0.1 });  // Beobachte nur, wenn das Modell fast sichtbar ist
 
-// Observer für jedes model-viewer Element hinzufügen
-modelViewers.forEach(modelViewer => {
-  observer.observe(modelViewer);
-});
+// Lade das Model Viewer-Script nur auf der Startseite
+if (pages[0].classList.contains('active')) {
+  loadModelViewerScript().then(() => {
+    modelViewers.forEach(modelViewer => {
+      observer.observe(modelViewer);  // Beobachte jedes `model-viewer`-Element
+    });
+  }).catch(err => console.error("Error loading model-viewer script:", err));
+}
