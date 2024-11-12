@@ -7,12 +7,21 @@ const sidebarHeader = document.querySelector('#sidebar .heading');
 const hamburger = document.querySelector('.hamburger');
 const viewInfoButtons = document.querySelectorAll('.viewInfo');
 const exploreButtons = document.querySelectorAll('.explore');
+const modelViewers = document.querySelectorAll('model-viewer');
+const MWLoaders = document.querySelectorAll('.MWLoader');
 const pageInfos = document.querySelectorAll('.page .info');
 const sidebarShowMoreButton = document.querySelector('#sidebar .show-more');
 const sidebarShowMoreButtonText = document.querySelector('#sidebar .show-more span');
 const sidebarMoreDiv = document.querySelector('#sidebar .more');
 const sidebarMoreDivLinks = document.querySelectorAll('#sidebar .more li a');
 const language = document.body.getAttribute('data-language');
+
+// Hide Page Preloader after first Model Viewer is loaded
+modelViewers[0].addEventListener('load', () => {
+  setTimeout(() => {
+    preloader.classList.add('hide');
+  }, 2000);
+});
 
 
 // Verhindert das Scrollen bei gedrücktem Mausrad
@@ -96,53 +105,38 @@ sidebarShowMoreButton.addEventListener('click', () => {
 
 
 
-// Seiten-Navigation und dynamisches Laden der `model-viewer`-Elemente
+// Navigate Between Pages
 NavLinks.forEach((link, index) => {
   link.addEventListener('click', () => {
     if (index <= 11) {
       NavIcon.style.display = "block";
     }
-
-    // Entferne die Klasse 'active' von allen Seiten und füge sie zur gewählten Seite hinzu
     pages.forEach(page => page.classList.remove('active'));
     pages[index].classList.add('active');
+    
+    let offset = index * 50; // Standard offset für die normalen Links
+    let isInMoreDiv = false; // Flag um zu prüfen, ob ein Link im "more" Div angeklickt wurde
 
-    // `model-viewer`-Element für die geklickte Seite dynamisch laden
-    const container = pages[index].querySelector('.model-viewer-container');
-    if (container) {
-        container.appendChild(globalModelViewer); // Verschiebe `model-viewer`-Element in den neuen Container
-        loadModel(container); // Aktualisiere das Modell
-    }
-
-    // Position des Navigations-Icons aktualisieren
-    let offset = index * 50;
-    let isInMoreDiv = false;
-
+    // Prüfen, ob der geklickte Link im "more" Div ist
     if (link.closest('.more')) {
-      offset += 60;
+      offset += 60; // Erhöhe den offset um 60px, wenn der Link im "more" Div ist
       isInMoreDiv = true;
     }
 
-    NavIcon.style.transform = `translateY(${offset}px) rotate(45deg)`;
-
+    NavIcon.style.transform = `translateY(${offset}px) rotate(45deg)`; // Setze die Position des navIcons
+    
     if (isInMoreDiv && status === 'closed') {
-      NavIcon.style.display = "none";
+      NavIcon.style.display = "none"; // Verstecke die Rakete, wenn das more div geschlossen ist
     } else {
-      NavIcon.style.display = "block";
+      NavIcon.style.display = "block"; // Zeige die Rakete an, wenn sie nicht im more div ist oder es offen ist
     }
 
-    // Sidebar auf mobilen Geräten schließen
     if (window.innerWidth < 1450) {
-      sidebar.classList.remove('show');
+      sidebar.classList.remove('show'); // Schließe die Sidebar auf mobilen Geräten
       hamburger.classList.remove('isX');
     }
   });
 });
-
-
-
-
-
 
 //View Info and Explore Buttons
 viewInfoButtons.forEach(viewInfoButton => {
@@ -169,57 +163,11 @@ exploreButtons.forEach(exploreButton => {
   });
 });
 
-
-
-// Funktion zum dynamischen Laden des `model-viewer`-Elements
-// Funktion zum Entladen des vorhandenen Modells
-function unloadModel(container) {
-  const existingModelViewer = container.querySelector('model-viewer');
-  if (existingModelViewer) {
-      existingModelViewer.remove(); // Entfernt das model-viewer-Element und gibt den WebGL-Kontext frei
-  }
-}
-
-// Erstellt ein einziges model-viewer-Element
-const globalModelViewer = document.createElement('model-viewer');
-globalModelViewer.setAttribute('alt', '3D-Modell');
-globalModelViewer.setAttribute('auto-rotate', '');
-globalModelViewer.setAttribute('camera-controls', '');
-globalModelViewer.setAttribute('background-color', 'transparent');
-globalModelViewer.setAttribute('shadow-intensity', '0');
-globalModelViewer.setAttribute('interaction-prompt', 'none');
-
-// Füge das globalModelViewer-Element zum ersten Container hinzu
-pages[0].querySelector('.model-viewer-container').appendChild(globalModelViewer);
-
-// Funktion zum Laden des Modells
-function loadModel(container) {
-  // Vor dem Laden des neuen Modells entladen wir das vorhandene Modell
-  unloadModel(container);
-
-  const modelSrc = container.getAttribute('data-src');
-
-  // Erstelle das `model-viewer`-Element und setze die Attribute
-  const modelViewer = document.createElement('model-viewer');
-  modelViewer.setAttribute('src', modelSrc);
-  modelViewer.setAttribute('alt', '3D-Modell');
-  modelViewer.setAttribute('auto-rotate', '');
-  modelViewer.setAttribute('camera-controls', '');
-  modelViewer.setAttribute('background-color', 'transparent');
-  modelViewer.setAttribute('shadow-intensity', '0');
-  modelViewer.setAttribute('interaction-prompt', 'none');
-
-  // Füge den neuen `model-viewer` in den Container ein
-  container.appendChild(modelViewer);
-
-  // Ladeanimation (MWLoader) für das spezifische Modell ausblenden, wenn das Modell geladen wurde
-  const loader = container.querySelector('.MWLoader');
+// Model Viewer Loader
+modelViewers.forEach((modelViewer, index) => {
   modelViewer.addEventListener('load', () => {
-      setTimeout(() => {
-          loader.style.display = 'none'; // Versteckt den Ladebildschirm nach dem Laden des Modells
-          preloader.style.display = 'none'; // Versteckt den initialen Preloader
-      }, 1000); // Verzögerung, um Flackern zu verhindern
+    setTimeout(() => {
+          MWLoaders[index].style.display = 'none'; // Verstecke den Preloader nach dem Laden des Modells
+      }, 1000); // Verzögerung, um flackern zu verhindern
   });
-}
-
-loadModel(pages[0].querySelector('.model-viewer-container')); // Lade das erste model-viewer-Element beim Laden der Seite
+});
