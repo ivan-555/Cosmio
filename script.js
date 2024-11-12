@@ -110,7 +110,8 @@ NavLinks.forEach((link, index) => {
     // `model-viewer`-Element für die geklickte Seite dynamisch laden
     const container = pages[index].querySelector('.model-viewer-container');
     if (container) {
-      loadModel(container);
+        container.appendChild(globalModelViewer); // Verschiebe `model-viewer`-Element in den neuen Container
+        loadModel(container); // Aktualisiere das Modell
     }
 
     // Position des Navigations-Icons aktualisieren
@@ -171,33 +172,54 @@ exploreButtons.forEach(exploreButton => {
 
 
 // Funktion zum dynamischen Laden des `model-viewer`-Elements
-function loadModel(container) {
-  const modelSrc = container.getAttribute('data-src');
-  
-  // Prüfe, ob das `model-viewer`-Element noch nicht vorhanden ist
-  if (!container.querySelector('model-viewer')) {
-    
-    const modelViewer = document.createElement('model-viewer');
-    modelViewer.setAttribute('src', modelSrc);
-    modelViewer.setAttribute('alt', '3D-Modell');
-    modelViewer.setAttribute('auto-rotate', '');
-    modelViewer.setAttribute('camera-controls', '');
-    modelViewer.setAttribute('background-color', 'transparent');
-    modelViewer.setAttribute('shadow-intensity', '0');
-    modelViewer.setAttribute('interaction-prompt', 'none');
-
-    // Füge den `model-viewer` in den Container ein
-    container.appendChild(modelViewer);
-
-    // Greife auf den spezifischen `MWLoader` zu und blende ihn nach einer Verzögerung aus, um Flackern zu verhindern
-    const loader = container.querySelector('.MWLoader');
-    modelViewer.addEventListener('load', () => {
-      setTimeout(() => {
-        loader.style.display = 'none'; // Verstecke den Ladebildschirm nach dem Laden des Modells mit Verzögerung
-        preloader.style.display = 'none'; // Verstecke den gesamten Preloader, wenn das Modell geladen ist
-      }, 1000); // Verzögerung von 1000ms
-    });
+// Funktion zum Entladen des vorhandenen Modells
+function unloadModel(container) {
+  const existingModelViewer = container.querySelector('model-viewer');
+  if (existingModelViewer) {
+      existingModelViewer.remove(); // Entfernt das model-viewer-Element und gibt den WebGL-Kontext frei
   }
+}
+
+// Erstellt ein einziges model-viewer-Element
+const globalModelViewer = document.createElement('model-viewer');
+globalModelViewer.setAttribute('alt', '3D-Modell');
+globalModelViewer.setAttribute('auto-rotate', '');
+globalModelViewer.setAttribute('camera-controls', '');
+globalModelViewer.setAttribute('background-color', 'transparent');
+globalModelViewer.setAttribute('shadow-intensity', '0');
+globalModelViewer.setAttribute('interaction-prompt', 'none');
+
+// Füge das globalModelViewer-Element zum ersten Container hinzu
+pages[0].querySelector('.model-viewer-container').appendChild(globalModelViewer);
+
+// Funktion zum Laden des Modells
+function loadModel(container) {
+  // Vor dem Laden des neuen Modells entladen wir das vorhandene Modell
+  unloadModel(container);
+
+  const modelSrc = container.getAttribute('data-src');
+
+  // Erstelle das `model-viewer`-Element und setze die Attribute
+  const modelViewer = document.createElement('model-viewer');
+  modelViewer.setAttribute('src', modelSrc);
+  modelViewer.setAttribute('alt', '3D-Modell');
+  modelViewer.setAttribute('auto-rotate', '');
+  modelViewer.setAttribute('camera-controls', '');
+  modelViewer.setAttribute('background-color', 'transparent');
+  modelViewer.setAttribute('shadow-intensity', '0');
+  modelViewer.setAttribute('interaction-prompt', 'none');
+
+  // Füge den neuen `model-viewer` in den Container ein
+  container.appendChild(modelViewer);
+
+  // Ladeanimation (MWLoader) für das spezifische Modell ausblenden, wenn das Modell geladen wurde
+  const loader = container.querySelector('.MWLoader');
+  modelViewer.addEventListener('load', () => {
+      setTimeout(() => {
+          loader.style.display = 'none'; // Versteckt den Ladebildschirm nach dem Laden des Modells
+          preloader.style.display = 'none'; // Versteckt den initialen Preloader
+      }, 1000); // Verzögerung, um Flackern zu verhindern
+  });
 }
 
 loadModel(pages[0].querySelector('.model-viewer-container')); // Lade das erste model-viewer-Element beim Laden der Seite
