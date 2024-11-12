@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 :root{
@@ -62,9 +63,7 @@ button {
     gap: 0.6em;
     font-weight: bold;
     cursor: pointer;
-
     outline: none;
-    -webkit-tap-highlight-color: transparent;
 }
   
 button .arrow-wrapper {
@@ -575,7 +574,7 @@ body{
 
 @media (max-height: 900px) {
     .page .info{
-        padding-top: 50px;
+        padding-top: 65px;
     }
 }
 @media (max-height: 700px) {
