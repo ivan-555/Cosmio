@@ -206,20 +206,6 @@ body{
     }
 }
 
-/* hides the preloader with fadeOut animation */
-.preloader.hide{
-    animation: fadeOut .5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeOut{
-    100%{
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-    }
-}
-
 /* ------------------------------------------------------------ Sidebar --------------------------------------------------------------- */
 
 #sidebar{

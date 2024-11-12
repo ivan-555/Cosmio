@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Model Viewer -->
-    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer@v1.11.1/dist/model-viewer.min.js"></script> -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer@v1.11.1/dist/model-viewer.min.js"></script>
 </head>
 
 <body data-language="en">
@@ -109,9 +109,10 @@
 
     <div class="page active">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Sonnensystem/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none" field-of-view="80deg" ></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Sonnensystem/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+                <!-- fw 80deg -->
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -168,9 +169,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Sonne/scene.glb" src="" alt="3D-Modell"  auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Sonne/scene.glb">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -220,9 +221,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Merkur/scene.gltf"  src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Merkur/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -258,9 +259,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Venus.glb" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Venus.glb">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -304,9 +305,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Erde/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Erde/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -345,9 +346,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Mars/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Mars/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -389,9 +390,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Jupiter/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Jupiter/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -509,9 +510,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Neptun/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Neptun/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -553,9 +554,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Mond/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Mond/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -596,10 +597,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Europa/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
-            <button class="button viewInfo">
+            <div class="model-viewer-container" data-src="assets/3D Models/Europa/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
                 View Info
                 <div class="arrow-wrapper">
                     <div class="arrow"></div>
@@ -633,9 +633,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Ceres/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Ceres/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -674,9 +674,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Pluto/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Pluto/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -719,9 +719,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Planet X.glb" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Planet X.glb"> 
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -771,9 +771,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Asteroid/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Asteroid/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -818,9 +818,9 @@
     
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/smoke_compressed.glb" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/smoke_compressed.glb">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -869,9 +869,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Iss/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Iss/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -921,9 +921,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Hubble/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Hubble/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -973,9 +973,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Sputnik/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Sputnik/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -1026,9 +1026,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Voyager/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Voyager/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -1479,9 +1479,10 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Schwarzes Loch/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none" field-of-view="200deg"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Schwarzes Loch/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+                <!-- fw 200deg -->
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -1703,9 +1704,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Polarstern/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Polarstern/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -1747,9 +1748,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Sirius/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Sirius/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -1820,9 +1821,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Kepler22b/scene.gltf" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Kepler22b/scene.gltf">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -1863,9 +1864,9 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Proxima Centauri b.glb" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Proxima Centauri b.glb">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">
@@ -2149,9 +2150,10 @@
 
     <div class="page">
         <div class="viewer">
-            <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
-            <model-viewer data-src="assets/3D Models/Multiversum.glb" src="" alt="3D-Modell" auto-rotate camera-controls background-color="transparent"
-            shadow-intensity="0" interaction-prompt="none" min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m"></model-viewer>
+            <div class="model-viewer-container" data-src="assets/3D Models/Multiversum.glb">
+                <div class="MWLoader">Loading 3D model <span class="dots"></span> </div>
+                <!-- min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" -->
+            </div>
             <button class="button viewInfo">
                 View Info
                 <div class="arrow-wrapper">

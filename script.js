@@ -7,21 +7,12 @@ const sidebarHeader = document.querySelector('#sidebar .heading');
 const hamburger = document.querySelector('.hamburger');
 const viewInfoButtons = document.querySelectorAll('.viewInfo');
 const exploreButtons = document.querySelectorAll('.explore');
-const modelViewers = document.querySelectorAll('model-viewer');
-const MWLoaders = document.querySelectorAll('.MWLoader');
 const pageInfos = document.querySelectorAll('.page .info');
 const sidebarShowMoreButton = document.querySelector('#sidebar .show-more');
 const sidebarShowMoreButtonText = document.querySelector('#sidebar .show-more span');
 const sidebarMoreDiv = document.querySelector('#sidebar .more');
 const sidebarMoreDivLinks = document.querySelectorAll('#sidebar .more li a');
 const language = document.body.getAttribute('data-language');
-
-// Hide Page Preloader after first Model Viewer is loaded
-modelViewers[0].addEventListener('load', () => {
-  setTimeout(() => {
-    preloader.classList.add('hide');
-  }, 2000);
-});
 
 
 // Verhindert das Scrollen bei gedrücktem Mausrad
@@ -105,38 +96,52 @@ sidebarShowMoreButton.addEventListener('click', () => {
 
 
 
-// Navigate Between Pages
+// Seiten-Navigation und dynamisches Laden der `model-viewer`-Elemente
 NavLinks.forEach((link, index) => {
   link.addEventListener('click', () => {
     if (index <= 11) {
       NavIcon.style.display = "block";
     }
+
+    // Entferne die Klasse 'active' von allen Seiten und füge sie zur gewählten Seite hinzu
     pages.forEach(page => page.classList.remove('active'));
     pages[index].classList.add('active');
-    
-    let offset = index * 50; // Standard offset für die normalen Links
-    let isInMoreDiv = false; // Flag um zu prüfen, ob ein Link im "more" Div angeklickt wurde
 
-    // Prüfen, ob der geklickte Link im "more" Div ist
+    // `model-viewer`-Element für die geklickte Seite dynamisch laden
+    const container = pages[index].querySelector('.model-viewer-container');
+    if (container) {
+      loadModel(container);
+    }
+
+    // Position des Navigations-Icons aktualisieren
+    let offset = index * 50;
+    let isInMoreDiv = false;
+
     if (link.closest('.more')) {
-      offset += 60; // Erhöhe den offset um 60px, wenn der Link im "more" Div ist
+      offset += 60;
       isInMoreDiv = true;
     }
 
-    NavIcon.style.transform = `translateY(${offset}px) rotate(45deg)`; // Setze die Position des navIcons
-    
+    NavIcon.style.transform = `translateY(${offset}px) rotate(45deg)`;
+
     if (isInMoreDiv && status === 'closed') {
-      NavIcon.style.display = "none"; // Verstecke die Rakete, wenn das more div geschlossen ist
+      NavIcon.style.display = "none";
     } else {
-      NavIcon.style.display = "block"; // Zeige die Rakete an, wenn sie nicht im more div ist oder es offen ist
+      NavIcon.style.display = "block";
     }
 
+    // Sidebar auf mobilen Geräten schließen
     if (window.innerWidth < 1450) {
-      sidebar.classList.remove('show'); // Schließe die Sidebar auf mobilen Geräten
+      sidebar.classList.remove('show');
       hamburger.classList.remove('isX');
     }
   });
 });
+
+
+
+
+
 
 //View Info and Explore Buttons
 viewInfoButtons.forEach(viewInfoButton => {
@@ -163,55 +168,36 @@ exploreButtons.forEach(exploreButton => {
   });
 });
 
-// Model Viewer Loader
-modelViewers.forEach((modelViewer, index) => {
-  modelViewer.addEventListener('load', () => {
-    setTimeout(() => {
-          MWLoaders[index].style.display = 'none'; // Verstecke den Preloader nach dem Laden des Modells
-      }, 1000); // Verzögerung, um flackern zu verhindern
-  });
-});
 
 
+// Funktion zum dynamischen Laden des `model-viewer`-Elements
+function loadModel(container) {
+  const modelSrc = container.getAttribute('data-src');
+  
+  // Prüfe, ob das `model-viewer`-Element noch nicht vorhanden ist
+  if (!container.querySelector('model-viewer')) {
+    
+    const modelViewer = document.createElement('model-viewer');
+    modelViewer.setAttribute('src', modelSrc);
+    modelViewer.setAttribute('alt', '3D-Modell');
+    modelViewer.setAttribute('auto-rotate', '');
+    modelViewer.setAttribute('camera-controls', '');
+    modelViewer.setAttribute('background-color', 'transparent');
+    modelViewer.setAttribute('shadow-intensity', '0');
+    modelViewer.setAttribute('interaction-prompt', 'none');
 
+    // Füge den `model-viewer` in den Container ein
+    container.appendChild(modelViewer);
 
-
-
-
-// Funktion zum Laden des Model-Viewer-Scripts als Modul
-function loadModelViewerScript() {
-  return new Promise((resolve, reject) => {
-    const existingScript = document.querySelector("script#model-viewer");
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
-      script.type = "module";  // Setze das type-Attribut auf module
-      script.id = "model-viewer";  // Zur Identifizierung für zukünftige Verwendung
-      script.onload = resolve;
-      script.onerror = reject;
-      document.head.appendChild(script);
-    } else {
-      resolve();  // Falls das Script bereits geladen ist
-    }
-  });
-}
-
-// Initialisiere den Intersection Observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const modelViewer = entry.target;
-      modelViewer.setAttribute('src', modelViewer.getAttribute('data-src'));
-      observer.unobserve(modelViewer);  // Stoppe das Beobachten nach dem Laden
-    }
-  });
-}, { threshold: 0.1 });  // Beobachte nur, wenn das Modell fast sichtbar ist
-
-// Lade das Model Viewer-Script nur auf der Startseite
-if (pages[0].classList.contains('active')) {
-  loadModelViewerScript().then(() => {
-    modelViewers.forEach(modelViewer => {
-      observer.observe(modelViewer);  // Beobachte jedes `model-viewer`-Element
+    // Greife auf den spezifischen `MWLoader` zu und blende ihn nach einer Verzögerung aus, um Flackern zu verhindern
+    const loader = container.querySelector('.MWLoader');
+    modelViewer.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.style.display = 'none'; // Verstecke den Ladebildschirm nach dem Laden des Modells mit Verzögerung
+        preloader.style.display = 'none'; // Verstecke den gesamten Preloader, wenn das Modell geladen ist
+      }, 1000); // Verzögerung von 1000ms
     });
-  }).catch(err => console.error("Error loading model-viewer script:", err));
+  }
 }
+
+loadModel(pages[0].querySelector('.model-viewer-container')); // Lade das erste model-viewer-Element beim Laden der Seite
