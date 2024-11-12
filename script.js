@@ -171,3 +171,22 @@ modelViewers.forEach((modelViewer, index) => {
       }, 1000); // Verzögerung, um flackern zu verhindern
   });
 });
+
+
+// Intersection Observer für das Lazy Loading der 3D-Modelle
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const modelViewer = entry.target;
+      if (!modelViewer.src) { // Prüfen, ob src noch nicht gesetzt ist
+        modelViewer.src = modelViewer.getAttribute('data-src');
+        observer.unobserve(modelViewer); // Beobachtung beenden, nachdem src gesetzt wurde
+      }
+    }
+  });
+}, { rootMargin: '0px 0px -200px 0px' }); // Optionales Offset zur Aktivierung
+
+// Observer für jedes model-viewer Element hinzufügen
+modelViewers.forEach(modelViewer => {
+  observer.observe(modelViewer);
+});
