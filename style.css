@@ -432,6 +432,7 @@ body{
     height: 100%;
     overflow: hidden;
     position: relative;
+    display: none;
 }
 
 .page .viewer .sketchfab-embed-wrapper iframe{
@@ -489,6 +490,11 @@ body{
     gap: 80px;
     flex-direction: column;
     transition: all .5s ease;
+    display: none;
+}
+
+.page .info.active{
+    display: flex;
 }
 
 /* blur class is added by js and blurs the text if the sidebar is open on small screens */
@@ -522,16 +528,6 @@ body{
 .page .info p::-webkit-scrollbar-thumb {
     background: #921717;
     border-radius: 10px;
-}
-
-/* Hide all pages initialy apart from home */
-.page {
-    display: none;
-}
-
-/* Show page added by js */
-.page.active{
-    display: block;
 }
 
 /* ------------------------------------------------------ Media Querys ------------------------------------------------------------------------ */

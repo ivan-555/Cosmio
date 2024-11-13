@@ -1,27 +1,31 @@
+const sidebar = document.querySelector('#sidebar');
 const NavLinks = document.querySelectorAll('aside nav ul li a');
 const NavIcon = document.querySelector('aside nav .icon');
-const preloader = document.querySelector('.preloader');
-const pages = document.querySelectorAll('.page');
-const sidebar = document.querySelector('#sidebar');
-const sidebarHeader = document.querySelector('#sidebar .heading');
 const hamburger = document.querySelector('.hamburger');
-const viewInfoButtons = document.querySelectorAll('.viewInfo');
-const exploreButtons = document.querySelectorAll('.explore');
-const modelViewers = document.querySelectorAll('model-viewer');
-const MWLoaders = document.querySelectorAll('.MWLoader');
-const pageInfos = document.querySelectorAll('.page .info');
 const sidebarShowMoreButton = document.querySelector('#sidebar .show-more');
 const sidebarShowMoreButtonText = document.querySelector('#sidebar .show-more span');
 const sidebarMoreDiv = document.querySelector('#sidebar .more');
 const sidebarMoreDivLinks = document.querySelectorAll('#sidebar .more li a');
+const preloader = document.querySelector('.preloader');
+const modelViewer = document.querySelector('model-viewer');
+const MWLoader = document.querySelector('.MWLoader');
+const sketchfabEmbedWrapper = document.querySelector('.sketchfab-embed-wrapper');
+const sketchfabEmbedWrapperFrame = document.querySelector('.sketchfab-embed-wrapper iframe');
+const viewInfoButtons = document.querySelectorAll('.viewInfo');
+const exploreButtons = document.querySelectorAll('.explore');
+const pageInfos = document.querySelectorAll('.page .info');
 const language = document.body.getAttribute('data-language');
 
-// Hide Page Preloader after first Model Viewer is loaded
-modelViewers[0].addEventListener('load', () => {
+// Hide Page Preloader after Model is loaded
+modelViewer.addEventListener('load', () => {
   setTimeout(() => {
     preloader.classList.add('hide');
-  }, 2000);
+    MWLoader.style.display = 'none';
+  }, 1500);
 });
+
+
+
 
 
 // Verhindert das Scrollen bei gedrücktem Mausrad
@@ -31,7 +35,6 @@ if (event.button === 1) {
     event.preventDefault();  // Standardaktion wie Scrollen verhindern
 }
 });
-
 // Scrollen per Mausrad auf der gesamten Seite deaktivieren und für p Elemente und Sidebar zulassen
 window.addEventListener("wheel", function(e) {
   let scrollablePElements = document.querySelectorAll('.info p');
@@ -44,6 +47,11 @@ window.addEventListener("wheel", function(e) {
       e.preventDefault(); // Verhindert das Scrollen auf anderen Bereichen
   }
 }, { passive: false }); // 'passive: false' erlaubt die Nutzung von e.preventDefault()
+
+
+
+
+
 
 // Sidebar Toggle
 hamburger.addEventListener('click', () => {
@@ -108,11 +116,34 @@ sidebarShowMoreButton.addEventListener('click', () => {
 // Navigate Between Pages
 NavLinks.forEach((link, index) => {
   link.addEventListener('click', () => {
-    if (index <= 11) {
-      NavIcon.style.display = "block";
+    pageInfos.forEach(info => info.classList.remove('active'));
+    pageInfos[index].classList.add('active');
+
+    if (link.getAttribute("data-sf") === "true") {
+      sketchfabEmbedWrapper.style.display = "block";
+      sketchfabEmbedWrapperFrame.src = link.getAttribute("data-src")
+      if (link.hasAttribute("data-cut")) {
+        sketchfabEmbedWrapper.classList.add("cut");
+      } else {
+        sketchfabEmbedWrapper.classList.remove("cut");	
+      }
+      modelViewer.style.display = "none";
+      MWLoader.style.display = 'none';
+    } else {
+      sketchfabEmbedWrapper.style.display = "none";
+      modelViewer.style.display = "block";
+      MWLoader.style.display = 'flex';
+      modelViewer.src = link.getAttribute("data-src");
+      if (link.hasAttribute("data-fw")) {
+        modelViewer.setAttribute("field-of-view", link.getAttribute("data-fw"));
+      } else {
+        modelViewer.removeAttribute("field-of-view");
+      }
     }
-    pages.forEach(page => page.classList.remove('active'));
-    pages[index].classList.add('active');
+
+    if (index <= 11) {
+      NavIcon.style.display = "block"; // Wenn der Link nicht im more div ist, soll die Rakete angezeigt werden
+    }
     
     let offset = index * 50; // Standard offset für die normalen Links
     let isInMoreDiv = false; // Flag um zu prüfen, ob ein Link im "more" Div angeklickt wurde
@@ -138,6 +169,10 @@ NavLinks.forEach((link, index) => {
   });
 });
 
+
+
+
+
 //View Info and Explore Buttons
 viewInfoButtons.forEach(viewInfoButton => {
   // Moves the page down to the info when a view info button is clicked
@@ -160,14 +195,5 @@ exploreButtons.forEach(exploreButton => {
       top: 0,
       behavior: 'smooth'
     });
-  });
-});
-
-// Model Viewer Loader
-modelViewers.forEach((modelViewer, index) => {
-  modelViewer.addEventListener('load', () => {
-    setTimeout(() => {
-          MWLoaders[index].style.display = 'none'; // Verstecke den Preloader nach dem Laden des Modells
-      }, 1000); // Verzögerung, um flackern zu verhindern
   });
 });
