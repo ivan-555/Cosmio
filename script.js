@@ -16,6 +16,8 @@ const exploreButtons = document.querySelectorAll('.explore');
 const pageInfos = document.querySelectorAll('.page .info');
 const language = document.body.getAttribute('data-language');
 
+
+
 // Hide Page Preloader after Model is loaded
 modelViewer.addEventListener('load', () => {
   setTimeout(() => {
@@ -23,7 +25,6 @@ modelViewer.addEventListener('load', () => {
     MWLoader.style.display = 'none';
   }, 1500);
 });
-
 
 
 
