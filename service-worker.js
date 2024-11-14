@@ -1,13 +1,5 @@
 const CACHE_NAME = "planetarium-cache-v1";
-const urlsToCache = [
-    "/",
-    "/index.html",
-    "/de/index.html",
-    "/style.css",
-    "/script.js",
-    "/assets/favicon.png",
-    "/assets/favicon-192.png"
-];
+const urlsToCache = [];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
