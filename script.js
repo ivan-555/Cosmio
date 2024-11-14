@@ -1,7 +1,7 @@
 // Service Worker registrieren
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/sw.js', { scope: '/' })
+    .register('/service-worker.js') // Pfad anpassen
     .then((registration) => {
       console.log('Service Worker registriert mit Scope:', registration.scope);
     })
