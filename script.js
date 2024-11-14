@@ -1,3 +1,16 @@
+// Service Worker registrieren
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+    .then((registration) => {
+      console.log('Service Worker registriert mit Scope:', registration.scope);
+    })
+    .catch((error) => {
+      console.error('Service Worker-Registrierung fehlgeschlagen:', error);
+    });
+}
+
+
 const sidebar = document.querySelector('#sidebar');
 const NavLinks = document.querySelectorAll('aside nav ul li a');
 const NavIcon = document.querySelector('aside nav .icon');
