@@ -1,13 +1,13 @@
 {
-    "name": "Cosmio",
-    "short_name": "Cosmio",
-    "description": "3D Universe Simulation",
-    "start_url": "https://github.com/ivan-555/Cosmio/index.html",
-    "id": "https://github.com/ivan-555/Cosmio/index.html",
-    "display": "standalone",
-    "background_color": "#0d0d0d",
-    "theme_color": "#0d0d0d",
-    "icons": [
+  "name": "Cosmio",
+  "short_name": "Cosmio",
+  "description": "3D Universe Simulation",
+  "start_url": "https://ivan-555.github.io/Cosmio/",
+  "id": "https://ivan-555.github.io/Cosmio/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "icons": [
     {
       "src": "/assets/favicon-192.png",
       "sizes": "192x192",
@@ -19,5 +19,4 @@
       "type": "image/png"
     }
   ]
-  }
-  
+}
